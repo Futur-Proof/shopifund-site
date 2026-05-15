@@ -185,9 +185,10 @@ nav{
 }
 .hero-trust-dot{width:4px;height:4px;border-radius:50%;background:var(--border);flex-shrink:0;}
 @media(max-width:540px){
-  .hero-trust{flex-direction:column;gap:0.5rem;align-items:flex-start;width:fit-content;margin-left:auto;margin-right:auto;}
+  .hero-trust{flex-direction:column;gap:0.6rem;align-items:flex-start;width:fit-content;margin-left:auto;margin-right:auto;font-size:0.9rem;}
   .hero-trust-dot{display:none;}
-  .hero-trust-item::before{content:'•';color:var(--teal);font-size:0.9rem;margin-right:0.4rem;}
+  .hero-trust-item{display:flex;align-items:center;font-weight:600;color:#1A2028;}
+  .hero-trust-item::before{content:'✓';color:var(--teal);font-size:1rem;font-weight:700;margin-right:0.5rem;line-height:1;}
   .hero h1{font-size:7.5vw;white-space:nowrap;}
   .hero h1 br{display:none;}
   .hero-tagline{display:none;}
