@@ -482,8 +482,10 @@ footer{
   display:flex;align-items:flex-start;justify-content:space-between;
   flex-wrap:wrap;gap:2rem;
 }
-.footer-brand{display:flex;align-items:center;gap:0.55rem;margin-bottom:0.5rem;}
-.footer-brand-name{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;color:#fff;}
+.footer-brand{display:flex;align-items:center;gap:0.65rem;margin-bottom:0.5rem;}
+.footer-wordmark{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:-0.03em;line-height:1;}
+.footer-wordmark .w-shopi{color:#F7F9F8;}
+.footer-wordmark .w-fund{color:#F5A020;}
 .footer-legal{font-size:0.75rem;line-height:1.7;max-width:480px;}
 .footer-links{display:flex;flex-direction:column;gap:0.5rem;}
 .footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.55);transition:color 0.2s;}
@@ -925,27 +927,8 @@ footer{
 <footer>
   <div>
     <div class="footer-brand">
-      <svg width="36" height="36" viewBox="0 0 205 195" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <clipPath id="sf-diag-ft">
-            <rect x="85" y="51" width="96" height="118" rx="11"/>
-          </clipPath>
-        </defs>
-        <rect x="4" y="65" width="108" height="122" rx="15" fill="#2A8A72"/>
-        <rect x="19" y="80" width="78" height="92" rx="9" fill="white"/>
-        <rect x="4" y="12" width="108" height="54" rx="15" fill="#2A8A72"/>
-        <circle cx="28" cy="67" r="18" fill="#2A8A72"/>
-        <circle cx="58" cy="67" r="18" fill="#2A8A72"/>
-        <circle cx="88" cy="67" r="18" fill="#2A8A72"/>
-        <rect x="16" y="20" width="26" height="38" rx="4" fill="white"/>
-        <rect x="70" y="20" width="26" height="38" rx="4" fill="white"/>
-        <rect x="70" y="34" width="130" height="153" rx="18" fill="#2A8A72"/>
-        <rect x="85" y="51" width="96" height="118" rx="11" fill="white"/>
-        <line x1="52" y1="192" x2="208" y2="28" stroke="#2A8A72" stroke-width="30" stroke-linecap="butt" clip-path="url(#sf-diag-ft)"/>
-        <line x1="144" y1="48" x2="198" y2="6" stroke="#F5A020" stroke-width="20" stroke-linecap="round"/>
-        <polyline points="168,6 198,6 198,38" stroke="#F5A020" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </svg>
-      <span class="footer-brand-name">shopifund</span>
+      <img src="icon-nav.png" width="36" height="36" alt="shopifund icon" style="display:block;flex-shrink:0;">
+      <span class="footer-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
     </div>
     <p class="footer-legal">shopifund is a business funding marketplace that connects small businesses with alternative lenders. shopifund is not a lender. All credit decisions are made by third-party lending partners. Funding amounts and terms vary by lender, business profile, and qualification criteria.</p>
   </div>
