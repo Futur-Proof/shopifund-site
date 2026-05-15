@@ -1015,6 +1015,35 @@ footer{
   .buck-chat-panel{width:calc(100vw - 32px);}
   .buck-chat-widget{right:16px;bottom:16px;}
 }
+/* CALC BUCK PROMO */
+.calc-title-row{
+  display:flex;align-items:center;justify-content:center;
+  gap:1.25rem;margin-bottom:0.25rem;
+}
+.calc-buck-wrap{
+  position:relative;flex-shrink:0;
+  display:flex;flex-direction:column;align-items:center;
+}
+.calc-buck-img{
+  width:72px;height:auto;display:block;
+  filter:drop-shadow(0 4px 12px rgba(27,107,90,0.15));
+}
+.buck-bubble{
+  position:absolute;top:-28px;left:50%;transform:translateX(-50%);
+  background:var(--teal);color:#fff;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:0.68rem;
+  white-space:nowrap;padding:0.25rem 0.6rem;border-radius:50px;
+  box-shadow:0 2px 8px rgba(27,107,90,0.25);
+}
+.buck-bubble::after{
+  content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);
+  border:5px solid transparent;
+  border-top-color:var(--teal);border-bottom:none;
+}
+@media(max-width:640px){
+  .calc-title-row{flex-direction:column;gap:0.5rem;}
+  .calc-buck-img{width:52px;}
+}
 </style>
 </head>
 <body>
@@ -1299,8 +1328,16 @@ function closeMenu(){document.querySelector('.hamburger').classList.remove('open
       <span id="rate-text">Loading live market rates&hellip;</span>
     </div>
 
-    <h2 class="calc-tool-title">Find Your Match</h2>
-    <h2 class="section-title">What's your funding goal?</h2>
+    <div class="calc-title-row">
+      <div class="calc-buck-wrap">
+        <img src="buck_pose.svg" alt="Buck" class="calc-buck-img">
+        <div class="buck-bubble">Funding in 24 hrs!</div>
+      </div>
+      <div>
+        <h2 class="calc-tool-title">Find Your Match</h2>
+        <h2 class="section-title">What's your funding goal?</h2>
+      </div>
+    </div>
     <p class="section-sub" style="margin:0 auto;">Get your matches in 2 minutes or less.</p>
 
     <div class="goal-grid">
