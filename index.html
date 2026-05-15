@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>shopifund — Business Funding That Works as Hard as You Do</title>
+<title>shopifund: Business Funding That Works as Hard as You Do</title>
 <meta name="description" content="shopifund matches small businesses with the right lender in 24 hours. Bank statements only. No tax returns. No credit pulls. Funded by Friday.">
-<meta property="og:title" content="shopifund — Funded by Friday">
+<meta property="og:title" content="shopifund: Funded by Friday">
 <meta property="og:description" content="One match. One call. One offer. Bank-statement underwriting. Decisions in 24 hours.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shopifund.com">
@@ -13,7 +13,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="shopifund — Funded by Friday">
+<meta name="twitter:title" content="shopifund: Funded by Friday">
 <meta name="twitter:description" content="One match. One call. One offer. Bank-statement underwriting. Decisions in 24 hours.">
 <meta name="twitter:image" content="https://shopifund.com/og-image.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -125,9 +125,14 @@ nav{
 .hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,160,32,0.45);}
 .hero-trust{
   margin-top:1rem;font-size:0.8rem;color:var(--muted);
-  display:flex;align-items:center;justify-content:center;gap:0.5rem;
+  display:flex;align-items:center;justify-content:center;gap:0.4rem;
+  flex-wrap:nowrap;white-space:nowrap;
 }
-.hero-trust-dot{width:4px;height:4px;border-radius:50%;background:var(--border);}
+.hero-trust-dot{width:4px;height:4px;border-radius:50%;background:var(--border);flex-shrink:0;}
+@media(max-width:540px){
+  .hero-trust{flex-direction:column;gap:0.3rem;align-items:center;}
+  .hero-trust-dot{display:none;}
+}
 
 /* PHONE MOCKUP */
 .hero-visual{
@@ -503,7 +508,7 @@ footer{
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
   <p class="hero-trust">
-    No credit pull &nbsp;<span class="hero-trust-dot"></span>&nbsp; No tax returns &nbsp;<span class="hero-trust-dot"></span>&nbsp; 3 months bank statements
+    No credit pull <span class="hero-trust-dot"></span> No tax returns <span class="hero-trust-dot"></span> 3 months bank statements
   </p>
 
   <!-- Phone mockup -->
@@ -586,7 +591,7 @@ footer{
 
 <!-- FRIDAY STRIP -->
 <div class="friday-strip">
-  <strong>Funded by Friday — guaranteed.</strong>
+  <strong>Funded by Friday.</strong>
   <span>Apply by Wednesday, funds in your account by end of week.</span>
 </div>
 
@@ -870,7 +875,7 @@ footer{
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
         </button>
-        <div class="faq-a">Most clients are matched within 24 hours of submitting their bank statements. If you apply by Wednesday and everything checks out, we target same-week funding — Funded by Friday.</div>
+        <div class="faq-a">Most clients are matched within 24 hours of submitting their bank statements. If you apply by Wednesday and everything checks out, we target same-week funding. Funded by Friday.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
