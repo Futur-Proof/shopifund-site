@@ -479,46 +479,7 @@ footer{
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <!--
-      shopifund icon — correct structure:
-      • storefront body (left, thick-stroke rounded rect)
-      • awning with 3 scallop bumps + 2 white panels
-      • box frame (right, overlapping, thick-stroke rounded rect)
-      • diagonal teal stripe through box interior
-      • amber L-arrow at top-right
-    -->
-    <svg width="44" height="44" viewBox="0 0 205 195" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <clipPath id="sf-diag">
-          <rect x="85" y="51" width="96" height="118" rx="11"/>
-        </clipPath>
-      </defs>
-
-      <!-- Storefront lower body (thick-stroke rounded rect, left) -->
-      <rect x="4" y="65" width="108" height="122" rx="15" fill="#E8F2F0"/>
-      <rect x="19" y="80" width="78" height="92" rx="9" fill="white"/>
-
-      <!-- Awning flat top section -->
-      <rect x="4" y="12" width="108" height="54" rx="15" fill="#E8F2F0"/>
-      <!-- Scallop bumps (3 circles hanging off awning bottom) -->
-      <circle cx="28" cy="67" r="18" fill="#E8F2F0"/>
-      <circle cx="58" cy="67" r="18" fill="#E8F2F0"/>
-      <circle cx="88" cy="67" r="18" fill="#E8F2F0"/>
-      <!-- White panels in awning (left + right, teal center divider between them) -->
-      <rect x="16" y="20" width="26" height="38" rx="4" fill="white"/>
-      <rect x="70" y="20" width="26" height="38" rx="4" fill="white"/>
-
-      <!-- Box frame (thick-stroke rounded rect, right side, overlapping storefront) -->
-      <rect x="70" y="34" width="130" height="153" rx="18" fill="#E8F2F0"/>
-      <rect x="85" y="51" width="96" height="118" rx="11" fill="white"/>
-
-      <!-- Diagonal teal stripe through box interior (clipped) -->
-      <line x1="52" y1="192" x2="208" y2="28" stroke="#E8F2F0" stroke-width="30" stroke-linecap="butt" clip-path="url(#sf-diag)"/>
-
-      <!-- Amber arrow: diagonal stem + L-corner at tip -->
-      <line x1="144" y1="48" x2="198" y2="6" stroke="#F5A020" stroke-width="20" stroke-linecap="round"/>
-      <polyline points="168,6 198,6 198,38" stroke="#F5A020" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </svg>
+    <img src="icon-nav.png" width="44" height="44" alt="shopifund icon" style="display:block;flex-shrink:0;">
     <span class="nav-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
   </a>
   <div class="nav-links">
