@@ -689,9 +689,11 @@ footer{
     order:1;
   }
   .buck-glow img{
-    min-height:0;
-    max-height:60px;
-    width:auto;
+    min-height:0 !important;
+    max-height:60px !important;
+    max-width:60px !important;
+    width:auto !important;
+    height:auto !important;
   }
 }
 
@@ -1031,7 +1033,7 @@ function closeMenu(){document.querySelector('.hamburger').classList.remove('open
   <!-- LEFT: Buck image -->
   <div class="buck-col">
     <div class="buck-glow">
-      <img src="buck_pose.svg" alt="Buck the Beaver, your funding guide" width="420">
+      <img src="buck_pose.svg" alt="Buck the Beaver, your funding guide">
     </div>
     <div class="buck-badge">
       <span class="buck-badge-icon">&#127757;</span>
