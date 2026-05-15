@@ -185,8 +185,9 @@ nav{
 }
 .hero-trust-dot{width:4px;height:4px;border-radius:50%;background:var(--border);flex-shrink:0;}
 @media(max-width:540px){
-  .hero-trust{flex-direction:column;gap:0.3rem;align-items:center;}
+  .hero-trust{flex-direction:column;gap:0.5rem;align-items:flex-start;width:fit-content;margin-left:auto;margin-right:auto;}
   .hero-trust-dot{display:none;}
+  .hero-trust-item::before{content:'•';color:var(--teal);font-size:0.9rem;margin-right:0.4rem;}
   .hero h1{font-size:7.5vw;white-space:nowrap;}
   .hero h1 br{display:none;}
   .hero-tagline{display:none;}
@@ -713,7 +714,11 @@ function closeMenu(){document.querySelector('.hamburger').classList.remove('open
     </button>
   </div>
   <p class="hero-trust">
-    No credit pull <span class="hero-trust-dot"></span> No tax returns <span class="hero-trust-dot"></span> 3 months bank statements
+    <span class="hero-trust-item">No credit pull</span>
+    <span class="hero-trust-dot"></span>
+    <span class="hero-trust-item">No tax returns</span>
+    <span class="hero-trust-dot"></span>
+    <span class="hero-trust-item">3 months bank statements</span>
   </p>
 
   <!-- Phone mockup -->
