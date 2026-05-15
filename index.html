@@ -408,6 +408,13 @@ section{padding:5rem 5vw;}
 
 /* CALCULATOR */
 .calc-section{background:var(--white);padding:6rem 1.5rem;}
+.calc-tool-title{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  font-weight:900;color:var(--amber);
+  letter-spacing:-0.02em;line-height:1.1;
+  margin-bottom:0.5rem;
+}
 .calc-inner{max-width:820px;margin:0 auto;text-align:center;}
 .rate-ticker{
   display:inline-flex;align-items:center;gap:0.5rem;
@@ -644,6 +651,7 @@ footer{
     <a href="#how">How it works</a>
     <a href="#products">Products</a>
     <a href="#faq">FAQ</a>
+    <a href="working-capital-loans.html">Guides</a>
     <a href="apply.html" class="nav-cta">Apply Now</a>
   </div>
   <button class="hamburger" aria-label="Menu" onclick="toggleMenu(this)">
@@ -654,6 +662,7 @@ footer{
   <a href="#how" onclick="closeMenu()">How it works</a>
   <a href="#products" onclick="closeMenu()">Products</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="working-capital-loans.html" onclick="closeMenu()">Guides</a>
   <a href="apply.html" class="nav-cta">Apply Now</a>
 </div>
 <script>
@@ -893,6 +902,7 @@ function closeMenu(){document.querySelector('.hamburger').classList.remove('open
       <span id="rate-text">Loading live market rates…</span>
     </div>
 
+    <h2 class="calc-tool-title">Find Your Match</h2>
     <div class="section-label">Your Goal</div>
     <h2 class="section-title">What's your funding goal?</h2>
     <p class="section-sub" style="margin:0 auto;">Get your matches in 2 minutes or less.</p>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State Law Privacy Notice | shopifund</title>
+<meta name="description" content="shopifund's supplemental state law privacy notice covering GLBA, California, Colorado, Connecticut, Minnesota, Montana, Oregon, Texas, and Virginia consumer privacy rights.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#144F43;
+  --teal-mid:#1B6B5A;
+  --teal-tint:#E8F2F0;
+  --amber:#F5A020;
+  --amber-dark:#D4880F;
+  --amber-tint:#FEF6E8;
+  --charcoal:#1A2028;
+  --charcoal-mid:#3D4550;
+  --muted:#6B7480;
+  --cream:#F7F9F8;
+  --border:#E2E8E6;
+  --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--charcoal);line-height:1.7;background:var(--white);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;}
+h1,h2,h3,h4{text-wrap:balance;}
+p,li{text-wrap:pretty;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#144F43;border-bottom:1px solid rgba(255,255,255,0.08);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav-logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+.nav-wordmark{font-family:'Nunito',sans-serif;font-size:2.6rem;font-weight:900;letter-spacing:-0.03em;line-height:1;}
+.nav-wordmark .w-shopi{color:#F7F9F8;}
+.nav-wordmark .w-fund{color:#F5A020;}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{font-size:0.9rem;font-weight:500;color:rgba(247,249,248,0.7);transition:color 0.2s;}
+.nav-links a:hover{color:#F7F9F8;}
+.nav-cta{background:var(--amber);color:var(--charcoal);font-weight:700;font-size:0.875rem;padding:0.55rem 1.3rem;border-radius:50px;white-space:nowrap;transition:background 0.2s,transform 0.15s;box-shadow:0 2px 12px rgba(245,160,32,0.3);}
+.nav-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;cursor:pointer;background:none;border:none;padding:4px;flex-shrink:0;}
+.hamburger span{display:block;width:100%;height:2.5px;background:#F7F9F8;border-radius:2px;transition:transform 0.25s,opacity 0.25s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#144F43;z-index:199;flex-direction:column;padding:1rem 1.25rem 1.5rem;gap:0.25rem;border-top:1px solid rgba(255,255,255,0.1);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:1.05rem;font-weight:700;color:#F7F9F8;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.08);text-decoration:none;transition:opacity 0.2s;}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu .nav-cta{margin-top:0.5rem;text-align:center;padding:0.75rem;border-radius:50px;border-bottom:none;color:var(--charcoal);}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex !important;}nav{padding:0 1.25rem;}.nav-logo img{width:22px;height:22px;}.nav-wordmark{font-size:1.3rem;}}
+
+/* HERO */
+.policy-hero{background:var(--teal);padding:7rem 5vw 4rem;text-align:center;}
+.policy-hero-label{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.8);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:50px;margin-bottom:1.25rem;}
+.policy-hero h1{font-family:'Nunito',sans-serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:900;color:#fff;letter-spacing:-0.02em;margin-bottom:0.75rem;}
+.policy-hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto 1.25rem;}
+.policy-hero-meta{font-size:0.88rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap;}
+.policy-hero-meta span{display:flex;align-items:center;gap:0.35rem;}
+
+/* LAYOUT */
+.policy-layout{max-width:1160px;margin:0 auto;padding:4rem 5vw 6rem;display:grid;grid-template-columns:240px 1fr;gap:4rem;align-items:start;}
+@media(max-width:900px){.policy-layout{grid-template-columns:1fr;gap:2rem;}}
+
+/* TOC */
+.policy-toc{position:sticky;top:92px;}
+.toc-label{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:0.15rem;}
+.toc-list a{display:block;font-size:0.84rem;font-weight:500;color:var(--muted);padding:0.45rem 0.75rem;border-radius:8px;border-left:2px solid transparent;transition:color 0.18s,background 0.18s,border-color 0.18s;line-height:1.35;}
+.toc-list a:hover{color:var(--teal-mid);background:var(--teal-tint);}
+.toc-list a.active{color:var(--teal-mid);background:var(--teal-tint);border-left-color:var(--teal-mid);font-weight:600;}
+.toc-divider{height:1px;background:var(--border);margin:0.75rem 0;}
+.toc-cta{display:block;background:var(--amber);color:var(--charcoal);text-align:center;font-weight:700;font-size:0.84rem;padding:0.7rem 1rem;border-radius:50px;margin-top:1.25rem;box-shadow:0 3px 12px rgba(245,160,32,0.35);transition:background 0.2s,transform 0.15s;}
+.toc-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+@media(max-width:900px){.policy-toc{position:relative;top:auto;}.toc-list{display:none;}.toc-label{display:none;}.toc-divider{display:none;}}
+
+/* MOBILE TOC */
+.toc-mobile{display:none;margin-bottom:1.5rem;}
+@media(max-width:900px){.toc-mobile{display:block;}}
+.toc-mobile-toggle{width:100%;padding:0.85rem 1.1rem;background:var(--cream);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:space-between;font-size:0.88rem;font-weight:600;color:var(--charcoal);cursor:pointer;font-family:'Inter',sans-serif;}
+.toc-mobile-list{display:none;flex-direction:column;gap:0.1rem;background:var(--white);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:0.5rem;}
+.toc-mobile-list.open{display:flex;}
+.toc-mobile-list a{font-size:0.84rem;font-weight:500;color:var(--muted);padding:0.55rem 0.75rem;border-radius:8px;transition:background 0.15s,color 0.15s;}
+.toc-mobile-list a:hover{background:var(--teal-tint);color:var(--teal-mid);}
+
+/* CONTENT */
+.policy-section{margin-bottom:3.5rem;scroll-margin-top:100px;}
+.policy-section:last-child{margin-bottom:0;}
+.section-number{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:0.4rem;}
+.policy-section h2{font-family:'Nunito',sans-serif;font-size:clamp(1.3rem,3vw,1.7rem);font-weight:900;color:var(--charcoal);letter-spacing:-0.02em;margin-bottom:1.1rem;padding-bottom:0.75rem;border-bottom:2px solid var(--teal-tint);}
+.policy-section h3{font-family:'Nunito',sans-serif;font-size:1.05rem;font-weight:800;color:var(--charcoal);margin:1.6rem 0 0.6rem;}
+.policy-section h4{font-size:0.9rem;font-weight:700;color:var(--charcoal);margin:1.2rem 0 0.4rem;}
+.policy-section p{font-size:0.9rem;color:var(--charcoal-mid);line-height:1.8;margin-bottom:1rem;}
+.policy-section p:last-child{margin-bottom:0;}
+.policy-section ul,.policy-section ol{padding-left:1.4rem;margin-bottom:1rem;display:flex;flex-direction:column;gap:0.4rem;}
+.policy-section li{font-size:0.9rem;color:var(--charcoal-mid);line-height:1.75;}
+.policy-section strong{color:var(--charcoal);font-weight:600;}
+.policy-section a{color:var(--teal-mid);text-decoration:underline;text-underline-offset:2px;}
+.policy-section a:hover{color:var(--teal);}
+
+/* STATE TABS */
+.state-tabs{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.5rem;}
+.state-tab{font-size:0.78rem;font-weight:700;padding:0.4rem 0.9rem;border-radius:50px;border:1.5px solid var(--border);color:var(--muted);cursor:pointer;transition:background 0.15s,color 0.15s,border-color 0.15s;background:none;font-family:'Inter',sans-serif;}
+.state-tab:hover,.state-tab.active{background:var(--teal);color:#fff;border-color:var(--teal);}
+.state-block{display:none;}
+.state-block.active{display:block;}
+
+/* CALLOUTS */
+.policy-callout{background:var(--teal-tint);border-left:3px solid var(--teal-mid);border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin:1.25rem 0;}
+.policy-callout p{color:var(--teal);font-size:0.875rem;margin-bottom:0;}
+.policy-callout.amber{background:var(--amber-tint);border-left-color:var(--amber);}
+.policy-callout.amber p{color:#7A4C00;}
+.policy-callout.charcoal{background:#F4F5F6;border-left-color:var(--charcoal-mid);}
+.policy-callout.charcoal p{color:var(--charcoal-mid);}
+
+/* GLBA BOX */
+.glba-box{background:var(--charcoal);border-radius:16px;padding:2rem;margin-bottom:2rem;}
+.glba-box-label{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:0.6rem;}
+.glba-box h3{font-family:'Nunito',sans-serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:0.75rem;}
+.glba-box p{font-size:0.875rem;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:0.75rem;}
+.glba-box p:last-child{margin-bottom:0;}
+.glba-box a{color:var(--amber);}
+
+/* TABLES */
+.policy-table-wrap{overflow-x:auto;margin:1.25rem 0;}
+.policy-table{width:100%;border-collapse:collapse;font-size:0.84rem;}
+.policy-table th{background:var(--teal);color:#fff;font-weight:700;font-size:0.75rem;letter-spacing:0.04em;padding:0.75rem 1rem;text-align:left;}
+.policy-table th:first-child{border-radius:8px 0 0 0;}
+.policy-table th:last-child{border-radius:0 8px 0 0;}
+.policy-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--charcoal-mid);line-height:1.6;vertical-align:top;}
+.policy-table tr:last-child td{border-bottom:none;}
+.policy-table tr:nth-child(even) td{background:var(--cream);}
+.tag{display:inline-block;font-size:0.7rem;font-weight:700;padding:0.2rem 0.55rem;border-radius:50px;white-space:nowrap;}
+.tag-yes{background:#EAF5F2;color:var(--teal-mid);}
+.tag-no{background:#F3F3F3;color:var(--muted);}
+.tag-limited{background:var(--amber-tint);color:#8A5500;}
+
+/* OPT-OUT CARD */
+.optout-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.25rem 0;}
+.optout-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.optout-card-icon{width:36px;height:36px;border-radius:10px;background:var(--teal-tint);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;}
+.optout-card-title{font-size:0.82rem;font-weight:700;color:var(--charcoal);margin-bottom:0.3rem;}
+.optout-card-desc{font-size:0.78rem;color:var(--muted);line-height:1.55;}
+.optout-card-desc a{color:var(--teal-mid);}
+
+/* CONTACT CARDS */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.25rem;}
+.contact-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.contact-card-label{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+.contact-card-value{font-size:0.88rem;font-weight:600;color:var(--charcoal);}
+.contact-card-value a{color:var(--teal-mid);}
+
+/* FOOTER */
+footer{background:var(--charcoal);color:rgba(255,255,255,0.55);padding:3rem 5vw;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:2rem;}
+.footer-brand{display:flex;align-items:center;gap:0.65rem;margin-bottom:0.5rem;}
+.footer-wordmark{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:-0.03em;line-height:1;}
+.footer-wordmark .w-shopi{color:#F7F9F8;}
+.footer-wordmark .w-fund{color:#F5A020;}
+.footer-legal{font-size:0.75rem;line-height:1.7;max-width:480px;text-wrap:pretty;}
+.footer-links{display:flex;flex-direction:column;gap:0.5rem;}
+.footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.55);transition:color 0.2s;}
+.footer-links a:hover{color:#fff;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="shopifund_icon_cream.svg" width="44" height="44" alt="shopifund icon" style="display:block;flex-shrink:0;object-fit:contain;">
+    <span class="nav-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#products">Products</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="working-capital-loans.html">Guides</a>
+    <a href="apply.html" class="nav-cta">Apply Now</a>
+  </div>
+  <button class="hamburger" aria-label="Menu" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#how" onclick="closeMenu()">How it works</a>
+  <a href="index.html#products" onclick="closeMenu()">Products</a>
+  <a href="index.html#faq" onclick="closeMenu()">FAQ</a>
+  <a href="working-capital-loans.html" onclick="closeMenu()">Guides</a>
+  <a href="apply.html" class="nav-cta">Apply Now</a>
+</div>
+<script>
+function toggleMenu(btn){btn.classList.toggle('open');document.getElementById('mobile-menu').classList.toggle('open');}
+function closeMenu(){document.querySelector('.hamburger').classList.remove('open');document.getElementById('mobile-menu').classList.remove('open');}
+</script>
+
+<!-- HERO -->
+<div class="policy-hero">
+  <div class="policy-hero-label">Legal</div>
+  <h1>State Law Privacy Notice</h1>
+  <p class="policy-hero-sub">Supplemental notice covering federal GLBA requirements and state-specific consumer privacy rights for residents of California, Colorado, Connecticut, Minnesota, Montana, Oregon, Texas, and Virginia.</p>
+  <div class="policy-hero-meta">
+    <span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Effective May 15, 2026
+    </span>
+    <span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Supplements our <a href="privacy.html" style="color:var(--amber);">main Privacy Policy</a>
+    </span>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="policy-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="policy-toc">
+    <div class="toc-label">On this page</div>
+    <ul class="toc-list" id="toc-list">
+      <li><a href="#scope">1. Scope of This Notice</a></li>
+      <li><a href="#glba">2. GLBA Federal Notice</a></li>
+      <li><a href="#pi-categories">3. Personal Information Categories</a></li>
+      <li><a href="#state-rights">4. State-Specific Rights</a></li>
+      <li><a href="#opt-out">5. How to Opt Out</a></li>
+      <li><a href="#gpc">6. Global Privacy Control</a></li>
+      <li><a href="#verification">7. Identity Verification</a></li>
+      <li><a href="#contact">8. Contact Us</a></li>
+    </ul>
+    <div class="toc-divider"></div>
+    <a href="privacy.html" class="toc-cta" style="background:var(--teal);color:#fff;box-shadow:none;">Main Privacy Policy</a>
+    <a href="apply.html" class="toc-cta" style="margin-top:0.5rem;">Get Funded by Friday</a>
+  </aside>
+
+  <!-- MOBILE TOC -->
+  <div class="toc-mobile">
+    <button class="toc-mobile-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('open')?'rotate(180deg)':'';">
+      Jump to section
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="toc-mobile-list">
+      <a href="#scope">1. Scope of This Notice</a>
+      <a href="#glba">2. GLBA Federal Notice</a>
+      <a href="#pi-categories">3. Personal Information Categories</a>
+      <a href="#state-rights">4. State-Specific Rights</a>
+      <a href="#opt-out">5. How to Opt Out</a>
+      <a href="#gpc">6. Global Privacy Control</a>
+      <a href="#verification">7. Identity Verification</a>
+      <a href="#contact">8. Contact Us</a>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <main class="policy-content">
+
+    <!-- 1 -->
+    <section class="policy-section" id="scope">
+      <div class="section-number">Section 01</div>
+      <h2>Scope of This Notice</h2>
+      <p>This State Law Privacy Notice supplements our <a href="privacy.html">main Privacy Policy</a> and applies to residents of states that have enacted comprehensive consumer privacy legislation: <strong>California, Colorado, Connecticut, Minnesota, Montana, Oregon, Texas, and Virginia.</strong></p>
+      <p>This notice also contains our federal financial privacy notice required under the <strong>Gramm-Leach-Bliley Act (GLBA)</strong>, which applies to all users of our Services regardless of state of residence.</p>
+      <p>This notice covers your use of shopifund.com, including visiting our website, submitting a funding inquiry, signing up for email alerts, or otherwise interacting with our platform. Information you submit in connection with a lending application may be subject to additional federal financial privacy protections described in Section 2.</p>
+      <div class="policy-callout">
+        <p>If you submitted a loan inquiry through shopifund and were matched with a lender, that lender's own GLBA notice applies to the financial account information they collect and process. This notice governs shopifund's handling of your data only.</p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="policy-section" id="glba">
+      <div class="section-number">Section 02</div>
+      <h2>Federal GLBA Privacy Notice</h2>
+
+      <div class="glba-box">
+        <div class="glba-box-label">Federal Law — Gramm-Leach-Bliley Act</div>
+        <h3>Facts: What shopifund Does with Your Personal Information</h3>
+        <p>Federal law requires financial companies to tell you how they share your personal financial information. Read this notice carefully to understand what we do.</p>
+      </div>
+
+      <div class="policy-table-wrap">
+        <table class="policy-table">
+          <thead>
+            <tr><th style="width:35%">Question</th><th>Facts</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Why do we share personal information?</strong></td>
+              <td>Financial companies choose how they share your personal information. Federal law gives consumers the right to limit some but not all sharing. Federal law also requires us to tell you how we collect, share, and protect your personal information. Please read this notice carefully to understand what we do.</td>
+            </tr>
+            <tr>
+              <td><strong>What information do we collect?</strong></td>
+              <td>The types of personal information we collect and share depend on the product or service you have with us. This information can include: Social Security number and income, account balances and payment history, credit history and credit scores, business revenue and financial statements, and contact and identification information.</td>
+            </tr>
+            <tr>
+              <td><strong>How do we protect your information?</strong></td>
+              <td>To protect your personal information from unauthorized access and use, we use security measures that comply with federal law. These measures include computer safeguards, secured files, and a limited-access employee policy. We contractually require our service providers to maintain similar protections.</td>
+            </tr>
+            <tr>
+              <td><strong>How does shopifund collect my personal information?</strong></td>
+              <td>We collect your personal information when you: apply for a business loan or funding through our platform; give us your contact information; and visit our website — from which we may collect device and browsing information automatically.</td>
+            </tr>
+            <tr>
+              <td><strong>Why can't I limit all sharing?</strong></td>
+              <td>Federal law gives you the right to limit only: sharing for affiliates' everyday business purposes (information about your creditworthiness); affiliates from using your information to market to you; and sharing for non-affiliates to market to you. State laws and individual companies may give you additional rights to limit sharing.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Sharing Practices</h3>
+      <div class="policy-table-wrap">
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th>Reasons we can share your personal information</th>
+              <th>Does shopifund share?</th>
+              <th>Can you limit this sharing?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>For our everyday business purposes</strong> — such as processing your inquiry, maintaining your account, and responding to court orders and legal investigations</td>
+              <td><span class="tag tag-yes">Yes</span></td>
+              <td><span class="tag tag-no">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>For our marketing purposes</strong> — to offer our products and services to you</td>
+              <td><span class="tag tag-yes">Yes</span></td>
+              <td><span class="tag tag-no">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>For joint marketing with other financial companies</strong></td>
+              <td><span class="tag tag-no">No</span></td>
+              <td>We don't share</td>
+            </tr>
+            <tr>
+              <td><strong>For our affiliates' everyday business purposes</strong> — information about your transactions and experiences</td>
+              <td><span class="tag tag-limited">Limited</span></td>
+              <td><span class="tag tag-no">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>For our affiliates' everyday business purposes</strong> — information about your creditworthiness</td>
+              <td><span class="tag tag-no">No</span></td>
+              <td>We don't share</td>
+            </tr>
+            <tr>
+              <td><strong>For non-affiliates to market to you</strong></td>
+              <td><span class="tag tag-no">No</span></td>
+              <td>We don't share</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Definitions</h3>
+      <ul>
+        <li><strong>Affiliates</strong> — companies related by common ownership or control. shopifund currently has no affiliates.</li>
+        <li><strong>Non-affiliates</strong> — companies not related by common ownership or control. These include the independent lending partners in our network, analytics providers, and service vendors.</li>
+        <li><strong>Joint marketing</strong> — a formal agreement between non-affiliated financial companies to market financial products or services to you. shopifund does not engage in joint marketing.</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section class="policy-section" id="pi-categories">
+      <div class="section-number">Section 03</div>
+      <h2>Personal Information Categories</h2>
+      <p>The table below describes the categories of personal information we collect, the sources from which we collect them, the third parties with whom we disclose them, and whether we sell or share them for targeted advertising purposes.</p>
+      <p>"<strong>Sell</strong>" means exchanging personal information for monetary or other valuable consideration. "<strong>Share</strong>" in this context means disclosing personal information for cross-context behavioral advertising (targeted advertising). shopifund does not sell personal information. We share certain categories with analytics and advertising partners for targeted advertising as noted below.</p>
+
+      <div class="policy-table-wrap">
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th style="width:22%">Category</th>
+              <th style="width:22%">Examples</th>
+              <th style="width:20%">Source</th>
+              <th style="width:20%">Disclosed To</th>
+              <th style="width:8%">Sold</th>
+              <th style="width:8%">Shared for Ads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Identifiers</strong></td>
+              <td>Name, email address, phone number, IP address</td>
+              <td>Directly from you; automatically via your device</td>
+              <td>Matched lenders; service providers; analytics partners</td>
+              <td><span class="tag tag-no">No</span></td>
+              <td><span class="tag tag-limited">Limited</span></td>
+            </tr>
+            <tr>
+              <td><strong>Business &amp; financial information</strong></td>
+              <td>Business name, entity type, industry, revenue, funding amount, credit range, bank account data</td>
+              <td>Directly from you</td>
+              <td>Matched lenders; service providers</td>
+              <td><span class="tag tag-no">No</span></td>
+              <td><span class="tag tag-no">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>Commercial information</strong></td>
+              <td>Products or services considered; funding purpose; loan amount requested</td>
+              <td>Directly from you</td>
+              <td>Matched lenders; service providers</td>
+              <td><span class="tag tag-no">No</span></td>
+              <td><span class="tag tag-no">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>Internet &amp; network activity</strong></td>
+              <td>Pages visited, time on site, form steps completed, referral URL, click paths</td>
+              <td>Automatically via your device and browser</td>
+              <td>Analytics providers; advertising partners</td>
+              <td><span class="tag tag-no">No</span></td>
+              <td><span class="tag tag-yes">Yes</span></td>
+            </tr>
+            <tr>
+              <td><strong>Geolocation data</strong></td>
+              <td>City and state inferred from ZIP code or IP address</td>
+              <td>Directly from you (ZIP); automatically (IP)</td>
+              <td>Analytics providers; matched lenders</td>
+              <td><span class="tag tag-no">No</span></td>
+              <td><span class="tag tag-limited">Limited</span></td>
+            </tr>
+            <tr>
+              <td><strong>Inferences</strong></td>
+              <td>Lead quality score, funding likelihood, product match category</td>
+              <td>Derived from information you provide and automated analysis</td>
+              <td>Matched lenders; internal operations only</td>
+              <td><span class="tag tag-no">No</span></td>
+              <td><span class="tag tag-no">No</span></td>
+            </tr>
+            <tr>
+              <td><strong>Communications</strong></td>
+              <td>Emails, support messages, feedback submitted</td>
+              <td>Directly from you</td>
+              <td>Service providers (CRM, support tools)</td>
+              <td><span class="tag tag-no">No</span></td>
+              <td><span class="tag tag-no">No</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="policy-callout amber">
+        <p><strong>"Limited" sharing for targeted advertising</strong> means we use advertising platform pixels (such as Google and Meta) that may associate your visit with advertising audiences. You can opt out of this using the mechanisms in Section 5.</p>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="policy-section" id="state-rights">
+      <div class="section-number">Section 04</div>
+      <h2>State-Specific Consumer Rights</h2>
+      <p>Select your state to view the rights available to you under applicable law. These rights are in addition to any rights provided under federal law.</p>
+
+      <div class="state-tabs" id="state-tabs">
+        <button class="state-tab active" onclick="showState('ca',this)">California</button>
+        <button class="state-tab" onclick="showState('co',this)">Colorado</button>
+        <button class="state-tab" onclick="showState('ct',this)">Connecticut</button>
+        <button class="state-tab" onclick="showState('mn',this)">Minnesota</button>
+        <button class="state-tab" onclick="showState('mt',this)">Montana</button>
+        <button class="state-tab" onclick="showState('or',this)">Oregon</button>
+        <button class="state-tab" onclick="showState('tx',this)">Texas</button>
+        <button class="state-tab" onclick="showState('va',this)">Virginia</button>
+      </div>
+
+      <!-- CALIFORNIA -->
+      <div class="state-block active" id="state-ca">
+        <h4>California — CCPA / CPRA</h4>
+        <p>Under the California Consumer Privacy Act (CCPA) as amended by the California Privacy Rights Act (CPRA), California residents have the following rights:</p>
+        <ul>
+          <li><strong>Right to Know</strong> — request disclosure of the categories and specific pieces of personal information we have collected, the sources, our purposes, and the third parties with whom we share it</li>
+          <li><strong>Right to Delete</strong> — request deletion of your personal information, subject to legal exceptions</li>
+          <li><strong>Right to Correct</strong> — request correction of inaccurate personal information</li>
+          <li><strong>Right to Opt Out of Sale or Sharing</strong> — opt out of the sale of your personal information or its sharing for cross-context behavioral advertising. shopifund does not sell personal information. Limited sharing for targeted advertising can be opted out of as described in Section 5.</li>
+          <li><strong>Right to Limit Use of Sensitive Personal Information</strong> — limit our use of sensitive personal information (including financial account data) to purposes necessary to provide our Services</li>
+          <li><strong>Right to Non-Discrimination</strong> — we will not discriminate against you for exercising any of your rights</li>
+        </ul>
+        <p>California residents may also designate an authorized agent to submit requests on their behalf. We may require written proof of authorization and identity verification before processing such requests.</p>
+        <p><strong>Shine the Light:</strong> California Civil Code Section 1798.83 allows California residents to request information about personal information disclosed to third parties for direct marketing purposes during the preceding calendar year. shopifund does not disclose personal information to third parties for their own direct marketing purposes.</p>
+      </div>
+
+      <!-- COLORADO -->
+      <div class="state-block" id="state-co">
+        <h4>Colorado — CPA (Colorado Privacy Act)</h4>
+        <p>Under the Colorado Privacy Act, Colorado residents have the following rights:</p>
+        <ul>
+          <li><strong>Right to Access</strong> — confirm whether we process your personal data and request a copy</li>
+          <li><strong>Right to Correct</strong> — request correction of inaccurate personal data</li>
+          <li><strong>Right to Delete</strong> — request deletion of personal data we hold about you</li>
+          <li><strong>Right to Data Portability</strong> — receive a copy of your personal data in a portable, readily usable format</li>
+          <li><strong>Right to Opt Out</strong> — opt out of the processing of personal data for purposes of targeted advertising, the sale of personal data, or profiling for decisions that produce legal or similarly significant effects</li>
+        </ul>
+        <p>Colorado residents may appeal a denied privacy request by contacting us at <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a> with the subject "CPA Appeal." We will respond within 45 days of the appeal.</p>
+      </div>
+
+      <!-- CONNECTICUT -->
+      <div class="state-block" id="state-ct">
+        <h4>Connecticut — CTDPA (Connecticut Data Privacy Act)</h4>
+        <p>Under the Connecticut Data Privacy Act, Connecticut residents have the following rights:</p>
+        <ul>
+          <li><strong>Right to Access</strong> — confirm whether we process your personal data and request a copy</li>
+          <li><strong>Right to Correct</strong> — request correction of inaccuracies in your personal data</li>
+          <li><strong>Right to Delete</strong> — request deletion of personal data you have provided or that we have collected about you</li>
+          <li><strong>Right to Data Portability</strong> — obtain a copy of your personal data in a portable format</li>
+          <li><strong>Right to Opt Out</strong> — opt out of the processing of personal data for targeted advertising, the sale of personal data, or profiling for significant decisions</li>
+        </ul>
+        <p>Connecticut residents may submit an appeal to a denied privacy request within 90 days of receiving our decision. Contact us at <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a> with "CTDPA Appeal" in the subject line.</p>
+      </div>
+
+      <!-- MINNESOTA -->
+      <div class="state-block" id="state-mn">
+        <h4>Minnesota — MCDPA (Minnesota Consumer Data Privacy Act)</h4>
+        <p>Under the Minnesota Consumer Data Privacy Act, Minnesota residents have the following rights:</p>
+        <ul>
+          <li><strong>Right to Access</strong> — confirm whether we process your personal data and request a copy, including a list of third parties to whom your personal data has been disclosed</li>
+          <li><strong>Right to Correct</strong> — request correction of inaccurate personal data</li>
+          <li><strong>Right to Delete</strong> — request deletion of personal data we hold about you</li>
+          <li><strong>Right to Data Portability</strong> — receive a portable copy of personal data you have provided to us</li>
+          <li><strong>Right to Opt Out</strong> — opt out of processing for targeted advertising, sale of personal data, and profiling for significant decisions affecting you</li>
+          <li><strong>Right to Appeal</strong> — appeal our decision if we decline to act on a privacy request</li>
+        </ul>
+        <p>The MCDPA requires us to provide, upon request, a list of specific third parties (not just categories) to whom we have disclosed your personal data. Submit this request to <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a>.</p>
+      </div>
+
+      <!-- MONTANA -->
+      <div class="state-block" id="state-mt">
+        <h4>Montana — MCDPA (Montana Consumer Data Privacy Act)</h4>
+        <p>Under the Montana Consumer Data Privacy Act, Montana residents have the following rights:</p>
+        <ul>
+          <li><strong>Right to Access</strong> — confirm whether we process your personal data and obtain a copy</li>
+          <li><strong>Right to Correct</strong> — request correction of inaccurate personal data</li>
+          <li><strong>Right to Delete</strong> — request deletion of personal data we process about you</li>
+          <li><strong>Right to Data Portability</strong> — receive a portable copy of your personal data</li>
+          <li><strong>Right to Opt Out</strong> — opt out of the processing of personal data for targeted advertising, the sale of personal data, or profiling in furtherance of decisions that produce significant effects</li>
+        </ul>
+        <p>Montana residents may appeal a denied privacy request within a reasonable period. Contact us at <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a> with "Montana Privacy Appeal" in the subject line.</p>
+      </div>
+
+      <!-- OREGON -->
+      <div class="state-block" id="state-or">
+        <h4>Oregon — OCPA (Oregon Consumer Privacy Act)</h4>
+        <p>Under the Oregon Consumer Privacy Act, Oregon residents have the following rights:</p>
+        <ul>
+          <li><strong>Right to Access</strong> — confirm whether we process your personal data, obtain a list of specific third parties to whom we have disclosed personal data, and request a copy of your personal data</li>
+          <li><strong>Right to Correct</strong> — request correction of inaccurate personal data</li>
+          <li><strong>Right to Delete</strong> — request deletion of personal data we hold about you</li>
+          <li><strong>Right to Data Portability</strong> — receive a portable copy of your personal data</li>
+          <li><strong>Right to Opt Out</strong> — opt out of targeted advertising, sale of personal data, and profiling for significant decisions</li>
+        </ul>
+        <p>Like Minnesota, Oregon requires us to disclose a list of specific third parties upon request. Oregon residents may also appeal a denied request within 45 days of our response. Contact <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a> with "OCPA Appeal" in the subject.</p>
+      </div>
+
+      <!-- TEXAS -->
+      <div class="state-block" id="state-tx">
+        <h4>Texas — TDPSA (Texas Data Privacy and Security Act)</h4>
+        <p>Under the Texas Data Privacy and Security Act, Texas residents have the following rights:</p>
+        <ul>
+          <li><strong>Right to Access</strong> — confirm whether we process your personal data and request a copy</li>
+          <li><strong>Right to Correct</strong> — request correction of inaccurate personal data</li>
+          <li><strong>Right to Delete</strong> — request deletion of personal data you have provided to us or that we have collected about you</li>
+          <li><strong>Right to Data Portability</strong> — obtain a copy of personal data in a portable format</li>
+          <li><strong>Right to Opt Out</strong> — opt out of the processing of personal data for targeted advertising, the sale of personal data, or profiling for significant decisions</li>
+          <li><strong>Right to Appeal</strong> — appeal within a reasonable period if we decline to act on your request</li>
+        </ul>
+        <p>Texas does not limit enforcement to a specific revenue or data-volume threshold for businesses that voluntarily sell personal data. If you have questions about your rights, contact <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a>.</p>
+      </div>
+
+      <!-- VIRGINIA -->
+      <div class="state-block" id="state-va">
+        <h4>Virginia — VCDPA (Virginia Consumer Data Protection Act)</h4>
+        <p>Under the Virginia Consumer Data Protection Act, Virginia residents have the following rights:</p>
+        <ul>
+          <li><strong>Right to Access</strong> — confirm whether we process your personal data and request a copy</li>
+          <li><strong>Right to Correct</strong> — request correction of inaccurate personal data</li>
+          <li><strong>Right to Delete</strong> — request deletion of personal data we process about you</li>
+          <li><strong>Right to Data Portability</strong> — obtain a portable copy of personal data you have provided to us</li>
+          <li><strong>Right to Opt Out</strong> — opt out of processing for targeted advertising, sale of personal data, or profiling for significant decisions</li>
+          <li><strong>Right to Appeal</strong> — appeal within 60 days if we decline to act on your request</li>
+        </ul>
+        <p>Virginia residents whose appeals are denied may contact the Virginia Attorney General's Office. Contact us at <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a> with "VCDPA Appeal" in the subject line.</p>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="policy-section" id="opt-out">
+      <div class="section-number">Section 05</div>
+      <h2>How to Opt Out</h2>
+      <p>You may opt out of the sale of personal information (shopifund does not sell), the sharing of personal information for targeted advertising, or targeted advertising based on your activity on shopifund.com using any of the following mechanisms:</p>
+
+      <div class="optout-grid">
+        <div class="optout-card">
+          <div class="optout-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 4 12 13 22 4"/></svg>
+          </div>
+          <div class="optout-card-title">Email Request</div>
+          <div class="optout-card-desc">Email <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a> with the subject line "Opt-Out Request." Specify what you are opting out of.</div>
+        </div>
+        <div class="optout-card">
+          <div class="optout-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="optout-card-title">Phone</div>
+          <div class="optout-card-desc">Call us at <a href="tel:+18005550100">1-800-555-0100</a> Monday–Friday, 9am–5pm ET. Ask to be connected to our Privacy team.</div>
+        </div>
+        <div class="optout-card">
+          <div class="optout-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="optout-card-title">Ad Platform Opt-Out</div>
+          <div class="optout-card-desc">Use the <a href="https://optout.aboutads.info/" target="_blank" rel="noopener">DAA opt-out tool</a> or <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener">NAI opt-out tool</a> to opt out of interest-based advertising from our advertising partners.</div>
+        </div>
+        <div class="optout-card">
+          <div class="optout-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="optout-card-title">Browser Settings</div>
+          <div class="optout-card-desc">Manage or block cookies through your browser's privacy settings. Note that blocking all cookies may affect site functionality.</div>
+        </div>
+      </div>
+
+      <p>We will process opt-out requests within 15 business days (California: 15 business days; Colorado, Connecticut, Virginia: 15 days; Oregon, Montana, Texas, Minnesota: 45 days).</p>
+    </section>
+
+    <!-- 6 -->
+    <section class="policy-section" id="gpc">
+      <div class="section-number">Section 06</div>
+      <h2>Global Privacy Control</h2>
+      <p>The <strong>Global Privacy Control (GPC)</strong> is a browser-level signal that communicates a user's opt-out preference for the sale of personal information and sharing for targeted advertising. shopifund honors GPC signals where required by applicable state law.</p>
+      <p>If your browser or browser extension is configured to transmit a GPC signal when you visit shopifund.com, we will treat that signal as a valid opt-out request for targeted advertising for that browser session. The opt-out applies to information collected during that session and, to the extent technically feasible, going forward.</p>
+      <p>GPC does not override opt-ins you have explicitly granted or affect the sharing of your information with matched lenders for the purpose of fulfilling your funding inquiry, which is the core function of our Services.</p>
+      <div class="policy-callout">
+        <p>You can enable GPC through browsers that support it natively (such as Brave) or by installing a browser extension. Learn more at <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener">globalprivacycontrol.org</a>.</p>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="policy-section" id="verification">
+      <div class="section-number">Section 07</div>
+      <h2>Identity Verification Requirements</h2>
+      <p>To protect your personal information, we are required to verify your identity before fulfilling access, correction, deletion, or portability requests. The level of verification required depends on the sensitivity of the information requested and the potential risk of harm from unauthorized disclosure.</p>
+
+      <h3>How We Verify Your Identity</h3>
+      <p>When you submit a privacy rights request, we will ask you to provide information that we can match against our records. Typically, we require you to verify at least <strong>three of the following data points</strong>:</p>
+      <ul>
+        <li>Name (first and last)</li>
+        <li>Email address used to submit your inquiry</li>
+        <li>Phone number provided on your application</li>
+        <li>Business name</li>
+        <li>ZIP code of business location</li>
+      </ul>
+      <p>For deletion requests or requests for highly sensitive information, we may require a higher level of verification, such as a signed declaration under penalty of perjury.</p>
+
+      <h3>Authorized Agents</h3>
+      <p>If an authorized agent submits a request on your behalf, we will require: (a) written proof of the agent's authority to act on your behalf (such as a signed power of attorney), and (b) independent verification of your identity either directly from you or through the agent with sufficient documentation. We may deny a request from an agent who does not provide sufficient proof of authorization.</p>
+
+      <h3>Response Timeline</h3>
+      <ul>
+        <li>We will acknowledge your request within <strong>10 business days</strong> of receipt</li>
+        <li>We will fulfill or deny your request within <strong>45 days</strong> of receipt</li>
+        <li>If we need additional time, we will notify you and may extend the response period by up to an additional <strong>45 days</strong></li>
+        <li>Appeals must be submitted within the timeframes specified in Section 4 for your state</li>
+      </ul>
+
+      <div class="policy-callout charcoal">
+        <p>We will not charge a fee to process your request unless it is manifestly unfounded, excessive, or repetitive. In such cases, we may charge a reasonable fee or decline to respond, and we will explain our reasoning.</p>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="policy-section" id="contact">
+      <div class="section-number">Section 08</div>
+      <h2>Contact Us</h2>
+      <p>To exercise any of the rights described in this notice, submit a privacy inquiry, or ask questions about our data practices, contact us through any of the channels below. Include your name, state of residence, and a description of your request.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-card-label">Privacy Requests</div>
+          <div class="contact-card-value"><a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-value"><a href="tel:+18005550100">1-800-555-0100</a><br><span style="font-size:0.78rem;font-weight:400;color:var(--muted);">Mon–Fri, 9am–5pm ET</span></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-label">Mail</div>
+          <div class="contact-card-value">shopifund Inc.<br>Privacy &amp; Compliance Office<br>Miami, FL 33101</div>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem;">This notice was last updated on <strong>May 15, 2026</strong>. For our complete data practices, please review our <a href="privacy.html">main Privacy Policy</a>.</p>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">
+      <img src="shopifund_icon_cream.svg" width="36" height="36" alt="shopifund icon" style="display:block;flex-shrink:0;object-fit:contain;">
+      <span class="footer-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
+    </div>
+    <p class="footer-legal">shopifund is a business funding marketplace that connects small businesses with alternative lenders. shopifund is not a lender. All credit decisions are made by third-party lending partners. Funding amounts and terms vary by lender, business profile, and qualification criteria.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#products">Products</a>
+    <a href="#">For lenders</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="state-privacy.html" style="color:#F7F9F8;font-weight:600;">State Privacy Notice</a>
+    <a href="#">Terms of Service</a>
+  </div>
+</footer>
+
+<script>
+function showState(code, btn) {
+  document.querySelectorAll('.state-block').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.state-tab').forEach(function(t){t.classList.remove('active');});
+  document.getElementById('state-' + code).classList.add('active');
+  btn.classList.add('active');
+}
+
+// TOC active state
+(function(){
+  var links = document.querySelectorAll('#toc-list a');
+  var sections = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el) sections.push({el:el, a:a});
+  });
+  function onScroll(){
+    var scrollY = window.scrollY + 120;
+    var active = null;
+    sections.forEach(function(s){if(s.el.offsetTop <= scrollY) active = s;});
+    links.forEach(function(a){a.classList.remove('active');});
+    if(active) active.a.classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
