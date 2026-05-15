@@ -1050,8 +1050,41 @@ footer{
 .calc-title-row{overflow:visible;}
 .calc-inner{text-align:center;}
 @media(max-width:640px){
-  .calc-title-row{flex-direction:column;gap:0.5rem;}
-  .calc-buck-img{width:100px;}
+  .calc-title-row{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:0.5rem 0.75rem;
+    text-align:left;
+    padding-top:3.5rem;
+  }
+  .calc-buck-wrap{
+    grid-column:1;grid-row:1;
+    align-self:center;
+  }
+  .calc-title-text{display:contents;}
+  .calc-tool-title{
+    grid-column:2;grid-row:1;
+    text-align:right;
+    align-self:center;
+    margin-bottom:0;
+    font-size:clamp(1.2rem,5vw,1.6rem);
+  }
+  .calc-title-text .section-title{
+    grid-column:1/-1;grid-row:2;
+    text-align:left;
+    font-size:clamp(1.3rem,5.5vw,1.8rem);
+    margin-bottom:0;
+  }
+  .calc-buck-img{width:80px !important;}
+  .buck-bubble{
+    top:-40px;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+    font-size:0.75rem;
+    padding:0.3rem 0.85rem;
+  }
+  .buck-bubble::after{left:50%;}
 }
 </style>
 </head>
