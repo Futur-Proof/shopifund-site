@@ -38,24 +38,28 @@ img{max-width:100%;}
 /* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
-  background:rgba(255,255,255,0.97);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:blur(12px);
+  background:#144F43;
+  border-bottom:1px solid rgba(255,255,255,0.08);
   padding:0 5vw;
   display:flex;align-items:center;justify-content:space-between;
   height:64px;
 }
-.nav-logo{display:flex;align-items:center;gap:0.55rem;text-decoration:none;}
-.nav-wordmark{font-family:'Nunito',sans-serif;font-size:1.3rem;font-weight:900;color:var(--teal);letter-spacing:-0.02em;}
+.nav-logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;}
+.nav-wordmark{
+  font-family:'Nunito',sans-serif;font-size:1.3rem;font-weight:900;
+  letter-spacing:-0.02em;line-height:1;
+}
+.nav-wordmark .w-shopi{color:#F7F9F8;}
+.nav-wordmark .w-fund{color:#F5A020;}
 .nav-links{display:flex;align-items:center;gap:2rem;}
-.nav-links a{font-size:0.9rem;font-weight:500;color:var(--charcoal-mid);transition:color 0.2s;}
-.nav-links a:hover{color:var(--teal);}
+.nav-links a{font-size:0.9rem;font-weight:500;color:rgba(247,249,248,0.7);transition:color 0.2s;}
+.nav-links a:hover{color:#F7F9F8;}
 .nav-cta{
   background:var(--amber);color:var(--charcoal);
   font-weight:700;font-size:0.875rem;
   padding:0.55rem 1.3rem;border-radius:50px;
   white-space:nowrap;transition:background 0.2s,transform 0.15s;
-  box-shadow:0 2px 12px rgba(245,160,32,0.35);
+  box-shadow:0 2px 12px rgba(245,160,32,0.3);
 }
 .nav-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
 @media(max-width:640px){
@@ -465,17 +469,17 @@ footer{
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <!-- shopifund icon SVG -->
+    <!-- shopifund icon SVG — icon body #E8F2F0, arrow #F5A020 -->
     <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="8" y="40" width="62" height="52" rx="9" fill="#1B6B5A"/>
-      <path d="M6,44 L6,21 Q6,17 10,17 L70,17 Q74,17 74,21 L74,44 Q66,51 58,44 Q50,51 42,44 Q34,51 26,44 Q18,51 10,44 Q8,48 6,44 Z" fill="#1B6B5A"/>
-      <line x1="24" y1="17" x2="15" y2="44" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
-      <line x1="39" y1="17" x2="30" y2="44" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
-      <line x1="54" y1="17" x2="45" y2="44" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+      <rect x="8" y="40" width="62" height="52" rx="9" fill="#E8F2F0"/>
+      <path d="M6,44 L6,21 Q6,17 10,17 L70,17 Q74,17 74,21 L74,44 Q66,51 58,44 Q50,51 42,44 Q34,51 26,44 Q18,51 10,44 Q8,48 6,44 Z" fill="#E8F2F0"/>
+      <line x1="24" y1="17" x2="15" y2="44" stroke="#144F43" stroke-width="5" stroke-linecap="round" opacity="0.25"/>
+      <line x1="39" y1="17" x2="30" y2="44" stroke="#144F43" stroke-width="5" stroke-linecap="round" opacity="0.25"/>
+      <line x1="54" y1="17" x2="45" y2="44" stroke="#144F43" stroke-width="5" stroke-linecap="round" opacity="0.25"/>
       <path d="M58,40 L90,8" stroke="#F5A020" stroke-width="10" stroke-linecap="round" fill="none"/>
       <polyline points="79,8 90,8 90,19" stroke="#F5A020" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     </svg>
-    <span class="nav-wordmark">shopifund</span>
+    <span class="nav-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
   </a>
   <div class="nav-links">
     <a href="#how">How it works</a>
