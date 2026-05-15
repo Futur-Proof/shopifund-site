@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shopifund: Banks Said No. Buck Says Let's Go.</title>
+<meta name="description" content="Meet Buck — your funding guide. Three bank statements. One call. Funded by Friday. shopifund matches Main Street businesses with the right lender in 24 hours.">
+<meta property="og:title" content="shopifund: Funded by Friday">
+<meta property="og:description" content="Banks said no. Buck says let's go. Bank-statement underwriting. Decisions in 24 hours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shopifund.com/home2">
+<meta property="og:image" content="https://shopifund.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="shopifund: Funded by Friday">
+<meta name="twitter:description" content="Banks said no. Buck says let's go. Bank-statement underwriting. Decisions in 24 hours.">
+<meta name="twitter:image" content="https://shopifund.com/og-image.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #1B6B5A;
+  --teal-dark: #144F43;
+  --teal-mid: #2A8A72;
+  --teal-tint: #E8F2F0;
+  --amber: #F5A020;
+  --amber-dark: #D4880F;
+  --amber-tint: #FEF6E8;
+  --charcoal: #1A2028;
+  --charcoal-mid: #3D4550;
+  --muted: #6B7480;
+  --cream: #F7F9F8;
+  --border: #E2E8E6;
+  --white: #FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--charcoal);line-height:1.6;background:var(--white);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;}
+h1,h2,h3,h4{text-wrap:balance;}
+p,li,.faq-a,.footer-legal{text-wrap:pretty;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:#144F43;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding:0 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.nav-logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+.nav-wordmark{
+  font-family:'Nunito',sans-serif;font-size:2.6rem;font-weight:900;
+  letter-spacing:-0.03em;line-height:1;
+}
+.nav-wordmark .w-shopi{color:#F7F9F8;}
+.nav-wordmark .w-fund{color:#F5A020;}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{font-size:0.9rem;font-weight:700;color:#F7F9F8;transition:color 0.2s;}
+.nav-links a:hover{color:#F7F9F8;}
+.nav-cta{
+  background:var(--amber);color:var(--charcoal);
+  font-weight:700;font-size:0.875rem;
+  padding:0.55rem 1.3rem;border-radius:50px;
+  white-space:nowrap;transition:background 0.2s,transform 0.15s;
+  box-shadow:0 2px 12px rgba(245,160,32,0.3);
+}
+.nav-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;cursor:pointer;background:none;border:none;padding:4px;flex-shrink:0;}
+.hamburger span{display:block;width:100%;height:2.5px;background:#F7F9F8;border-radius:2px;transition:transform 0.25s,opacity 0.25s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#144F43;z-index:199;flex-direction:column;padding:1rem 1.25rem 1.5rem;gap:0.25rem;border-top:1px solid rgba(255,255,255,0.1);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:1.05rem;font-weight:700;color:#F7F9F8;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.08);text-decoration:none;transition:opacity 0.2s;}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu a:hover{opacity:0.8;}
+.mobile-menu .nav-cta{margin-top:0.5rem;text-align:center;padding:0.75rem;border-radius:50px;border-bottom:none;color:var(--charcoal);}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex !important;}
+  nav{padding:0 1.25rem;}
+  .nav-logo img{width:22px;height:22px;}
+  .nav-wordmark{font-size:1.3rem;}
+}
+
+/* HERO */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+  padding:7rem 1.5rem 4rem;
+  background:var(--white);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,107,90,0.06) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:var(--teal-tint);color:var(--teal);
+  font-size:0.78rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;
+  padding:0.35rem 1rem;border-radius:50px;
+  margin-bottom:1.6rem;
+}
+.hero-pill-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);}
+.hero h1{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(2.8rem,8vw,5.5rem);
+  font-weight:900;line-height:1.08;
+  color:var(--charcoal);
+  letter-spacing:-0.03em;
+  margin-bottom:1.2rem;
+}
+.hero h1 em{font-style:normal;color:var(--teal);}
+.hero-sub{
+  font-size:clamp(0.65rem,2.3vw,1.1rem);
+  color:var(--muted);
+  white-space:nowrap;
+  margin:0 auto 0.5rem;line-height:1.6;
+}
+.hero-tagline{
+  font-size:clamp(0.95rem,2vw,1.1rem);
+  color:var(--muted);
+  white-space:nowrap;
+  margin:0 auto 2rem;
+}
+.hero-cta-row{
+  display:flex;align-items:center;gap:0.75rem;
+  margin-bottom:1.5rem;flex-wrap:wrap;justify-content:center;
+}
+.hero-select-wrap{
+  position:relative;display:flex;align-items:center;
+}
+.hero-select{
+  appearance:none;-webkit-appearance:none;
+  border:2px solid #1B6B5A;border-radius:50px;
+  padding:0.85rem 3rem 0.85rem 1.4rem;
+  font-size:1rem;font-weight:600;color:var(--charcoal);
+  background:#fff;cursor:pointer;
+  min-width:240px;outline:none;
+  transition:border-color 0.2s;
+}
+.hero-select:focus{border-color:var(--teal);}
+.hero-select-chevron{
+  pointer-events:none;position:absolute;right:1.1rem;
+  color:#1B6B5A;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;
+  background:var(--amber);color:var(--charcoal);
+  font-weight:900;font-size:1.2rem;
+  padding:1rem 2.6rem;border-radius:50px;
+  cursor:pointer;border:none;
+  box-shadow:0 6px 28px rgba(245,160,32,0.55);
+  transition:transform 0.2s,background 0.2s,box-shadow 0.2s;
+  white-space:nowrap;text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.hero-cta:hover{transform:translateY(-2px);background:var(--amber-dark);box-shadow:0 8px 32px rgba(245,160,32,0.65);}
+@media(max-width:540px){
+  .hero-select{min-width:0;width:100%;}
+  .hero-cta-row{flex-direction:column;width:100%;padding:0 0.5rem;}
+  .hero-cta{width:100%;justify-content:center;}
+}
+.hero-trust{
+  margin-top:1rem;font-size:0.8rem;color:var(--muted);
+  display:flex;align-items:center;justify-content:center;gap:0.4rem;
+  flex-wrap:nowrap;white-space:nowrap;
+}
+.hero-trust-dot{width:6px;height:6px;border-radius:50%;background:#F5A020;flex-shrink:0;}
+@media(max-width:540px){
+  .hero-trust{flex-direction:column;gap:0.6rem;align-items:flex-start;width:fit-content;margin-left:auto;margin-right:auto;font-size:0.9rem;}
+  .hero-trust-dot{display:none;}
+  .hero-trust-item{display:flex;align-items:center;font-weight:600;color:#1A2028;}
+  .hero-trust-item::before{content:'✓';color:var(--teal);font-size:1rem;font-weight:700;margin-right:0.5rem;line-height:1;}
+  .hero h1{font-size:7.5vw;white-space:nowrap;}
+  .hero h1 br{display:none;}
+  .hero-tagline{display:none;}
+}
+
+/* PHONE MOCKUP */
+.hero-visual{
+  margin-top:3.5rem;
+  position:relative;display:inline-block;
+}
+.phone{
+  width:220px;height:420px;
+  background:var(--charcoal);border-radius:36px;
+  border:6px solid #2E3740;
+  box-shadow:0 32px 80px rgba(26,32,40,0.18);
+  overflow:hidden;position:relative;
+  display:flex;flex-direction:column;
+}
+.phone-notch{
+  width:80px;height:22px;background:var(--charcoal);
+  border-radius:0 0 16px 16px;margin:0 auto;
+  position:relative;z-index:2;
+}
+.phone-screen{
+  flex:1;background:linear-gradient(160deg,var(--teal-tint) 0%,var(--white) 60%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:1rem;gap:0.75rem;
+}
+.phone-approved{
+  background:var(--teal);color:#fff;
+  font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;
+  padding:0.6rem 1.2rem;border-radius:12px;width:100%;text-align:center;
+}
+.phone-amount{
+  font-family:'Nunito',sans-serif;font-size:2rem;font-weight:900;
+  color:var(--charcoal);letter-spacing:-0.02em;
+}
+.phone-label{font-size:0.65rem;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}
+.phone-bar{
+  height:6px;border-radius:3px;background:var(--border);width:100%;overflow:hidden;
+}
+.phone-bar-fill{height:100%;width:80%;background:var(--teal);border-radius:3px;}
+.phone-badge{
+  display:flex;align-items:center;gap:0.4rem;
+  background:var(--amber-tint);border-radius:8px;
+  padding:0.5rem 0.75rem;width:100%;font-size:0.7rem;font-weight:700;color:var(--amber-dark);
+}
+.phone-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+.float-badge{
+  position:absolute;right:-28px;top:30%;
+  background:var(--white);border-radius:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.12);
+  padding:0.6rem 0.9rem;font-size:0.7rem;font-weight:700;
+  color:var(--teal);white-space:nowrap;
+}
+
+/* STATS BAR */
+.stats-bar{
+  background:var(--charcoal);
+  padding:2rem 5vw;
+  display:flex;justify-content:center;gap:0;
+}
+.stat-item{
+  flex:1;max-width:220px;text-align:center;
+  padding:0 2rem;border-right:1px solid rgba(255,255,255,0.1);
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{
+  font-family:'Nunito',sans-serif;font-size:2rem;font-weight:900;
+  color:var(--amber);line-height:1;
+}
+.stat-label{font-size:0.78rem;color:rgba(255,255,255,0.55);margin-top:0.25rem;font-weight:500;}
+@media(max-width:640px){
+  .stat-item{padding:0 1rem;}
+  .stat-num{font-size:1.5rem;}
+}
+
+/* SECTION DEFAULTS */
+section{padding:5rem 5vw;}
+.section-label{
+  font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:0.75rem;
+}
+.section-title{
+  font-family:'Nunito',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);
+  font-weight:900;line-height:1.15;color:var(--charcoal);
+  letter-spacing:-0.02em;margin-bottom:1rem;
+}
+.section-sub{
+  font-size:1rem;color:var(--muted);max-width:520px;line-height:1.7;
+}
+
+/* HOW IT WORKS */
+.how{background:var(--cream);}
+.how-inner{max-width:960px;margin:0 auto;text-align:center;}
+.steps-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;
+  margin-top:3rem;
+}
+@media(max-width:640px){.steps-grid{grid-template-columns:1fr;gap:1.5rem;}}
+.step-card{
+  background:var(--white);border-radius:20px;
+  padding:2rem 1.5rem;
+  border:1px solid var(--border);
+  text-align:left;
+  transition:box-shadow 0.2s;
+}
+.step-card:hover{box-shadow:0 8px 32px rgba(27,107,90,0.09);}
+.step-num{
+  font-family:'Nunito',sans-serif;font-size:0.75rem;font-weight:800;
+  color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.step-icon{
+  width:48px;height:48px;border-radius:14px;
+  background:var(--teal-tint);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.2rem;
+}
+.step-card h3{
+  font-family:'Nunito',sans-serif;font-size:1.15rem;font-weight:800;
+  color:var(--charcoal);margin-bottom:0.5rem;
+}
+.step-card p{font-size:0.875rem;color:var(--muted);line-height:1.65;}
+.step-tag{
+  display:inline-block;margin-top:0.9rem;
+  font-size:0.7rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;
+  background:var(--teal-tint);color:var(--teal);
+  padding:0.25rem 0.65rem;border-radius:50px;
+}
+
+/* FRIDAY STRIP */
+.friday-strip{
+  background:var(--teal);color:#fff;
+  text-align:center;padding:1.5rem 2rem;
+}
+.friday-strip strong{
+  font-family:'Nunito',sans-serif;font-size:1.15rem;font-weight:900;
+}
+.friday-strip span{font-size:0.9rem;opacity:0.8;margin-left:0.5rem;}
+
+/* PRODUCTS */
+.products{background:var(--white);}
+.products-inner{max-width:1100px;margin:0 auto;}
+.scroll-wrapper{position:relative;}
+.scroll-row{
+  display:flex;gap:1rem;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  padding:0.75rem 0 1.5rem;
+  scrollbar-width:none;cursor:grab;
+}
+.scroll-row::-webkit-scrollbar{display:none;}
+.scroll-row.dragging{cursor:grabbing;}
+.product-card{
+  flex:0 0 240px;scroll-snap-align:start;
+  background:var(--cream);border-radius:18px;
+  border:1px solid var(--border);
+  padding:1.5rem 1.25rem;
+  transition:box-shadow 0.2s,transform 0.2s;
+}
+.product-card:hover{box-shadow:0 8px 28px rgba(27,107,90,0.1);transform:translateY(-2px);}
+.product-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--teal);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;
+}
+.product-card h3{
+  font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;
+  color:var(--charcoal);margin-bottom:0.35rem;
+}
+.product-range{
+  font-family:'Nunito',sans-serif;font-size:1.3rem;font-weight:900;
+  color:var(--teal);margin-bottom:0.35rem;
+}
+.product-card p{font-size:0.8rem;color:var(--muted);line-height:1.6;}
+.product-tag{
+  display:inline-block;margin-top:0.9rem;
+  font-size:0.65rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;
+  background:var(--amber-tint);color:var(--amber-dark);
+  padding:0.2rem 0.55rem;border-radius:50px;
+}
+.scroll-arrows{
+  display:flex;gap:0.5rem;justify-content:flex-end;margin-bottom:0.75rem;
+}
+.scroll-btn{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--cream);border:1px solid var(--border);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s;font-size:0.9rem;color:var(--charcoal-mid);
+}
+.scroll-btn:hover{background:var(--teal);color:#fff;border-color:var(--teal);}
+
+/* WHY SHOPIFUND */
+.why{background:var(--cream);}
+.why-inner{max-width:960px;margin:0 auto;}
+.why-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;
+  margin-top:2.5rem;
+}
+@media(max-width:640px){.why-grid{grid-template-columns:1fr;}}
+.why-card{
+  background:var(--white);border-radius:16px;
+  border:1px solid var(--border);
+  padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;
+}
+.why-icon{
+  width:40px;height:40px;flex-shrink:0;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+}
+.why-icon.teal{background:var(--teal-tint);}
+.why-icon.amber{background:var(--amber-tint);}
+.why-card h4{
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;
+  color:var(--charcoal);margin-bottom:0.25rem;
+}
+.why-card p{font-size:0.825rem;color:var(--muted);line-height:1.6;}
+
+/* CALCULATOR */
+.calc-section{background:var(--white);padding:6rem 1.5rem;}
+.calc-tool-title{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  font-weight:900;color:var(--amber);
+  letter-spacing:-0.02em;line-height:1.1;
+  margin-bottom:0.5rem;
+}
+.calc-inner{max-width:820px;margin:0 auto;text-align:center;}
+.rate-ticker{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--teal-tint);border:1px solid rgba(27,107,90,0.15);
+  border-radius:50px;padding:0.35rem 1.1rem;
+  font-size:0.75rem;color:var(--teal);margin-bottom:2rem;
+}
+.rate-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;animation:pulse-dot 2s infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:0.35;}}
+.goal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;}
+@media(max-width:640px){.goal-grid{grid-template-columns:1fr;}}
+.goal-card{
+  position:relative;background:var(--white);
+  border:2px solid var(--border);border-radius:20px;
+  padding:1.75rem 1.25rem;text-align:left;cursor:pointer;
+  transition:border-color 0.2s,box-shadow 0.2s,transform 0.15s;
+  display:flex;flex-direction:column;gap:0.4rem;
+  font-family:'Inter',sans-serif;
+}
+.goal-card:hover{border-color:var(--teal);box-shadow:0 4px 24px rgba(27,107,90,0.1);transform:translateY(-2px);}
+.goal-card.active{border-color:var(--teal);background:var(--teal-tint);}
+.goal-card.active .goal-icon-wrap{background:var(--teal);}
+.goal-card.active .goal-icon-wrap svg{stroke:#fff;}
+.goal-icon-wrap{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--teal-tint);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:0.25rem;transition:background 0.2s;
+  flex-shrink:0;
+}
+.goal-check{
+  position:absolute;top:0.75rem;right:0.75rem;
+  width:20px;height:20px;border-radius:50%;
+  background:var(--teal);
+  display:none;align-items:center;justify-content:center;
+}
+.goal-card.active .goal-check{display:flex;}
+.goal-card-title{font-size:0.95rem;font-weight:700;color:var(--charcoal);}
+.goal-card-desc{font-size:0.78rem;color:var(--muted);line-height:1.4;}
+.calc-panel{
+  background:var(--cream);border:1px solid var(--border);border-radius:24px;
+  padding:2rem 2rem 1.5rem;margin-top:1.25rem;text-align:left;
+  animation:calc-in 0.28s ease;
+}
+@keyframes calc-in{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.calc-field{margin-bottom:1.5rem;}
+.calc-field-label{
+  font-size:0.72rem;font-weight:700;color:var(--charcoal-mid);
+  letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.6rem;
+}
+.slider-val{
+  font-size:1.7rem;font-weight:900;color:var(--charcoal);
+  font-family:'Nunito',sans-serif;margin-bottom:0.6rem;line-height:1;
+}
+.slider-val span{font-size:0.8rem;font-weight:500;color:var(--muted);margin-left:0.2rem;}
+.calc-slider{
+  -webkit-appearance:none;appearance:none;
+  width:100%;height:4px;border-radius:4px;
+  background:var(--border);outline:none;cursor:pointer;
+}
+.calc-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--teal);border:3px solid #fff;
+  box-shadow:0 2px 10px rgba(27,107,90,0.35);cursor:pointer;
+}
+.calc-slider::-moz-range-thumb{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--teal);border:3px solid #fff;
+  box-shadow:0 2px 10px rgba(27,107,90,0.35);cursor:pointer;border:none;
+}
+.slider-ticks{display:flex;justify-content:space-between;margin-top:0.35rem;}
+.slider-ticks span{font-size:0.67rem;color:var(--muted);}
+.tile-group{display:grid;grid-template-columns:1fr 1fr;gap:0.55rem;}
+.tile-btn{
+  background:var(--white);border:1.5px solid var(--border);border-radius:12px;
+  padding:0.7rem 0.75rem;font-size:0.85rem;font-weight:600;color:var(--charcoal);
+  cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s;
+  text-align:center;font-family:'Inter',sans-serif;
+}
+.tile-btn:hover{border-color:var(--teal);}
+.tile-btn.active{border-color:var(--teal);background:var(--teal-tint);color:var(--teal);}
+.tile-btn.error{border-color:var(--amber);background:var(--amber-tint);}
+.calc-select{
+  width:100%;padding:0.75rem 2.5rem 0.75rem 1rem;border-radius:10px;
+  border:1.5px solid var(--border);background:var(--white);
+  font-size:0.9rem;color:var(--charcoal);
+  font-family:'Inter',sans-serif;
+  appearance:none;-webkit-appearance:none;outline:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7480' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center;
+  transition:border-color 0.2s;cursor:pointer;
+}
+.calc-select:focus{border-color:var(--teal);}
+.calc-two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+@media(max-width:520px){.calc-two-col{grid-template-columns:1fr;}}
+.calc-go{
+  width:100%;padding:1rem;border-radius:50px;
+  background:var(--amber);color:var(--charcoal);
+  font-weight:800;font-size:1rem;border:none;cursor:pointer;
+  box-shadow:0 4px 20px rgba(245,160,32,0.35);
+  transition:background 0.2s,transform 0.15s;
+  font-family:'Inter',sans-serif;margin-top:0.25rem;
+}
+.calc-go:hover{background:var(--amber-dark);transform:translateY(-1px);}
+.form-note{font-size:0.72rem;color:var(--muted);text-align:center;margin-top:0.75rem;}
+.calc-results-wrap{
+  background:var(--teal-dark);color:var(--cream);border-radius:24px;
+  padding:2.5rem 2rem;margin-top:1.25rem;
+  animation:calc-in 0.32s ease;text-align:center;
+}
+.res-label{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(247,249,248,0.55);margin-bottom:0.4rem;}
+.res-main{font-family:'Nunito',sans-serif;font-size:2.8rem;font-weight:900;color:var(--amber);line-height:1.1;}
+.res-sub{font-size:0.9rem;color:rgba(247,249,248,0.65);margin-top:0.25rem;}
+.res-divider{height:1px;background:rgba(255,255,255,0.1);margin:1.5rem 0;}
+.res-cards{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;text-align:left;}
+@media(max-width:480px){.res-cards{grid-template-columns:1fr;}}
+.res-card{background:rgba(255,255,255,0.06);border-radius:14px;padding:1rem 1.1rem;}
+.res-card-label{font-size:0.68rem;color:rgba(247,249,248,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.2rem;}
+.res-card-val{font-size:1.2rem;font-weight:800;color:var(--cream);}
+.res-card-sub{font-size:0.7rem;color:rgba(247,249,248,0.45);margin-top:0.15rem;}
+.res-tags{display:flex;flex-wrap:wrap;gap:0.4rem;justify-content:center;margin:1.25rem 0 0.5rem;}
+.res-tag{background:rgba(245,160,32,0.15);color:var(--amber);border:1px solid rgba(245,160,32,0.25);border-radius:50px;padding:0.28rem 0.75rem;font-size:0.73rem;font-weight:600;}
+.res-cta{
+  display:inline-block;margin-top:1.25rem;
+  padding:0.9rem 2.4rem;border-radius:50px;
+  background:var(--amber);color:var(--charcoal);
+  font-weight:800;font-size:0.95rem;
+  border:none;font-family:'Inter',sans-serif;
+  box-shadow:0 4px 24px rgba(245,160,32,0.4);
+  transition:background 0.2s,transform 0.15s;text-decoration:none;cursor:pointer;
+}
+.res-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+.res-fine{font-size:0.68rem;color:rgba(247,249,248,0.35);margin-top:1rem;line-height:1.5;}
+.calc-reset{background:none;border:none;color:var(--muted);font-size:0.78rem;cursor:pointer;margin-top:1rem;text-decoration:underline;font-family:'Inter',sans-serif;display:block;margin-left:auto;margin-right:auto;}
+
+/* TESTIMONIALS */
+.testi{background:var(--cream);}
+.testi-inner{max-width:1100px;margin:0 auto;}
+.testi-card{
+  flex:0 0 300px;scroll-snap-align:start;
+  background:var(--white);border-radius:18px;
+  border:1px solid var(--border);
+  padding:1.5rem;
+}
+.testi-stars{color:var(--amber);font-size:0.9rem;letter-spacing:0.05em;margin-bottom:0.75rem;}
+.testi-card p{font-size:0.875rem;color:var(--charcoal);line-height:1.7;margin-bottom:1rem;}
+.testi-meta{display:flex;align-items:center;gap:0.75rem;}
+.testi-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--teal);display:flex;align-items:center;justify-content:center;
+  font-family:'Nunito',sans-serif;font-weight:900;font-size:0.8rem;color:#fff;
+  flex-shrink:0;
+}
+.testi-name{font-weight:700;font-size:0.82rem;color:var(--charcoal);}
+.testi-biz{font-size:0.75rem;color:var(--muted);}
+
+/* TESTIMONIAL MARQUEE */
+.testi-marquee{
+  overflow:hidden;margin-top:2.5rem;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);
+}
+.testi-track{
+  display:flex;gap:1.25rem;width:max-content;
+  animation:testi-scroll 45s linear infinite;
+}
+.testi-track:hover{animation-play-state:paused;}
+@keyframes testi-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+/* FAQ */
+.faq{background:var(--white);}
+.faq-inner{max-width:700px;margin:0 auto;}
+.faq-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:0.75rem;}
+.faq-item{
+  border:1.5px solid var(--border);border-radius:14px;overflow:hidden;
+  transition:border-color 0.2s;
+}
+.faq-item.open{border-color:var(--teal);}
+.faq-q{
+  width:100%;padding:1.1rem 1.25rem;
+  background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  text-align:left;font-family:'Inter',sans-serif;
+}
+.faq-q span{font-weight:600;font-size:0.9rem;color:var(--charcoal);}
+.faq-chevron{
+  width:20px;height:20px;flex-shrink:0;
+  border-radius:50%;background:var(--cream);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 0.3s,background 0.2s;
+}
+.faq-item.open .faq-chevron{transform:rotate(180deg);background:var(--teal-tint);}
+.faq-a{
+  display:none;padding:0 1.25rem 1.1rem;
+  font-size:0.875rem;color:var(--muted);line-height:1.7;
+}
+.faq-item.open .faq-a{display:block;}
+
+/* BOTTOM CTA */
+.cta-section{
+  background:var(--teal);
+  text-align:center;padding:5rem 2rem;
+}
+.cta-section h2{
+  font-family:'Nunito',sans-serif;font-size:clamp(2rem,5vw,3rem);
+  font-weight:900;color:#fff;letter-spacing:-0.02em;
+  margin-bottom:0.75rem;
+}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,0.75);margin-bottom:2rem;}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--amber);color:var(--charcoal);
+  font-weight:800;font-size:1rem;
+  padding:1rem 2.2rem;border-radius:50px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.2);
+  transition:transform 0.2s;
+}
+.cta-btn:hover{transform:translateY(-2px);}
+
+/* FOOTER */
+footer{
+  background:var(--charcoal);color:rgba(255,255,255,0.55);
+  padding:3rem 5vw;
+  display:flex;align-items:flex-start;justify-content:space-between;
+  flex-wrap:wrap;gap:2rem;
+}
+.footer-brand{display:flex;align-items:center;gap:0.65rem;margin-bottom:0.5rem;}
+.footer-wordmark{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:-0.03em;line-height:1;}
+.footer-wordmark .w-shopi{color:#F7F9F8;}
+.footer-wordmark .w-fund{color:#F5A020;}
+.footer-legal{font-size:0.75rem;line-height:1.7;max-width:480px;}
+.footer-links{display:flex;flex-direction:column;gap:0.5rem;}
+.footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.55);transition:color 0.2s;}
+.footer-links a:hover{color:#fff;}
+
+/* ── BUCK-SPECIFIC STYLES ────────────────────────────── */
+
+/* BUCK HERO — two-col layout */
+.hero2{
+  min-height:100svh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:3rem;
+  padding:7rem 5vw 4rem;
+  background:var(--white);
+  position:relative;
+  overflow:hidden;
+}
+.hero2::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,107,90,0.06) 0%, transparent 70%);
+  pointer-events:none;
+}
+@media(max-width:860px){
+  .hero2{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:6rem 1.5rem 3rem;
+    gap:2rem;
+  }
+}
+
+/* Buck image column */
+.buck-col{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+.buck-glow{
+  position:relative;
+  display:inline-block;
+}
+.buck-glow::before{
+  content:'';
+  position:absolute;
+  inset:-24px;
+  border-radius:50%;
+  background:radial-gradient(ellipse 70% 60% at 50% 60%, rgba(27,107,90,0.18) 0%, transparent 70%);
+  pointer-events:none;
+  z-index:0;
+}
+.buck-glow img{
+  position:relative;
+  z-index:1;
+  min-height:380px;
+  max-height:520px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 24px 48px rgba(27,107,90,0.12));
+}
+.buck-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--amber);color:var(--charcoal);
+  font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:800;
+  padding:0.45rem 1.1rem;border-radius:50px;
+  margin-top:1.5rem;
+  box-shadow:0 4px 16px rgba(245,160,32,0.35);
+  letter-spacing:0.01em;
+}
+.buck-badge-icon{font-size:1rem;}
+
+/* Hero copy column */
+.hero2-copy{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  z-index:1;
+  position:relative;
+}
+@media(max-width:860px){
+  .hero2-copy{align-items:center;}
+}
+.hero2-copy .hero-pill{margin-bottom:1.2rem;}
+.hero2-copy h1{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(2.6rem,5.5vw,4.8rem);
+  font-weight:900;line-height:1.08;
+  color:var(--charcoal);
+  letter-spacing:-0.03em;
+  margin-bottom:1.2rem;
+  text-align:left;
+}
+@media(max-width:860px){
+  .hero2-copy h1{text-align:center;}
+}
+.hero2-copy h1 em{font-style:normal;color:var(--teal);}
+.hero2-sub{
+  font-size:1.05rem;
+  color:var(--muted);
+  line-height:1.7;
+  margin-bottom:2rem;
+  max-width:440px;
+}
+@media(max-width:860px){
+  .hero2-sub{text-align:center;margin-left:auto;margin-right:auto;}
+}
+.hero2-copy .hero-cta-row{
+  justify-content:flex-start;
+  margin-bottom:1.25rem;
+}
+@media(max-width:860px){
+  .hero2-copy .hero-cta-row{justify-content:center;width:100%;}
+}
+.hero2-copy .hero-trust{justify-content:flex-start;}
+@media(max-width:860px){
+  .hero2-copy .hero-trust{justify-content:center;}
+}
+
+/* BUCK STRIP */
+.buck-strip{
+  background:var(--teal);
+  padding:1.75rem 5vw;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+.buck-strip-left{
+  display:flex;
+  align-items:center;
+  gap:1.1rem;
+}
+.buck-strip-avatar{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--teal-dark);
+  border:2px solid rgba(247,249,248,0.25);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Nunito',sans-serif;font-weight:900;font-size:1.4rem;
+  color:var(--cream);flex-shrink:0;
+  overflow:hidden;
+}
+.buck-strip-avatar img{
+  width:100%;height:100%;object-fit:cover;border-radius:50%;
+}
+.buck-strip-text strong{
+  font-family:'Nunito',sans-serif;font-size:1.15rem;font-weight:900;
+  color:var(--cream);display:block;
+}
+.buck-strip-text span{
+  font-size:0.875rem;color:rgba(247,249,248,0.72);
+}
+.buck-strip-cta{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:var(--amber);color:var(--charcoal);
+  font-weight:800;font-size:0.9rem;
+  padding:0.65rem 1.4rem;border-radius:50px;
+  white-space:nowrap;
+  box-shadow:0 4px 16px rgba(245,160,32,0.35);
+  transition:background 0.2s,transform 0.15s;
+  flex-shrink:0;
+}
+.buck-strip-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+@media(max-width:640px){
+  .buck-strip{justify-content:center;text-align:center;}
+  .buck-strip-left{flex-direction:column;text-align:center;}
+  .buck-strip-cta{width:100%;justify-content:center;}
+}
+
+/* CHAT WITH BUCK inline section */
+.buck-chat-section{
+  background:var(--cream);
+  text-align:center;
+  padding:5rem 2rem;
+}
+.buck-chat-section h2{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(1.8rem,4vw,2.6rem);
+  font-weight:900;color:var(--charcoal);
+  letter-spacing:-0.02em;margin-bottom:1rem;
+}
+.buck-chat-section p{
+  font-size:1rem;color:var(--muted);
+  max-width:540px;margin:0 auto 2rem;
+  line-height:1.7;
+}
+.buck-chat-btn-inline{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--teal);color:var(--cream);
+  font-weight:800;font-size:1rem;
+  padding:1rem 2.2rem;border-radius:50px;
+  cursor:pointer;border:none;
+  box-shadow:0 4px 20px rgba(27,107,90,0.3);
+  transition:background 0.2s,transform 0.15s;
+  font-family:'Inter',sans-serif;
+}
+.buck-chat-btn-inline:hover{background:var(--teal-dark);transform:translateY(-1px);}
+.buck-chat-fine{
+  margin-top:1rem;font-size:0.78rem;color:var(--muted);
+  font-style:italic;
+}
+
+/* BUCK CHAT WIDGET */
+.buck-chat-widget{
+  position:fixed;bottom:24px;right:24px;z-index:1000;
+  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+}
+.buck-chat-trigger{
+  position:relative;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.buck-chat-label{
+  background:var(--teal);color:var(--cream);
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;
+  padding:0.25rem 0.75rem;border-radius:50px;
+  white-space:nowrap;
+  box-shadow:0 2px 10px rgba(27,107,90,0.3);
+}
+.buck-chat-avatar{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--teal-dark);
+  border:3px solid var(--white);
+  box-shadow:0 4px 20px rgba(27,107,90,0.35);
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  font-family:'Nunito',sans-serif;font-weight:900;font-size:1.6rem;color:var(--cream);
+  transition:transform 0.2s;
+}
+.buck-chat-avatar img{
+  width:100%;height:100%;object-fit:cover;
+}
+.buck-chat-trigger:hover .buck-chat-avatar{transform:scale(1.06);}
+.buck-chat-dot{
+  position:absolute;top:2px;right:2px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--amber);
+  border:2px solid var(--white);
+}
+
+/* Chat panel */
+.buck-chat-panel{
+  display:none;
+  width:340px;
+  background:var(--white);
+  border-radius:20px;
+  box-shadow:0 16px 56px rgba(26,32,40,0.18);
+  overflow:hidden;
+  border:1px solid var(--border);
+  flex-direction:column;
+}
+.buck-chat-panel.open{display:flex;}
+.buck-chat-header{
+  background:var(--teal);
+  padding:1rem 1.1rem;
+  display:flex;align-items:center;gap:0.8rem;
+}
+.buck-chat-header-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--teal-dark);
+  border:2px solid rgba(247,249,248,0.3);
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  font-family:'Nunito',sans-serif;font-weight:900;font-size:1rem;color:var(--cream);
+  flex-shrink:0;
+}
+.buck-chat-header-avatar img{
+  width:100%;height:100%;object-fit:cover;
+}
+.buck-chat-header-info{flex:1;}
+.buck-chat-header-name{
+  font-family:'Nunito',sans-serif;font-weight:900;font-size:0.95rem;color:var(--cream);
+  line-height:1.2;
+}
+.buck-chat-header-role{font-size:0.72rem;color:rgba(247,249,248,0.65);}
+.buck-chat-close{
+  background:none;border:none;color:rgba(247,249,248,0.7);
+  cursor:pointer;font-size:1.2rem;line-height:1;
+  padding:0.2rem;transition:color 0.2s;
+}
+.buck-chat-close:hover{color:var(--cream);}
+.buck-chat-body{
+  padding:1rem;
+  display:flex;flex-direction:column;gap:0.75rem;
+  max-height:260px;overflow-y:auto;
+  background:var(--charcoal);
+}
+.buck-bubble{
+  background:rgba(255,255,255,0.07);
+  border-radius:14px 14px 14px 4px;
+  padding:0.75rem 1rem;
+  font-size:0.85rem;color:var(--cream);
+  line-height:1.55;
+  align-self:flex-start;max-width:92%;
+}
+.buck-bubble-user{
+  background:var(--teal);
+  border-radius:14px 14px 4px 14px;
+  align-self:flex-end;
+  max-width:85%;
+}
+.buck-bubble-reply a{
+  color:var(--amber);font-weight:700;text-decoration:underline;
+}
+.buck-chat-input-row{
+  display:flex;gap:0.5rem;
+  padding:0.75rem;
+  border-top:1px solid var(--border);
+  background:var(--white);
+}
+.buck-chat-input{
+  flex:1;border:1.5px solid var(--border);border-radius:50px;
+  padding:0.6rem 1rem;font-size:0.875rem;color:var(--charcoal);
+  font-family:'Inter',sans-serif;outline:none;
+  transition:border-color 0.2s;
+  background:var(--cream);
+}
+.buck-chat-input:focus{border-color:var(--teal);}
+.buck-chat-send{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--amber);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:background 0.2s;
+}
+.buck-chat-send:hover{background:var(--amber-dark);}
+
+@media(max-width:480px){
+  .buck-chat-panel{width:calc(100vw - 32px);}
+  .buck-chat-widget{right:16px;bottom:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="shopifund_icon_cream.svg" width="44" height="44" alt="shopifund icon" style="display:block;flex-shrink:0;object-fit:contain;">
+    <span class="nav-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#products">Products</a>
+    <a href="#faq">FAQ</a>
+    <a href="working-capital-loans.html">Guides</a>
+    <a href="apply.html" class="nav-cta">Apply Now</a>
+  </div>
+  <button class="hamburger" aria-label="Menu" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#how" onclick="closeMenu()">How it works</a>
+  <a href="#products" onclick="closeMenu()">Products</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="working-capital-loans.html" onclick="closeMenu()">Guides</a>
+  <a href="apply.html" class="nav-cta">Apply Now</a>
+</div>
+<script>
+function toggleMenu(btn){btn.classList.toggle('open');document.getElementById('mobile-menu').classList.toggle('open');}
+function closeMenu(){document.querySelector('.hamburger').classList.remove('open');document.getElementById('mobile-menu').classList.remove('open');}
+</script>
+
+<!-- HERO (two-col Buck layout) -->
+<section class="hero2">
+  <!-- LEFT: Buck image -->
+  <div class="buck-col">
+    <div class="buck-glow">
+      <img src="buck_pose.svg" alt="Buck the Beaver — your funding guide" width="420">
+    </div>
+    <div class="buck-badge">
+      <span class="buck-badge-icon">&#127757;</span>
+      Meet Buck — your funding guide
+    </div>
+  </div>
+
+  <!-- RIGHT: Copy -->
+  <div class="hero2-copy">
+    <div class="hero-pill">
+      <span class="hero-pill-dot"></span>
+      Decisions in 24 hours
+    </div>
+    <h1>Banks said no.<br>Buck says <em>let's go.</em></h1>
+    <p class="hero2-sub">Buck's matched thousands of business owners with the right lender. Three bank statements. One call. Funded by Friday.</p>
+    <div class="hero-cta-row">
+      <div class="hero-select-wrap">
+        <select class="hero-select" id="funding-amount" aria-label="How much money do you need?">
+          <option value="" disabled selected>How much money do you need?</option>
+          <option value="5k-25k">$5K - $25K</option>
+          <option value="25k-50k">$25K - $50K</option>
+          <option value="50k-100k">$50K - $100K</option>
+          <option value="100k-250k">$100K - $250K</option>
+          <option value="250k-500k">$250K - $500K</option>
+          <option value="500k+">$500K+</option>
+        </select>
+        <svg class="hero-select-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <button class="hero-cta" onclick="var v=document.getElementById('funding-amount').value;if(v)window.location.href='apply.html?amount='+v;else document.getElementById('funding-amount').focus();">
+        Get Funded
+      </button>
+    </div>
+    <p class="hero-trust">
+      <span class="hero-trust-item">No credit pull</span>
+      <span class="hero-trust-dot"></span>
+      <span class="hero-trust-item">No tax returns</span>
+      <span class="hero-trust-dot"></span>
+      <span class="hero-trust-item">3 months bank statements</span>
+    </p>
+  </div>
+</section>
+
+<!-- BUCK STRIP -->
+<div class="buck-strip">
+  <div class="buck-strip-left">
+    <div class="buck-strip-avatar">
+      <img src="buck_chat_icon.jpg" alt="Buck" onerror="this.style.display='none';this.parentNode.textContent='B';">
+    </div>
+    <div class="buck-strip-text">
+      <strong>Need cash by Friday? Buck's got you.</strong>
+      <span>Three lenders just reviewed your file. Here's what came back.</span>
+    </div>
+  </div>
+  <a href="#buck-chat" class="buck-strip-cta" onclick="openBuckChat();return false;">
+    Talk to Buck's team &rarr;
+  </a>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">Three steps. Buck handles the rest.</h2>
+    <p class="section-sub" style="margin:0 auto;">No guesswork. No runaround. Buck's seen every situation — he finds the right fit, fast.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">Step 01</div>
+        <div class="step-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3>Tell Buck what you need</h3>
+        <p>Takes 3 minutes. No credit pull. Buck's seen every situation — a slow quarter, a bank rejection, a payroll crunch. He doesn't judge. He works.</p>
+        <span class="step-tag">3 min</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 02</div>
+        <div class="step-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        </div>
+        <h3>Hand over 3 bank statements</h3>
+        <p>That's it. Buck analyzes real cash flow, not tax returns. Your revenue tells the story better than any form ever could.</p>
+        <span class="step-tag">Bank data only</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 03</div>
+        <div class="step-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Buck finds your match</h3>
+        <p>One lender. One offer. Buck walks you through every term — what it costs, what it means, and whether it's right for your business.</p>
+        <span class="step-tag">One call</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">$2B+</div>
+    <div class="stat-label">Funded to SMBs</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">24hr</div>
+    <div class="stat-label">Average decision time</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">Lending partners</div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-inner">
+    <div class="section-label">Funding products</div>
+    <h2 class="section-title">Find what fits your business.</h2>
+    <div class="scroll-arrows">
+      <button class="scroll-btn" onclick="scrollRow('products-row',-1)" aria-label="Scroll left">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="scroll-btn" onclick="scrollRow('products-row',1)" aria-label="Scroll right">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="scroll-row" id="products-row">
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3>Merchant Cash Advance</h3>
+        <div class="product-range">$5K &ndash; $500K</div>
+        <p>Advance on future receivables and repay as a share of what you earn. Ideal for high-volume businesses.</p>
+        <span class="product-tag">Fastest</span>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h3>Business Line of Credit</h3>
+        <div class="product-range">$10K &ndash; $250K</div>
+        <p>Draw what you need, when you need it. Pay interest only on funds in use. Perfect for smoothing out cash flow.</p>
+        <span class="product-tag">Most flexible</span>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Term Loan</h3>
+        <div class="product-range">$25K &ndash; $1M</div>
+        <p>Fixed payments over a set term. Great for equipment, expansion, or any large one-time business purchase.</p>
+        <span class="product-tag">Best rates</span>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Revenue-Based Financing</h3>
+        <div class="product-range">$20K &ndash; $750K</div>
+        <p>Payments scale with your monthly revenue. Slower months cost less. Stronger months pay down the balance faster.</p>
+        <span class="product-tag">Low months protected</span>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+        </div>
+        <h3>Invoice Factoring</h3>
+        <div class="product-range">Up to 90% advance</div>
+        <p>Turn outstanding invoices into immediate cash. Stop waiting 30 to 90 days to collect what you're already owed.</p>
+        <span class="product-tag">B2B businesses</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SHOPIFUND -->
+<section class="why">
+  <div class="why-inner">
+    <div class="section-label">Why shopifund</div>
+    <h2 class="section-title">Buck only works with lenders he'd use himself.</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon teal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>No hard credit pull</h4>
+          <p>Checking your eligibility won't affect your credit score. We assess your business using real bank data, not credit reports.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon amber">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4880F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div>
+          <h4>One dedicated advisor</h4>
+          <p>No phone circus. One person knows your file, makes one call, and explains every detail clearly.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon teal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h4>24-hour turnaround</h4>
+          <p>Submit Monday, matched by Tuesday, funded by Friday. We designed our entire process around your timeline.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon amber">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4880F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div>
+          <h4>Real rates, upfront</h4>
+          <p>We show you factor rates and APR before you commit to anything. No surprises buried in the fine print.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section" id="apply">
+  <div class="calc-inner">
+
+    <div class="rate-ticker" id="rate-ticker">
+      <span class="rate-dot"></span>
+      <span id="rate-text">Loading live market rates&hellip;</span>
+    </div>
+
+    <h2 class="calc-tool-title">Find Your Match</h2>
+    <h2 class="section-title">What's your funding goal?</h2>
+    <p class="section-sub" style="margin:0 auto;">Get your matches in 2 minutes or less.</p>
+
+    <div class="goal-grid">
+      <button class="goal-card" onclick="sfGoal('max',this)">
+        <div class="goal-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="goal-card-title">Get maximum capital</div>
+        <div class="goal-card-desc">Largest possible offer for your business</div>
+        <div class="goal-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </button>
+      <button class="goal-card" onclick="sfGoal('fast',this)">
+        <div class="goal-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="goal-card-title">Get funded fast</div>
+        <div class="goal-card-desc">24-hour match, fastest available terms</div>
+        <div class="goal-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </button>
+      <button class="goal-card" onclick="sfGoal('rate',this)">
+        <div class="goal-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+        </div>
+        <div class="goal-card-title">Get the best rate</div>
+        <div class="goal-card-desc">Lenders compete for you</div>
+        <div class="goal-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </button>
+    </div>
+
+    <div id="sf-panel" style="display:none;"></div>
+    <div id="sf-results" style="display:none;"></div>
+
+    <p class="form-note" style="margin-top:1.5rem;">No hard credit pull. No commitment. Results in under 2 minutes.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="testi-inner">
+    <div class="section-label">Business owners</div>
+    <h2 class="section-title">Owners Buck has helped get funded.</h2>
+  </div>
+  <div class="testi-marquee">
+    <div class="testi-track">
+      <!-- Set 1 -->
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Applied Monday afternoon, had a call Tuesday morning, money in my account Thursday. I've been trying to get funding for 6 months through banks. shopifund did it in 3 days."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">MR</div>
+          <div>
+            <div class="testi-name">Marcus R.</div>
+            <div class="testi-biz">Restaurant owner, Miami FL</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I was nervous about the factor rate but my advisor explained everything line by line. No pressure. I actually understood what I was signing. That never happens."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">SL</div>
+          <div>
+            <div class="testi-name">Sandra L.</div>
+            <div class="testi-biz">Boutique retail, Austin TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Three months of bank statements and that was it. No tax returns, no business plan, no 47-page application. Just real cash flow proof. Got $120K for equipment."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">DT</div>
+          <div>
+            <div class="testi-name">David T.</div>
+            <div class="testi-biz">HVAC contractor, Phoenix AZ</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Revenue-based financing was perfect for my seasonal business. Slow months I pay almost nothing. I wish I found shopifund two years ago instead of burning through my savings."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">KN</div>
+          <div>
+            <div class="testi-name">Kim N.</div>
+            <div class="testi-biz">Landscaping, Seattle WA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"One advisor, one call, one offer. That's exactly what happened. No 12 different lenders calling me for a month. Clean, fast, professional. $75K in 4 days."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">JM</div>
+          <div>
+            <div class="testi-name">James M.</div>
+            <div class="testi-biz">Staffing agency, Chicago IL</div>
+          </div>
+        </div>
+      </div>
+      <!-- Set 2, duplicate for seamless loop -->
+      <div class="testi-card" aria-hidden="true">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Applied Monday afternoon, had a call Tuesday morning, money in my account Thursday. I've been trying to get funding for 6 months through banks. shopifund did it in 3 days."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">MR</div>
+          <div>
+            <div class="testi-name">Marcus R.</div>
+            <div class="testi-biz">Restaurant owner, Miami FL</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" aria-hidden="true">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I was nervous about the factor rate but my advisor explained everything line by line. No pressure. I actually understood what I was signing. That never happens."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">SL</div>
+          <div>
+            <div class="testi-name">Sandra L.</div>
+            <div class="testi-biz">Boutique retail, Austin TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" aria-hidden="true">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Three months of bank statements and that was it. No tax returns, no business plan, no 47-page application. Just real cash flow proof. Got $120K for equipment."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">DT</div>
+          <div>
+            <div class="testi-name">David T.</div>
+            <div class="testi-biz">HVAC contractor, Phoenix AZ</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" aria-hidden="true">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Revenue-based financing was perfect for my seasonal business. Slow months I pay almost nothing. I wish I found shopifund two years ago instead of burning through my savings."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">KN</div>
+          <div>
+            <div class="testi-name">Kim N.</div>
+            <div class="testi-biz">Landscaping, Seattle WA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" aria-hidden="true">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"One advisor, one call, one offer. That's exactly what happened. No 12 different lenders calling me for a month. Clean, fast, professional. $75K in 4 days."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">JM</div>
+          <div>
+            <div class="testi-name">James M.</div>
+            <div class="testi-biz">Staffing agency, Chicago IL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="section-label">Questions</div>
+    <h2 class="section-title">Straight answers.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Will checking my eligibility hurt my credit?</span>
+          <div class="faq-chevron">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-a">No. Our initial eligibility check is a soft pull and does not appear on your credit report or affect your score. A hard pull only happens if you accept an offer.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What documents do I need?</span>
+          <div class="faq-chevron">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-a">Just 3 months of business bank statements. No tax returns, no financial projections, no business plan. We use real cash flow data to evaluate your business.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How fast can I actually get funded?</span>
+          <div class="faq-chevron">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-a">Most clients are matched within 24 hours of submitting their bank statements. If you apply by Wednesday and everything checks out, we target same-week funding. Funded by Friday.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What if I've been declined by a bank?</span>
+          <div class="faq-chevron">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-a">Many of our clients were declined by traditional banks. Our lending partners use alternative underwriting that weights cash flow and business performance, not just credit scores. Apply and let the data speak.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do I have to talk to multiple lenders?</span>
+          <div class="faq-chevron">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="faq-a">Never. That's the whole point. We do the matching on our end. You get one advisor, one lender match, one offer. You decide if it works for you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT WITH BUCK inline section -->
+<section class="buck-chat-section" id="buck-chat">
+  <h2>Got questions? Buck's here.</h2>
+  <p>Buck's not a bot. He's a funding guide who's seen your situation before. Ask him anything about your options, your file, or what to expect.</p>
+  <button class="buck-chat-btn-inline" onclick="openBuckChat()">
+    Chat with Buck &rarr;
+  </button>
+  <p class="buck-chat-fine">The buck stops here.</p>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-section">
+  <h2>Your business can't wait.</h2>
+  <p>Buck's matched owners in tougher spots than yours.</p>
+  <a href="apply.html" class="cta-btn">
+    Get Funded by Friday &rarr;
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">
+      <img src="shopifund_icon_cream.svg" width="36" height="36" alt="shopifund icon" style="display:block;flex-shrink:0;object-fit:contain;">
+      <span class="footer-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
+    </div>
+    <p class="footer-legal">shopifund is a business funding marketplace that connects small businesses with alternative lenders. shopifund is not a lender. All credit decisions are made by third-party lending partners. Funding amounts and terms vary by lender, business profile, and qualification criteria.</p>
+  </div>
+  <div class="footer-links">
+    <a href="#">How it works</a>
+    <a href="#">Products</a>
+    <a href="#">For lenders</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+  </div>
+</footer>
+
+<!-- BUCK CHAT WIDGET -->
+<div class="buck-chat-widget" id="buck-chat-widget">
+  <div class="buck-chat-panel" id="buck-chat-panel">
+    <div class="buck-chat-header">
+      <div class="buck-chat-header-avatar">
+        <img src="buck_chat_icon.jpg" alt="Buck" onerror="this.style.display='none';this.parentNode.textContent='B';">
+      </div>
+      <div class="buck-chat-header-info">
+        <div class="buck-chat-header-name">Buck</div>
+        <div class="buck-chat-header-role">Funding Guide &middot; shopifund</div>
+      </div>
+      <button class="buck-chat-close" onclick="closeBuckChat()" aria-label="Close chat">&#10005;</button>
+    </div>
+    <div class="buck-chat-body" id="buck-chat-body">
+      <div class="buck-bubble">Hey. I'm Buck. Tell me what's going on with your business and I'll tell you what we can do.</div>
+      <div class="buck-bubble">Banks said no? Good. That's exactly who I help.</div>
+      <div class="buck-bubble">What kind of funding are you looking for? I've got options.</div>
+    </div>
+    <div class="buck-chat-input-row">
+      <input type="text" class="buck-chat-input" id="buck-chat-input" placeholder="Ask Buck anything..." aria-label="Chat message" onkeydown="if(event.key==='Enter')sendBuckMessage();">
+      <button class="buck-chat-send" onclick="sendBuckMessage()" aria-label="Send message">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M10 4l4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="buck-chat-trigger" onclick="toggleBuckChat()" role="button" tabindex="0" aria-label="Chat with Buck" onkeydown="if(event.key==='Enter'||event.key===' ')toggleBuckChat();">
+    <div class="buck-chat-label">Chat with Buck</div>
+    <div class="buck-chat-avatar" id="buck-avatar">
+      <img src="buck_chat_icon.jpg" alt="Buck" onerror="this.style.display='none';this.parentNode.textContent='B';">
+      <div class="buck-chat-dot"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Horizontal scroll via arrows
+function scrollRow(id, dir) {
+  var el = document.getElementById(id);
+  var card = el.querySelector('[class$="-card"]');
+  var width = card ? card.offsetWidth + 16 : 280;
+  el.scrollBy({ left: dir * width, behavior: 'smooth' });
+}
+
+// Drag to scroll
+document.querySelectorAll('.scroll-row').forEach(function(row) {
+  var isDown = false, startX, scrollLeft;
+  row.addEventListener('mousedown', function(e) {
+    isDown = true; row.classList.add('dragging');
+    startX = e.pageX - row.offsetLeft;
+    scrollLeft = row.scrollLeft;
+  });
+  row.addEventListener('mouseleave', function() { isDown = false; row.classList.remove('dragging'); });
+  row.addEventListener('mouseup', function() { isDown = false; row.classList.remove('dragging'); });
+  row.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    var x = e.pageX - row.offsetLeft;
+    row.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
+});
+
+// FAQ accordion
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+// Buck chat widget
+var buckChatOpen = false;
+
+function openBuckChat() {
+  document.getElementById('buck-chat-panel').classList.add('open');
+  buckChatOpen = true;
+  setTimeout(function() {
+    var input = document.getElementById('buck-chat-input');
+    if (input) input.focus();
+  }, 100);
+}
+
+function closeBuckChat() {
+  document.getElementById('buck-chat-panel').classList.remove('open');
+  buckChatOpen = false;
+}
+
+function toggleBuckChat() {
+  if (buckChatOpen) { closeBuckChat(); } else { openBuckChat(); }
+}
+
+function sendBuckMessage() {
+  var input = document.getElementById('buck-chat-input');
+  var body = document.getElementById('buck-chat-body');
+  var msg = input.value.trim();
+  if (!msg) return;
+
+  // User bubble
+  var userBubble = document.createElement('div');
+  userBubble.className = 'buck-bubble buck-bubble-user';
+  userBubble.textContent = msg;
+  body.appendChild(userBubble);
+  input.value = '';
+
+  // Buck reply
+  setTimeout(function() {
+    var reply = document.createElement('div');
+    reply.className = 'buck-bubble buck-bubble-reply';
+    reply.innerHTML = 'Got it. Let me pull up your options. Takes about 2 minutes. &rarr; <a href="apply.html">Get Started</a>';
+    body.appendChild(reply);
+    body.scrollTop = body.scrollHeight;
+  }, 700);
+
+  body.scrollTop = body.scrollHeight;
+}
+
+// ── Shopifund Goal Calculator ──────────────────────────────────────
+(function () {
+  var SF = { goal: null, revenue: 35000, time: null, credit: null, docs: null, effr: 3.63 };
+
+  // Live rate fetch
+  fetch('https://markets.newyorkfed.org/api/rates/unsecured/effr/last/1.json')
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      SF.effr = d.refRates[0].percentRate;
+      var prime = (SF.effr + 3).toFixed(2);
+      var date = d.refRates[0].effectiveDate;
+      var el = document.getElementById('rate-text');
+      if (el) el.innerHTML = 'Fed Funds <strong>' + SF.effr + '%</strong>&ensp;&middot;&ensp;Est. Prime <strong>' + prime + '%</strong>&ensp;&middot;&ensp;<span style="opacity:.55">NY Fed &middot; ' + date + '</span>';
+    })
+    .catch(function () {
+      var el = document.getElementById('rate-text');
+      if (el) el.innerHTML = 'Est. Prime Rate <strong>~6.63%</strong>&ensp;&middot;&ensp;<span style="opacity:.55">Source: NY Federal Reserve</span>';
+    });
+
+  window.sfGoal = function (goal, btn) {
+    SF.goal = goal; SF.time = null; SF.credit = null; SF.docs = null;
+    document.querySelectorAll('.goal-card').forEach(function (c) { c.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById('sf-results').style.display = 'none';
+    renderPanel(goal);
+    setTimeout(function () { document.getElementById('sf-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 80);
+  };
+
+  function renderPanel(goal) {
+    var h = '<div class="calc-panel">';
+
+    // Revenue slider
+    h += '<div class="calc-field">';
+    h += '<div class="calc-field-label">Monthly Revenue</div>';
+    h += '<div class="slider-val" id="sf-rev-disp">$35,000<span>/month</span></div>';
+    h += '<input type="range" class="calc-slider" id="sf-rev" min="5000" max="500000" step="5000" value="35000" oninput="sfRevSlide(this)">';
+    h += '<div class="slider-ticks"><span>$5K</span><span>$100K</span><span>$250K</span><span>$500K+</span></div>';
+    h += '</div>';
+
+    // Time in business
+    h += '<div class="calc-field">';
+    h += '<div class="calc-field-label">Time in Business</div>';
+    h += '<div class="tile-group" id="sf-time-grp">';
+    h += '<button class="tile-btn" onclick="sfTile(this,\'time\',\'0-6\')">Under 6 months</button>';
+    h += '<button class="tile-btn" onclick="sfTile(this,\'time\',\'6-12\')">6 – 12 months</button>';
+    h += '<button class="tile-btn" onclick="sfTile(this,\'time\',\'1-3\')">1 – 3 years</button>';
+    h += '<button class="tile-btn" onclick="sfTile(this,\'time\',\'3+\')">3+ years</button>';
+    h += '</div></div>';
+
+    if (goal === 'max') {
+      h += '<div class="calc-field"><div class="calc-field-label">Industry</div>';
+      h += '<select class="calc-select" id="sf-industry"><option value="">Select your industry</option>';
+      ['Restaurant / Food Service','Retail','Construction / Trades','Healthcare','Transportation','E-commerce','Technology / Software','Professional Services','Other'].forEach(function(x){ h += '<option>' + x + '</option>'; });
+      h += '</select></div>';
+    }
+
+    if (goal === 'rate') {
+      h += '<div class="calc-field"><div class="calc-field-label">Personal Credit Score</div>';
+      h += '<div class="tile-group" id="sf-credit-grp">';
+      h += '<button class="tile-btn" onclick="sfTile(this,\'credit\',\'poor\')">Under 580</button>';
+      h += '<button class="tile-btn" onclick="sfTile(this,\'credit\',\'fair\')">580 – 649</button>';
+      h += '<button class="tile-btn" onclick="sfTile(this,\'credit\',\'good\')">650 – 719</button>';
+      h += '<button class="tile-btn" onclick="sfTile(this,\'credit\',\'great\')">720+</button>';
+      h += '</div></div>';
+    }
+
+    if (goal === 'fast') {
+      h += '<div class="calc-field"><div class="calc-field-label">3 months of bank statements ready?</div>';
+      h += '<div class="tile-group" style="grid-template-columns:1fr 1fr;max-width:260px;" id="sf-docs-grp">';
+      h += '<button class="tile-btn" onclick="sfTile(this,\'docs\',\'yes\')">Yes, ready</button>';
+      h += '<button class="tile-btn" onclick="sfTile(this,\'docs\',\'no\')">Not yet</button>';
+      h += '</div></div>';
+    }
+
+    h += '<button class="calc-go" onclick="sfCalc()">See My Options &rarr;</button>';
+    h += '<p class="form-note">No hard credit pull &middot; No commitment &middot; Takes 2 minutes</p>';
+    h += '</div>';
+
+    var panel = document.getElementById('sf-panel');
+    panel.innerHTML = h;
+    panel.style.display = 'block';
+    // init slider track
+    sfRevSlide(document.getElementById('sf-rev'));
+  }
+
+  window.sfRevSlide = function (el) {
+    var v = parseInt(el.value);
+    SF.revenue = v;
+    var disp = document.getElementById('sf-rev-disp');
+    if (disp) disp.innerHTML = '$' + v.toLocaleString() + '<span>/month</span>';
+    var pct = ((v - 5000) / (500000 - 5000)) * 100;
+    el.style.background = 'linear-gradient(to right,var(--teal) ' + pct + '%,var(--border) ' + pct + '%)';
+  };
+
+  window.sfTile = function (el, group, val) {
+    el.closest('.tile-group').querySelectorAll('.tile-btn').forEach(function (b) {
+      b.classList.remove('active', 'error');
+    });
+    el.classList.add('active');
+    SF[group] = val;
+  };
+
+  window.sfCalc = function () {
+    if (!SF.time) {
+      var tg = document.getElementById('sf-time-grp');
+      if (tg) tg.querySelectorAll('.tile-btn').forEach(function (b) { b.classList.add('error'); setTimeout(function(){ b.classList.remove('error'); }, 1200); });
+      return;
+    }
+    if (SF.goal === 'rate' && !SF.credit) {
+      var cg = document.getElementById('sf-credit-grp');
+      if (cg) cg.querySelectorAll('.tile-btn').forEach(function (b) { b.classList.add('error'); setTimeout(function(){ b.classList.remove('error'); }, 1200); });
+      return;
+    }
+    renderResults(compute());
+  };
+
+  function compute() {
+    var prime = SF.effr + 3;
+    var rev = SF.revenue;
+    var tm = { '0-6':{mult:1.2,fast:1.0,spd:'24 – 48 hours',spdsub:'MCA decisions by next business day'},
+               '6-12':{mult:2.0,fast:1.5,spd:'Same day',spdsub:'Multiple lenders, same-day decisions'},
+               '1-3':{mult:3.5,fast:2.5,spd:'Same day',spdsub:'Full suite, priority matching'},
+               '3+':{mult:5.5,fast:4.0,spd:'Same day',spdsub:'SBA express eligible, priority matching'} };
+    var t = tm[SF.time] || tm['1-3'];
+
+    if (SF.goal === 'max') {
+      var maxAmt = Math.min(Math.round(rev * t.mult), 5000000);
+      var minAmt = Math.round(maxAmt * 0.6);
+      var prods = SF.time === '0-6' ? ['Merchant Cash Advance'] :
+                  SF.time === '6-12' ? ['MCA','Short-term Loan','Revenue-Based Financing'] :
+                  SF.time === '1-3'  ? ['Term Loan','Revenue-Based Financing','Line of Credit'] :
+                                       ['SBA 7(a)','Term Loan','Line of Credit','Equipment Financing'];
+      return { goal:'max', mainLabel:'You may qualify for up to', main: fmtAmt(maxAmt),
+               sub: fmtAmt(minAmt) + ' – ' + fmtAmt(maxAmt) + ' estimated range',
+               c1l:'Est. Prime Rate', c1v: prime.toFixed(2) + '%', c1s:'NY Fed live · EFFR + 3%',
+               c2l:'Products available', c2v: prods.length + ' product types', c2s:'Competing for your business',
+               tags: prods, cta:'Lock In My Matches', ctaHref:'apply.html',
+               fine:'Based on ' + fmtAmt(rev) + '/mo revenue · Not a guarantee of funding · Rates vary by lender' };
+    }
+
+    if (SF.goal === 'fast') {
+      var fAmt = Math.min(Math.round(rev * t.fast), 2000000);
+      var fMin = Math.round(fAmt * 0.7);
+      var fProds = ['Merchant Cash Advance','Short-term Loan'];
+      if (SF.time !== '0-6') fProds.push('Revenue-Based Financing');
+      return { goal:'fast', mainLabel:'Funded in as little as', main: t.spd,
+               sub: t.spdsub,
+               c1l:'Estimated range', c1v: fmtAmt(fMin) + ' – ' + fmtAmt(fAmt), c1s:'Based on monthly revenue',
+               c2l:'Document prep', c2v: SF.docs === 'yes' ? 'Ready to submit' : 'Gather 3 bank statements', c2s: SF.docs === 'yes' ? 'Fastest possible track' : 'Takes ~10 minutes',
+               tags: fProds, cta:'Start My 2-Minute Match', ctaHref:'apply.html',
+               fine:'Speed depends on documentation readiness · Not a guarantee of funding' };
+    }
+
+    if (SF.goal === 'rate') {
+      var rLo, rHi, rLab, rProds;
+      if (SF.credit === 'great')    { rLo=(prime+1).toFixed(1); rHi=(prime+4).toFixed(1);   rLab='Excellent profile'; rProds=['SBA 7(a)','Bank Term Loan','Business Line of Credit']; }
+      else if (SF.credit === 'good'){ rLo=(prime+4).toFixed(1); rHi=(prime+8).toFixed(1);   rLab='Good profile';      rProds=['Term Loan','Revenue-Based Financing','Line of Credit']; }
+      else if (SF.credit === 'fair'){ rLo=(prime+8).toFixed(1); rHi=(prime+15).toFixed(1);  rLab='Fair profile';      rProds=['MCA','Revenue-Based Financing','Short-term Loan']; }
+      else                          { rLo='18.0';                rHi='36.0';                 rLab='Building profile';  rProds=['Merchant Cash Advance']; }
+      var spread = (parseFloat(rLo) - prime).toFixed(1);
+      return { goal:'rate', mainLabel:'Your estimated APR range', main: rLo + '% – ' + rHi + '%',
+               sub: rLab + ' · ' + fmtAmt(rev) + '/mo revenue',
+               c1l:'Live Prime Rate', c1v: prime.toFixed(2) + '%', c1s:'NY Fed EFFR + 3% · Updated daily',
+               c2l:'Your spread', c2v:'Prime + ' + spread + '%+', c2s:'Lower rates as you grow',
+               tags: rProds, cta:'Get Lenders Competing For Me', ctaHref:'apply.html',
+               fine:'Prime Rate ' + prime.toFixed(2) + '% (EFFR ' + SF.effr + '% + 3%) · Rates vary by lender, term, and docs · Not a guarantee' };
+    }
+  }
+
+  function renderResults(r) {
+    var h = '<div class="calc-results-wrap">';
+    h += '<div class="res-label">' + r.mainLabel + '</div>';
+    h += '<div class="res-main">' + r.main + '</div>';
+    h += '<div class="res-sub">' + r.sub + '</div>';
+    h += '<div class="res-divider"></div>';
+    h += '<div class="res-cards">';
+    h += '<div class="res-card"><div class="res-card-label">' + r.c1l + '</div><div class="res-card-val">' + r.c1v + '</div><div class="res-card-sub">' + r.c1s + '</div></div>';
+    h += '<div class="res-card"><div class="res-card-label">' + r.c2l + '</div><div class="res-card-val">' + r.c2v + '</div><div class="res-card-sub">' + r.c2s + '</div></div>';
+    h += '</div>';
+    h += '<div class="res-tags">' + r.tags.map(function(t){ return '<span class="res-tag">' + t + '</span>'; }).join('') + '</div>';
+    h += '<a href="' + r.ctaHref + '" class="res-cta">' + r.cta + ' &rarr;</a>';
+    h += '<p class="res-fine">' + r.fine + '</p>';
+    h += '</div>';
+    h += '<button class="calc-reset" onclick="sfReset()">&larr; Change goal</button>';
+
+    var el = document.getElementById('sf-results');
+    el.innerHTML = h;
+    el.style.display = 'block';
+    setTimeout(function () { el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 80);
+  }
+
+  window.sfReset = function () {
+    document.querySelectorAll('.goal-card').forEach(function (c) { c.classList.remove('active'); });
+    document.getElementById('sf-panel').style.display = 'none';
+    document.getElementById('sf-results').style.display = 'none';
+    SF.goal = null;
+    document.querySelector('.calc-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  function fmtAmt(n) {
+    if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+    if (n >= 1000) return '$' + Math.round(n / 1000) + 'K';
+    return '$' + n;
+  }
+})();
+</script>
+</body>
+</html>
