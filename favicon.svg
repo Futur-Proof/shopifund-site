@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Store body -->
+  <rect x="8" y="40" width="62" height="52" rx="9" fill="#1B6B5A"/>
+  <!-- Awning with scalloped bottom -->
+  <path d="M6,44 L6,21 Q6,17 10,17 L70,17 Q74,17 74,21 L74,44
+           Q66,51 58,44 Q50,51 42,44 Q34,51 26,44 Q18,51 10,44 Q8,48 6,44 Z"
+        fill="#1B6B5A"/>
+  <!-- Awning stripes -->
+  <line x1="24" y1="17" x2="15" y2="44" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+  <line x1="39" y1="17" x2="30" y2="44" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+  <line x1="54" y1="17" x2="45" y2="44" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+  <!-- Body glass reflection lines -->
+  <line x1="18" y1="46" x2="40" y2="90" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
+  <line x1="32" y1="46" x2="54" y2="90" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
+  <!-- Amber arrow -->
+  <path d="M58,40 L90,8" stroke="#F5A020" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <polyline points="79,8 90,8 90,19" stroke="#F5A020" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
