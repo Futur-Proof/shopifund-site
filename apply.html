@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Funded | shopifund</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --teal:#144F43;
+  --teal-mid:#1B6B5A;
+  --amber:#F5A020;
+  --charcoal:#0F1C1A;
+  --muted:#5C6F6C;
+  --bg:#F7F9F8;
+  --white:#fff;
+  --border:#D8E4E2;
+}
+html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg);color:var(--charcoal);}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:var(--teal);
+  height:64px;padding:0 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{display:flex;align-items:center;gap:0.65rem;text-decoration:none;}
+.nav-wordmark{font-family:'Nunito',sans-serif;font-size:1.6rem;font-weight:900;letter-spacing:-0.03em;line-height:1;}
+.nav-wordmark .w-shopi{color:#F7F9F8;}
+.nav-wordmark .w-fund{color:#F5A020;}
+.nav-secure{font-size:0.78rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:0.35rem;}
+
+/* PROGRESS */
+.progress-bar-wrap{
+  position:fixed;top:64px;left:0;right:0;z-index:99;
+  height:4px;background:var(--border);
+}
+.progress-bar-fill{
+  height:100%;background:var(--teal-mid);
+  transition:width 0.4s ease;
+}
+
+/* MAIN LAYOUT */
+.wizard-wrap{
+  min-height:100vh;
+  padding:120px 1.5rem 3rem;
+  display:flex;flex-direction:column;align-items:center;
+}
+.step{display:none;width:100%;max-width:600px;animation:fadeUp 0.3s ease;}
+.step.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* STEP LABEL */
+.step-label{
+  font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--teal-mid);margin-bottom:0.75rem;
+}
+
+/* STEP HEADING */
+.step-heading{
+  font-family:'Nunito',sans-serif;font-weight:900;
+  font-size:clamp(1.7rem,5vw,2.5rem);
+  line-height:1.15;color:var(--charcoal);
+  margin-bottom:1.8rem;
+}
+
+/* ICON CARDS */
+.card-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:0.8rem;margin-bottom:1.5rem;
+}
+.card-option{
+  border:2px solid var(--border);border-radius:14px;
+  padding:1.4rem 1rem 1.1rem;
+  display:flex;flex-direction:column;align-items:center;gap:0.6rem;
+  cursor:pointer;background:var(--white);
+  transition:border-color 0.18s,box-shadow 0.18s,background 0.18s;
+  font-size:0.88rem;font-weight:600;text-align:center;color:var(--charcoal);
+}
+.card-option:hover{border-color:var(--teal-mid);box-shadow:0 2px 12px rgba(27,107,90,0.12);}
+.card-option.selected{border-color:var(--teal-mid);background:#EAF5F2;box-shadow:0 2px 12px rgba(27,107,90,0.15);}
+.card-icon{width:40px;height:40px;color:var(--teal-mid);}
+
+/* LIST OPTIONS */
+.list-options{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:1.5rem;}
+.list-option{
+  border:2px solid var(--border);border-radius:12px;
+  padding:1rem 1.3rem;
+  cursor:pointer;background:var(--white);
+  font-size:1rem;font-weight:500;color:var(--charcoal);
+  transition:border-color 0.18s,background 0.18s;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.list-option:hover{border-color:var(--teal-mid);background:#F0FAF7;}
+.list-option.selected{border-color:var(--teal-mid);background:#EAF5F2;font-weight:600;}
+.list-option-check{
+  width:22px;height:22px;border-radius:50%;border:2px solid var(--border);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:border-color 0.18s,background 0.18s;
+}
+.list-option.selected .list-option-check{background:var(--teal-mid);border-color:var(--teal-mid);}
+.list-option-check svg{display:none;}
+.list-option.selected .list-option-check svg{display:block;}
+
+/* INPUTS */
+.field{margin-bottom:1.1rem;}
+.field label{display:block;font-size:0.85rem;font-weight:600;color:var(--muted);margin-bottom:0.4rem;}
+.field input,.field select{
+  width:100%;border:2px solid var(--border);border-radius:10px;
+  padding:0.85rem 1rem;font-size:1rem;font-family:'Inter',sans-serif;
+  color:var(--charcoal);background:var(--white);outline:none;
+  transition:border-color 0.18s;
+}
+.field input:focus,.field select:focus{border-color:var(--teal-mid);}
+.field input::placeholder{color:#9EB3AF;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.field input.prefix-${padding-left:1.8rem;}
+.input-wrap{position:relative;}
+.input-prefix{
+  position:absolute;left:1rem;top:50%;transform:translateY(-50%);
+  color:var(--muted);font-weight:600;pointer-events:none;
+}
+
+/* BUTTONS */
+.btn-primary{
+  width:100%;padding:1rem;border-radius:50px;
+  background:var(--charcoal);color:#fff;
+  font-size:1.05rem;font-weight:700;
+  border:none;cursor:pointer;
+  transition:background 0.18s,transform 0.18s;
+  margin-bottom:1rem;
+  font-family:'Inter',sans-serif;
+}
+.btn-primary:hover{background:#111;transform:translateY(-1px);}
+.btn-primary.amber{background:var(--amber);color:var(--charcoal);}
+.btn-primary.amber:hover{background:#e8940f;}
+
+/* TRUST BADGES */
+.trust-badges{display:flex;flex-direction:column;gap:0.35rem;margin-top:0.25rem;}
+.trust-badge{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--muted);}
+
+/* NOTICE */
+.step-notice{
+  font-size:0.78rem;color:var(--muted);
+  margin-top:-1rem;margin-bottom:1.2rem;
+  line-height:1.5;
+}
+
+/* PROGRESS PILL */
+.progress-pill{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  border:1.5px solid var(--teal-mid);border-radius:50px;
+  padding:0.35rem 0.85rem;font-size:0.8rem;font-weight:600;
+  color:var(--teal-mid);margin-bottom:1.5rem;
+}
+
+/* LOADING */
+#step-loading{text-align:center;padding-top:2rem;}
+.loading-icon{
+  width:72px;height:72px;border-radius:50%;
+  background:var(--teal);display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.5rem;
+  animation:pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.08);opacity:0.85;}}
+.loading-dots{display:flex;gap:0.4rem;justify-content:center;margin-top:1rem;}
+.loading-dot{
+  width:10px;height:10px;border-radius:50%;background:var(--teal-mid);
+  animation:bounce 1.2s ease-in-out infinite;
+}
+.loading-dot:nth-child(2){animation-delay:0.2s;}
+.loading-dot:nth-child(3){animation-delay:0.4s;}
+@keyframes bounce{0%,80%,100%{transform:scale(0.7);opacity:0.5;}40%{transform:scale(1);opacity:1;}}
+
+/* RESULTS */
+#step-results{width:100%;max-width:760px;}
+.results-heading{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;margin-bottom:0.4rem;}
+.results-sub{font-size:0.9rem;color:var(--muted);margin-bottom:0.3rem;}
+.results-notice{font-size:0.85rem;color:var(--charcoal);margin-bottom:1.5rem;}
+.lender-card{
+  background:var(--white);border:1.5px solid var(--border);border-radius:14px;
+  padding:1.2rem 1.4rem;margin-bottom:1rem;
+}
+.lender-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.8rem;}
+.lender-name{font-weight:800;font-size:1rem;color:var(--teal);}
+.lender-stars{color:#F5A020;font-size:0.85rem;display:flex;align-items:center;gap:0.25rem;}
+.lender-apply{
+  background:var(--teal-mid);color:#fff;border:none;
+  padding:0.6rem 1.3rem;border-radius:50px;font-weight:700;font-size:0.9rem;
+  cursor:pointer;white-space:nowrap;transition:background 0.18s;
+}
+.lender-apply:hover{background:var(--teal);}
+.lender-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-bottom:0.8rem;}
+.lender-stat-label{font-size:0.72rem;color:var(--muted);margin-bottom:0.15rem;}
+.lender-stat-val{font-size:1rem;font-weight:700;}
+.lender-desc{font-size:0.82rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--border);padding-top:0.8rem;}
+.results-match-count{
+  background:#EAF5F2;border-radius:10px;padding:0.9rem 1.1rem;
+  margin-bottom:1.2rem;font-size:0.88rem;color:var(--teal);font-weight:600;
+  display:flex;align-items:center;gap:0.5rem;
+}
+
+@media(max-width:540px){
+  .card-grid{grid-template-columns:repeat(2,1fr);}
+  .lender-stats{grid-template-columns:repeat(3,1fr);}
+  .lender-top{flex-direction:column;align-items:flex-start;}
+  .lender-apply{width:100%;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="icon-nav.png" width="36" height="36" alt="shopifund icon" style="display:block;flex-shrink:0;">
+    <span class="nav-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
+  </a>
+  <div class="nav-secure">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    Secure &amp; encrypted
+  </div>
+</nav>
+
+<div class="progress-bar-wrap">
+  <div class="progress-bar-fill" id="progress-fill" style="width:9%"></div>
+</div>
+
+<div class="wizard-wrap">
+
+  <!-- STEP 1: Business type -->
+  <div class="step active" id="step-1">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">What type of business do you own?</h1>
+    <div class="card-grid">
+      <div class="card-option" data-value="sole-proprietor" onclick="selectCard(this,'biz-type');nextStep()">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        Sole Proprietor
+      </div>
+      <div class="card-option" data-value="partnership" onclick="selectCard(this,'biz-type');nextStep()">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 11c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-7-1c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 2c-1.33 0-4 .67-4 2v1h8v-1c0-1.33-2.67-2-4-2zm-7-1c-1.67 0-5 .83-5 2.5V15h10v-1.5C15 13.83 11.67 13 10 13z"/></svg>
+        Partnership
+      </div>
+      <div class="card-option" data-value="llc" onclick="selectCard(this,'biz-type');nextStep()">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 5v14M16 5v14M3 10h18M3 15h18"/></svg>
+        Limited Liability Company (LLC)
+      </div>
+      <div class="card-option" data-value="c-corp" onclick="selectCard(this,'biz-type');nextStep()">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18"/></svg>
+        C Corporation
+      </div>
+      <div class="card-option" data-value="s-corp" onclick="selectCard(this,'biz-type');nextStep()">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        S Corporation
+      </div>
+    </div>
+    <div class="progress-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Get your matches in 2 minutes or less.
+    </div>
+  </div>
+
+  <!-- STEP 2: Purpose -->
+  <div class="step" id="step-2">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">What are you getting the financing for?</h1>
+    <div class="field">
+      <label for="financing-purpose">Reason for Financing</label>
+      <select id="financing-purpose">
+        <option value="" disabled selected>Choose...</option>
+        <option value="expansion">Expansion</option>
+        <option value="equipment">Equipment purchase</option>
+        <option value="vehicle">Purchase a vehicle</option>
+        <option value="inventory">Inventory</option>
+        <option value="payroll">Payroll</option>
+        <option value="marketing">Marketing</option>
+        <option value="real-estate">Commercial real estate</option>
+        <option value="remodel">Remodel my location</option>
+        <option value="refinance">Refinance debt</option>
+        <option value="ar">Finance Accounts Receivable</option>
+        <option value="buy-business">Buy a business / franchise</option>
+        <option value="start">Start a business</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <button class="btn-primary" onclick="if(document.getElementById('financing-purpose').value){nextStep();}else{document.getElementById('financing-purpose').focus();}">Continue</button>
+  </div>
+
+  <!-- STEP 3: Timeline -->
+  <div class="step" id="step-3">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">How quickly do you need the money?</h1>
+    <div class="list-options">
+      <div class="list-option" data-value="within-week" onclick="selectList(this,'timeline');nextStep()">
+        Within a week
+        <div class="list-option-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+      <div class="list-option" data-value="within-2weeks" onclick="selectList(this,'timeline');nextStep()">
+        Within 2 weeks
+        <div class="list-option-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+      <div class="list-option" data-value="within-month" onclick="selectList(this,'timeline');nextStep()">
+        Within a month
+        <div class="list-option-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+      <div class="list-option" data-value="browsing" onclick="selectList(this,'timeline');nextStep()">
+        Unsure, just browsing rates
+        <div class="list-option-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: Monthly revenue -->
+  <div class="step" id="step-4">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">What's your average monthly revenue?</h1>
+    <div class="field">
+      <label for="monthly-revenue">Average Monthly Revenue</label>
+      <div class="input-wrap">
+        <span class="input-prefix">$</span>
+        <input type="number" id="monthly-revenue" placeholder="0" style="padding-left:1.8rem;" min="0">
+      </div>
+    </div>
+    <button class="btn-primary" onclick="if(document.getElementById('monthly-revenue').value){nextStep();}else{document.getElementById('monthly-revenue').focus();}">Continue</button>
+  </div>
+
+  <!-- STEP 5: Credit score -->
+  <div class="step" id="step-5">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">What's your estimated personal credit score?</h1>
+    <div class="list-options">
+      <div class="list-option" data-value="excellent" onclick="selectList(this,'credit');nextStep()">
+        Excellent (720+)
+        <div class="list-option-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+      <div class="list-option" data-value="good" onclick="selectList(this,'credit');nextStep()">
+        Good (680-719)
+        <div class="list-option-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+      <div class="list-option" data-value="fair" onclick="selectList(this,'credit');nextStep()">
+        Fair (640-679)
+        <div class="list-option-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+      <div class="list-option" data-value="poor" onclick="selectList(this,'credit');nextStep()">
+        Poor (639 or less)
+        <div class="list-option-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+      </div>
+    </div>
+    <p class="step-notice">No credit pull required. shopifund matches you without touching your credit.</p>
+  </div>
+
+  <!-- STEP 6: ZIP code -->
+  <div class="step" id="step-6">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">Where is your business located?</h1>
+    <div class="field">
+      <label for="biz-zip">Business ZIP Code</label>
+      <input type="text" id="biz-zip" placeholder="e.g. 90210" maxlength="5" inputmode="numeric" pattern="[0-9]*">
+    </div>
+    <button class="btn-primary" onclick="if(document.getElementById('biz-zip').value.length===5){nextStep();}else{document.getElementById('biz-zip').focus();}">Continue</button>
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Your information is securely encrypted
+      </div>
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        No credit pull
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 7: Business name -->
+  <div class="step" id="step-7">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">What is the name of your business?</h1>
+    <div class="field">
+      <label for="biz-name">Business Name</label>
+      <input type="text" id="biz-name" placeholder="e.g. Acme LLC">
+    </div>
+    <button class="btn-primary" onclick="if(document.getElementById('biz-name').value.trim()){nextStep();}else{document.getElementById('biz-name').focus();}">Continue</button>
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Your information is securely encrypted
+      </div>
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        No credit pull
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 8: Business details -->
+  <div class="step" id="step-8">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">Tell us about your business.</h1>
+    <div class="field">
+      <label>When did you start your business?</label>
+      <div class="field-row">
+        <select id="biz-month">
+          <option value="" disabled selected>Month</option>
+          <option>January</option><option>February</option><option>March</option>
+          <option>April</option><option>May</option><option>June</option>
+          <option>July</option><option>August</option><option>September</option>
+          <option>October</option><option>November</option><option>December</option>
+        </select>
+        <select id="biz-year">
+          <option value="" disabled selected>Year</option>
+          <script>for(var y=new Date().getFullYear();y>=1950;y--){document.write('<option>'+y+'</option>');}</script>
+        </select>
+      </div>
+      <p style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem;">If you're not the founder, use the acquisition date.</p>
+    </div>
+    <div class="field">
+      <label for="biz-industry">What industry is your business in?</label>
+      <select id="biz-industry">
+        <option value="" disabled selected>Select an industry</option>
+        <option>Accommodation and Food Services</option>
+        <option>Administrative &amp; Support and Waste Management</option>
+        <option>Agriculture, Forestry, Fishing and Hunting</option>
+        <option>Arts, Entertainment, and Recreation</option>
+        <option>Construction</option>
+        <option>Educational Services</option>
+        <option>Finance and Insurance</option>
+        <option>Health Care and Social Assistance</option>
+        <option>Information</option>
+        <option>Management of Companies and Enterprises</option>
+        <option>Manufacturing</option>
+        <option>Mining</option>
+        <option>Other Services</option>
+        <option>Professional, Scientific, and Technical Services</option>
+        <option>Public Administration</option>
+        <option>Real Estate Rental and Leasing</option>
+        <option>Retail Trade</option>
+        <option>Transportation and Warehousing</option>
+        <option>Utilities</option>
+        <option>Wholesale Trade</option>
+      </select>
+    </div>
+    <button class="btn-primary" onclick="if(document.getElementById('biz-month').value&&document.getElementById('biz-year').value&&document.getElementById('biz-industry').value){nextStep();}else{alert('Please complete all fields.');}">Continue</button>
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Your information is securely encrypted
+      </div>
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        No credit pull
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 9: Personal info -->
+  <div class="step" id="step-9">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">Tell us about yourself.</h1>
+    <div class="field-row" style="margin-bottom:1.1rem;">
+      <div class="field" style="margin-bottom:0;">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" placeholder="First name">
+      </div>
+      <div class="field" style="margin-bottom:0;">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" placeholder="Last name">
+      </div>
+    </div>
+    <div class="field">
+      <label for="phone">Phone Number</label>
+      <div class="input-wrap">
+        <span class="input-prefix">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <input type="tel" id="phone" placeholder="(555) 555-5555" style="padding-left:2.2rem;">
+      </div>
+    </div>
+    <button class="btn-primary" onclick="if(document.getElementById('first-name').value&&document.getElementById('last-name').value&&document.getElementById('phone').value){nextStep();}else{alert('Please complete all fields.');}">Continue</button>
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Your information is securely encrypted
+      </div>
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        No credit pull
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 10: Email -->
+  <div class="step" id="step-10">
+    <div class="step-label">Business Loan</div>
+    <h1 class="step-heading">What's your email address?</h1>
+    <div class="field">
+      <label for="email">Email Address</label>
+      <div class="input-wrap">
+        <span class="input-prefix">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 4 12 13 22 4"/></svg>
+        </span>
+        <input type="email" id="email" placeholder="you@example.com" style="padding-left:2.2rem;">
+      </div>
+    </div>
+    <button class="btn-primary amber" onclick="submitForm()">View My Matches</button>
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Your information is securely encrypted
+      </div>
+      <div class="trust-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        No credit pull
+      </div>
+    </div>
+  </div>
+
+  <!-- LOADING -->
+  <div class="step" id="step-loading">
+    <div class="loading-icon">
+      <img src="icon-nav.png" width="40" height="40" alt="shopifund">
+    </div>
+    <h2 class="step-heading" style="text-align:center;">Finding your matches...</h2>
+    <p style="text-align:center;color:var(--muted);font-size:0.92rem;">We're scanning our lender network to find the best fit for your business.</p>
+    <div class="loading-dots">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="step" id="step-results">
+    <h2 class="results-heading" id="results-heading">You have matches to review.</h2>
+    <p class="results-sub" id="results-sub"></p>
+    <p class="results-notice">These lenders may reach out soon. You can also apply online or call them directly.</p>
+    <div class="results-match-count">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+      5 lenders matched based on your business profile
+    </div>
+
+    <div class="lender-card">
+      <div class="lender-top">
+        <div>
+          <div class="lender-name">Shield Funding</div>
+          <div class="lender-stars">★★★★★ <span style="color:var(--muted)">(55)</span></div>
+        </div>
+        <button class="lender-apply">Apply Online</button>
+      </div>
+      <div class="lender-stats">
+        <div><div class="lender-stat-label">Amount</div><div class="lender-stat-val">$10K - $5M</div></div>
+        <div><div class="lender-stat-label">Term</div><div class="lender-stat-val">6 mos - 5 yrs</div></div>
+        <div><div class="lender-stat-label">Fastest Funding</div><div class="lender-stat-val">2 hrs</div></div>
+      </div>
+      <div class="lender-desc">Get your business funded the same day with our expedited funding process. Very competitive rates and terms. Trusted 5-star lender for almost 2 decades.</div>
+    </div>
+
+    <div class="lender-card">
+      <div class="lender-top">
+        <div>
+          <div class="lender-name">SBG Funding</div>
+          <div class="lender-stars">★★★★★ <span style="color:var(--muted)">(164)</span></div>
+        </div>
+        <button class="lender-apply">Apply Online</button>
+      </div>
+      <div class="lender-stats">
+        <div><div class="lender-stat-label">Amount</div><div class="lender-stat-val">$10K - $5M</div></div>
+        <div><div class="lender-stat-label">Term</div><div class="lender-stat-val">6 mos - 10 yrs</div></div>
+        <div><div class="lender-stat-label">Fastest Funding</div><div class="lender-stat-val">6 hrs</div></div>
+      </div>
+      <div class="lender-desc">Traditional financing options up to $5M including Business Lines of Credit, Term Loans, Equipment Financing, and Short Term Working Capital.</div>
+    </div>
+
+    <div class="lender-card">
+      <div class="lender-top">
+        <div>
+          <div class="lender-name">JR Capital</div>
+          <div class="lender-stars">★★★★★ <span style="color:var(--muted)">(3)</span></div>
+        </div>
+        <button class="lender-apply">Apply Online</button>
+      </div>
+      <div class="lender-stats">
+        <div><div class="lender-stat-label">Amount</div><div class="lender-stat-val">$15K - $5M</div></div>
+        <div><div class="lender-stat-label">Term</div><div class="lender-stat-val">6 mos - 7 yrs</div></div>
+        <div><div class="lender-stat-label">Fastest Funding</div><div class="lender-stat-val">1 day</div></div>
+      </div>
+      <div class="lender-desc">Equipment Financing, Leasing, and Working Capital for any business. Zero Money Down. Rates starting at 5.99%. Lock in your approval for 60 days.</div>
+    </div>
+
+    <div class="lender-card">
+      <div class="lender-top">
+        <div>
+          <div class="lender-name">Rapid Finance</div>
+          <div class="lender-stars">★★★★☆ <span style="color:var(--muted)">(89)</span></div>
+        </div>
+        <button class="lender-apply">Apply Online</button>
+      </div>
+      <div class="lender-stats">
+        <div><div class="lender-stat-label">Amount</div><div class="lender-stat-val">$5K - $1M</div></div>
+        <div><div class="lender-stat-label">Term</div><div class="lender-stat-val">3 mos - 5 yrs</div></div>
+        <div><div class="lender-stat-label">Fastest Funding</div><div class="lender-stat-val">24 hrs</div></div>
+      </div>
+      <div class="lender-desc">Flexible working capital and merchant cash advance products. Minimal documentation required. Bank statements only — no tax returns needed.</div>
+    </div>
+
+    <div class="lender-card">
+      <div class="lender-top">
+        <div>
+          <div class="lender-name">Fundbox</div>
+          <div class="lender-stars">★★★★★ <span style="color:var(--muted)">(212)</span></div>
+        </div>
+        <button class="lender-apply">Apply Online</button>
+      </div>
+      <div class="lender-stats">
+        <div><div class="lender-stat-label">Amount</div><div class="lender-stat-val">$1K - $150K</div></div>
+        <div><div class="lender-stat-label">Term</div><div class="lender-stat-val">12 - 24 wks</div></div>
+        <div><div class="lender-stat-label">Fastest Funding</div><div class="lender-stat-val">Next day</div></div>
+      </div>
+      <div class="lender-desc">Revolving line of credit for small businesses. Connect your accounting software and get a decision in minutes. Pay only for what you draw.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+var currentStep = 1;
+var totalSteps = 10;
+var formData = {};
+
+// Pre-fill loan amount from URL param
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var amt = params.get('amount');
+  if(amt) formData.loanAmount = amt;
+})();
+
+function updateProgress(){
+  var pct = Math.round((currentStep / totalSteps) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+function showStep(id){
+  document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active');});
+  var el = document.getElementById(id);
+  if(el) el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function nextStep(){
+  if(currentStep < totalSteps){
+    currentStep++;
+    updateProgress();
+    showStep('step-' + currentStep);
+  }
+}
+
+function selectCard(el, group){
+  el.closest('.card-grid').querySelectorAll('.card-option').forEach(function(c){c.classList.remove('selected');});
+  el.classList.add('selected');
+  formData[group] = el.dataset.value;
+}
+
+function selectList(el, group){
+  el.closest('.list-options').querySelectorAll('.list-option').forEach(function(c){c.classList.remove('selected');});
+  el.classList.add('selected');
+  formData[group] = el.dataset.value;
+}
+
+function submitForm(){
+  var email = document.getElementById('email').value;
+  if(!email || !email.includes('@')){
+    document.getElementById('email').focus();
+    return;
+  }
+  formData.email = email;
+  formData.firstName = document.getElementById('first-name').value;
+  formData.bizName = document.getElementById('biz-name').value;
+
+  // Show loading
+  document.getElementById('progress-fill').style.width = '100%';
+  showStep('step-loading');
+
+  setTimeout(function(){
+    var name = formData.bizName || formData.firstName || 'Your business';
+    document.getElementById('results-heading').textContent = name + ', you have 5 matches to review.';
+    var amt = formData.loanAmount ? formData.loanAmount.toUpperCase().replace('-',' - $') : '';
+    if(amt) document.getElementById('results-sub').textContent = 'Requested $' + amt + ' on ' + new Date().toLocaleDateString('en-US',{month:'2-digit',day:'2-digit',year:'numeric'});
+    showStep('step-results');
+  }, 3200);
+}
+
+updateProgress();
+</script>
+</body>
+</html>
