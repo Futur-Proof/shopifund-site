@@ -1,5 +1,13 @@
 {
   "buildCommand": null,
   "outputDirectory": ".",
-  "framework": null
+  "framework": null,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "shopifund-site.vercel.app" }],
+      "destination": "https://shopifund.com/$1",
+      "permanent": true
+    }
+  ]
 }
