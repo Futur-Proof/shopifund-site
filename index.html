@@ -121,16 +121,42 @@ nav{
   white-space:nowrap;
   margin:0 auto 2rem;
 }
-.hero-cta{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  background:var(--amber);color:var(--charcoal);
-  font-weight:800;font-size:1.05rem;
-  padding:1rem 2.2rem;border-radius:50px;
-  box-shadow:0 4px 20px rgba(245,160,32,0.4);
-  transition:transform 0.2s,box-shadow 0.2s;
-  text-decoration:none;
+.hero-cta-row{
+  display:flex;align-items:center;gap:0.75rem;
+  margin-bottom:1.5rem;flex-wrap:wrap;justify-content:center;
 }
-.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,160,32,0.45);}
+.hero-select-wrap{
+  position:relative;display:flex;align-items:center;
+}
+.hero-select{
+  appearance:none;-webkit-appearance:none;
+  border:2px solid #1B6B5A;border-radius:50px;
+  padding:0.85rem 3rem 0.85rem 1.4rem;
+  font-size:1rem;font-weight:600;color:var(--charcoal);
+  background:#fff;cursor:pointer;
+  min-width:240px;outline:none;
+  transition:border-color 0.2s;
+}
+.hero-select:focus{border-color:var(--teal);}
+.hero-select-chevron{
+  pointer-events:none;position:absolute;right:1.1rem;
+  color:#1B6B5A;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;
+  background:var(--charcoal);color:#fff;
+  font-weight:800;font-size:1.05rem;
+  padding:0.9rem 2rem;border-radius:50px;
+  cursor:pointer;border:none;
+  transition:transform 0.2s,background 0.2s;
+  white-space:nowrap;text-decoration:none;
+}
+.hero-cta:hover{transform:translateY(-2px);background:#111;}
+@media(max-width:540px){
+  .hero-select{min-width:0;width:100%;}
+  .hero-cta-row{flex-direction:column;width:100%;padding:0 0.5rem;}
+  .hero-cta{width:100%;justify-content:center;}
+}
 .hero-trust{
   margin-top:1rem;font-size:0.8rem;color:var(--muted);
   display:flex;align-items:center;justify-content:center;gap:0.4rem;
@@ -517,10 +543,23 @@ footer{
   <h1>Funded<br>by <em>Friday.</em></h1>
   <p class="hero-sub">Apply by Wednesday, funds in your account by end of week.</p>
   <p class="hero-tagline">One match. One call. One offer.</p>
-  <a href="#apply" class="hero-cta">
-    Check My Eligibility
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
+  <div class="hero-cta-row">
+    <div class="hero-select-wrap">
+      <select class="hero-select" id="funding-amount" aria-label="How much money do you need?">
+        <option value="" disabled selected>How much money do you need?</option>
+        <option value="5k-25k">$5K - $25K</option>
+        <option value="25k-50k">$25K - $50K</option>
+        <option value="50k-100k">$50K - $100K</option>
+        <option value="100k-250k">$100K - $250K</option>
+        <option value="250k-500k">$250K - $500K</option>
+        <option value="500k+">$500K+</option>
+      </select>
+      <svg class="hero-select-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <button class="hero-cta" onclick="var v=document.getElementById('funding-amount').value;if(v)window.location.href='#apply';else document.getElementById('funding-amount').focus();">
+      Get Funded
+    </button>
+  </div>
   <p class="hero-trust">
     No credit pull <span class="hero-trust-dot"></span> No tax returns <span class="hero-trust-dot"></span> 3 months bank statements
   </p>
