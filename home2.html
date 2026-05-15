@@ -805,6 +805,10 @@ footer{
 .buck-strip{
   background:var(--teal);
   padding:1.75rem 5vw;
+}
+.buck-strip-inner{
+  max-width:1100px;
+  margin:0 auto;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -848,7 +852,7 @@ footer{
 }
 .buck-strip-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
 @media(max-width:640px){
-  .buck-strip{justify-content:center;text-align:center;}
+  .buck-strip-inner{justify-content:center;text-align:center;}
   .buck-strip-left{flex-direction:column;text-align:center;}
   .buck-strip-cta{width:100%;justify-content:center;}
   .mobile-br{display:block;}
@@ -1108,18 +1112,20 @@ function closeMenu(){document.querySelector('.hamburger').classList.remove('open
 
 <!-- BUCK STRIP -->
 <div class="buck-strip">
-  <div class="buck-strip-left">
-    <div class="buck-strip-avatar">
-      <img src="buck_chat_icon.jpg" alt="Buck" onerror="this.style.display='none';this.parentNode.textContent='B';">
+  <div class="buck-strip-inner">
+    <div class="buck-strip-left">
+      <div class="buck-strip-avatar">
+        <img src="buck_chat_icon.jpg" alt="Buck" onerror="this.style.display='none';this.parentNode.textContent='B';">
+      </div>
+      <div class="buck-strip-text">
+        <strong>Need cash by Friday? Buck's got you.</strong>
+        <span>Three lenders just reviewed your file. <br class="mobile-br">Here's what came back.</span>
+      </div>
     </div>
-    <div class="buck-strip-text">
-      <strong>Need cash by Friday? Buck's got you.</strong>
-      <span>Three lenders just reviewed your file. <br class="mobile-br">Here's what came back.</span>
-    </div>
+    <a href="#buck-chat" class="buck-strip-cta" onclick="openBuckChat();return false;">
+      Talk to Buck's team &rarr;
+    </a>
   </div>
-  <a href="#buck-chat" class="buck-strip-cta" onclick="openBuckChat();return false;">
-    Talk to Buck's team &rarr;
-  </a>
 </div>
 
 <!-- HOW IT WORKS -->
