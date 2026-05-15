@@ -1017,8 +1017,11 @@ footer{
 }
 /* CALC BUCK PROMO */
 .calc-title-row{
-  display:flex;align-items:center;justify-content:center;
-  gap:1.25rem;margin-bottom:0.25rem;
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:1rem;margin-bottom:0.25rem;
+}
+.calc-title-text{
+  flex:0 0 auto;text-align:left;
 }
 .calc-buck-wrap{
   position:relative;flex-shrink:0;
@@ -1045,6 +1048,7 @@ footer{
   border-top-color:var(--teal);border-bottom:none;
 }
 .calc-title-row{overflow:visible;}
+.calc-inner{text-align:center;}
 @media(max-width:640px){
   .calc-title-row{flex-direction:column;gap:0.5rem;}
   .calc-buck-img{width:100px;}
@@ -1338,7 +1342,7 @@ function closeMenu(){document.querySelector('.hamburger').classList.remove('open
         <img src="buck_pose.svg" alt="Buck" class="calc-buck-img">
         <div class="buck-bubble">Funding in 24 hrs!</div>
       </div>
-      <div>
+      <div class="calc-title-text">
         <h2 class="calc-tool-title">Find Your Match</h2>
         <h2 class="section-title">What's your funding goal?</h2>
       </div>
