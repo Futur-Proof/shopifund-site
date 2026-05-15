@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | shopifund</title>
+<meta name="description" content="shopifund's privacy policy explains how we collect, use, and protect your personal information when you use our business funding marketplace.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#144F43;
+  --teal-mid:#1B6B5A;
+  --teal-tint:#E8F2F0;
+  --amber:#F5A020;
+  --amber-dark:#D4880F;
+  --amber-tint:#FEF6E8;
+  --charcoal:#1A2028;
+  --charcoal-mid:#3D4550;
+  --muted:#6B7480;
+  --cream:#F7F9F8;
+  --border:#E2E8E6;
+  --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--charcoal);line-height:1.7;background:var(--white);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;}
+h1,h2,h3,h4{text-wrap:balance;}
+p,li{text-wrap:pretty;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:#144F43;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding:0 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.nav-logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+.nav-wordmark{font-family:'Nunito',sans-serif;font-size:2.6rem;font-weight:900;letter-spacing:-0.03em;line-height:1;}
+.nav-wordmark .w-shopi{color:#F7F9F8;}
+.nav-wordmark .w-fund{color:#F5A020;}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{font-size:0.9rem;font-weight:500;color:rgba(247,249,248,0.7);transition:color 0.2s;}
+.nav-links a:hover{color:#F7F9F8;}
+.nav-cta{
+  background:var(--amber);color:var(--charcoal);
+  font-weight:700;font-size:0.875rem;
+  padding:0.55rem 1.3rem;border-radius:50px;
+  white-space:nowrap;transition:background 0.2s,transform 0.15s;
+  box-shadow:0 2px 12px rgba(245,160,32,0.3);
+}
+.nav-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;cursor:pointer;background:none;border:none;padding:4px;flex-shrink:0;}
+.hamburger span{display:block;width:100%;height:2.5px;background:#F7F9F8;border-radius:2px;transition:transform 0.25s,opacity 0.25s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:#144F43;z-index:199;flex-direction:column;padding:1rem 1.25rem 1.5rem;gap:0.25rem;border-top:1px solid rgba(255,255,255,0.1);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:1.05rem;font-weight:700;color:#F7F9F8;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.08);text-decoration:none;transition:opacity 0.2s;}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu .nav-cta{margin-top:0.5rem;text-align:center;padding:0.75rem;border-radius:50px;border-bottom:none;color:var(--charcoal);}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex !important;}
+  nav{padding:0 1.25rem;}
+  .nav-logo img{width:22px;height:22px;}
+  .nav-wordmark{font-size:1.3rem;}
+}
+
+/* POLICY HERO */
+.policy-hero{
+  background:var(--teal);
+  padding:7rem 5vw 4rem;
+  text-align:center;
+}
+.policy-hero-label{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.8);
+  font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0.35rem 1rem;border-radius:50px;
+  margin-bottom:1.25rem;
+}
+.policy-hero h1{
+  font-family:'Nunito',sans-serif;font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:900;color:#fff;letter-spacing:-0.02em;
+  margin-bottom:0.75rem;
+}
+.policy-hero-meta{
+  font-size:0.88rem;color:rgba(255,255,255,0.6);
+  display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap;
+}
+.policy-hero-meta span{display:flex;align-items:center;gap:0.35rem;}
+
+/* LAYOUT */
+.policy-layout{
+  max-width:1160px;margin:0 auto;
+  padding:4rem 5vw 6rem;
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:4rem;
+  align-items:start;
+}
+@media(max-width:900px){
+  .policy-layout{grid-template-columns:1fr;gap:2rem;}
+}
+
+/* SIDEBAR TOC */
+.policy-toc{
+  position:sticky;top:92px;
+}
+.toc-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:0.75rem;
+}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:0.15rem;}
+.toc-list a{
+  display:block;font-size:0.84rem;font-weight:500;color:var(--muted);
+  padding:0.45rem 0.75rem;border-radius:8px;border-left:2px solid transparent;
+  transition:color 0.18s,background 0.18s,border-color 0.18s;
+  line-height:1.35;
+}
+.toc-list a:hover{color:var(--teal-mid);background:var(--teal-tint);}
+.toc-list a.active{color:var(--teal-mid);background:var(--teal-tint);border-left-color:var(--teal-mid);font-weight:600;}
+.toc-divider{height:1px;background:var(--border);margin:0.75rem 0;}
+.toc-cta{
+  display:block;background:var(--amber);color:var(--charcoal);
+  text-align:center;font-weight:700;font-size:0.84rem;
+  padding:0.7rem 1rem;border-radius:50px;margin-top:1.25rem;
+  box-shadow:0 3px 12px rgba(245,160,32,0.35);
+  transition:background 0.2s,transform 0.15s;
+}
+.toc-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+@media(max-width:900px){
+  .policy-toc{position:relative;top:auto;}
+  .toc-list{display:none;}
+  .toc-label{display:none;}
+  .toc-divider{display:none;}
+}
+
+/* MOBILE TOC ACCORDION */
+.toc-mobile{display:none;margin-bottom:1.5rem;}
+@media(max-width:900px){.toc-mobile{display:block;}}
+.toc-mobile-toggle{
+  width:100%;padding:0.85rem 1.1rem;
+  background:var(--cream);border:1px solid var(--border);border-radius:12px;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:0.88rem;font-weight:600;color:var(--charcoal);
+  cursor:pointer;font-family:'Inter',sans-serif;
+}
+.toc-mobile-list{
+  display:none;flex-direction:column;gap:0.1rem;
+  background:var(--white);border:1px solid var(--border);
+  border-top:none;border-radius:0 0 12px 12px;
+  padding:0.5rem;
+}
+.toc-mobile-list.open{display:flex;}
+.toc-mobile-list a{
+  font-size:0.84rem;font-weight:500;color:var(--muted);
+  padding:0.55rem 0.75rem;border-radius:8px;
+  transition:background 0.15s,color 0.15s;
+}
+.toc-mobile-list a:hover{background:var(--teal-tint);color:var(--teal-mid);}
+
+/* POLICY CONTENT */
+.policy-content{}
+.policy-section{
+  margin-bottom:3.5rem;
+  scroll-margin-top:100px;
+}
+.policy-section:last-child{margin-bottom:0;}
+.section-number{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:0.4rem;
+}
+.policy-section h2{
+  font-family:'Nunito',sans-serif;font-size:clamp(1.3rem,3vw,1.7rem);
+  font-weight:900;color:var(--charcoal);letter-spacing:-0.02em;
+  margin-bottom:1.1rem;padding-bottom:0.75rem;
+  border-bottom:2px solid var(--teal-tint);
+}
+.policy-section h3{
+  font-family:'Nunito',sans-serif;font-size:1.05rem;font-weight:800;
+  color:var(--charcoal);margin:1.6rem 0 0.6rem;
+}
+.policy-section p{
+  font-size:0.9rem;color:var(--charcoal-mid);line-height:1.8;
+  margin-bottom:1rem;
+}
+.policy-section p:last-child{margin-bottom:0;}
+.policy-section ul,.policy-section ol{
+  padding-left:1.4rem;margin-bottom:1rem;
+  display:flex;flex-direction:column;gap:0.4rem;
+}
+.policy-section li{
+  font-size:0.9rem;color:var(--charcoal-mid);line-height:1.75;
+}
+.policy-section strong{color:var(--charcoal);font-weight:600;}
+.policy-section a{color:var(--teal-mid);text-decoration:underline;text-underline-offset:2px;}
+.policy-section a:hover{color:var(--teal);}
+
+/* INFO CALLOUT */
+.policy-callout{
+  background:var(--teal-tint);border-left:3px solid var(--teal-mid);
+  border-radius:0 10px 10px 0;
+  padding:1rem 1.25rem;margin:1.25rem 0;
+}
+.policy-callout p{color:var(--teal);font-size:0.875rem;margin-bottom:0;}
+
+/* AMBER CALLOUT */
+.policy-callout.amber{
+  background:var(--amber-tint);border-left-color:var(--amber);
+}
+.policy-callout.amber p{color:#8A5500;}
+
+/* CONTACT CARD */
+.contact-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;margin-top:1.25rem;
+}
+.contact-card{
+  background:var(--cream);border:1px solid var(--border);border-radius:14px;
+  padding:1.25rem;
+}
+.contact-card-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:0.5rem;
+}
+.contact-card-value{font-size:0.88rem;font-weight:600;color:var(--charcoal);}
+.contact-card-value a{color:var(--teal-mid);}
+
+/* TABLE */
+.policy-table-wrap{overflow-x:auto;margin:1.25rem 0;}
+.policy-table{width:100%;border-collapse:collapse;font-size:0.875rem;}
+.policy-table th{
+  background:var(--teal);color:#fff;
+  font-weight:700;font-size:0.78rem;letter-spacing:0.04em;
+  padding:0.75rem 1rem;text-align:left;
+}
+.policy-table th:first-child{border-radius:8px 0 0 0;}
+.policy-table th:last-child{border-radius:0 8px 0 0;}
+.policy-table td{
+  padding:0.75rem 1rem;border-bottom:1px solid var(--border);
+  color:var(--charcoal-mid);line-height:1.6;vertical-align:top;
+}
+.policy-table tr:last-child td{border-bottom:none;}
+.policy-table tr:nth-child(even) td{background:var(--cream);}
+
+/* FOOTER */
+footer{
+  background:var(--charcoal);color:rgba(255,255,255,0.55);
+  padding:3rem 5vw;
+  display:flex;align-items:flex-start;justify-content:space-between;
+  flex-wrap:wrap;gap:2rem;
+}
+.footer-brand{display:flex;align-items:center;gap:0.65rem;margin-bottom:0.5rem;}
+.footer-wordmark{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:-0.03em;line-height:1;}
+.footer-wordmark .w-shopi{color:#F7F9F8;}
+.footer-wordmark .w-fund{color:#F5A020;}
+.footer-legal{font-size:0.75rem;line-height:1.7;max-width:480px;text-wrap:pretty;}
+.footer-links{display:flex;flex-direction:column;gap:0.5rem;}
+.footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.55);transition:color 0.2s;}
+.footer-links a:hover{color:#fff;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="shopifund_icon_cream.svg" width="44" height="44" alt="shopifund icon" style="display:block;flex-shrink:0;object-fit:contain;">
+    <span class="nav-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#products">Products</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="apply.html" class="nav-cta">Apply Now</a>
+  </div>
+  <button class="hamburger" aria-label="Menu" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#how" onclick="closeMenu()">How it works</a>
+  <a href="index.html#products" onclick="closeMenu()">Products</a>
+  <a href="index.html#faq" onclick="closeMenu()">FAQ</a>
+  <a href="apply.html" class="nav-cta">Apply Now</a>
+</div>
+<script>
+function toggleMenu(btn){btn.classList.toggle('open');document.getElementById('mobile-menu').classList.toggle('open');}
+function closeMenu(){document.querySelector('.hamburger').classList.remove('open');document.getElementById('mobile-menu').classList.remove('open');}
+</script>
+
+<!-- HERO -->
+<div class="policy-hero">
+  <div class="policy-hero-label">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="policy-hero-meta">
+    <span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Effective May 15, 2026
+    </span>
+    <span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Last updated May 15, 2026
+    </span>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="policy-layout">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="policy-toc">
+    <div class="toc-label">On this page</div>
+    <ul class="toc-list" id="toc-list">
+      <li><a href="#who-we-are">1. Who We Are</a></li>
+      <li><a href="#information-we-collect">2. Information We Collect</a></li>
+      <li><a href="#how-we-use">3. How We Use Your Information</a></li>
+      <li><a href="#how-we-share">4. How We Share Your Information</a></li>
+      <li><a href="#your-choices">5. Your Privacy Choices</a></li>
+      <li><a href="#cookies">6. Cookies &amp; Tracking</a></li>
+      <li><a href="#security">7. Information Security</a></li>
+      <li><a href="#retention">8. Data Retention</a></li>
+      <li><a href="#third-party">9. Third-Party Services</a></li>
+      <li><a href="#children">10. Children's Privacy</a></li>
+      <li><a href="#california">11. California Privacy Rights</a></li>
+      <li><a href="#changes">12. Changes to This Policy</a></li>
+      <li><a href="#contact">13. Contact Us</a></li>
+    </ul>
+    <div class="toc-divider"></div>
+    <a href="apply.html" class="toc-cta">Get Funded by Friday</a>
+  </aside>
+
+  <!-- MOBILE TOC -->
+  <div class="toc-mobile">
+    <button class="toc-mobile-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('open')?'rotate(180deg)':'';">
+      Jump to section
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition:transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="toc-mobile-list">
+      <a href="#who-we-are">1. Who We Are</a>
+      <a href="#information-we-collect">2. Information We Collect</a>
+      <a href="#how-we-use">3. How We Use Your Information</a>
+      <a href="#how-we-share">4. How We Share Your Information</a>
+      <a href="#your-choices">5. Your Privacy Choices</a>
+      <a href="#cookies">6. Cookies &amp; Tracking</a>
+      <a href="#security">7. Information Security</a>
+      <a href="#retention">8. Data Retention</a>
+      <a href="#third-party">9. Third-Party Services</a>
+      <a href="#children">10. Children's Privacy</a>
+      <a href="#california">11. California Privacy Rights</a>
+      <a href="#changes">12. Changes to This Policy</a>
+      <a href="#contact">13. Contact Us</a>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <main class="policy-content">
+
+    <div class="policy-callout">
+      <p><strong>Plain-language summary:</strong> shopifund is a matching marketplace, not a lender. We collect your business information to connect you with funding partners. We do not sell your personal information. We share your data only with lenders you are matched with and the service providers that help us operate.</p>
+    </div>
+
+    <!-- 1 -->
+    <section class="policy-section" id="who-we-are">
+      <div class="section-number">Section 01</div>
+      <h2>Who We Are</h2>
+      <p>shopifund ("shopifund," "we," "our," or "us") operates <strong>shopifund.com</strong> and any related applications, tools, or services we provide (collectively, the "Services"). We are a business funding marketplace that connects small and medium-sized businesses ("you" or "your business") with third-party lending partners.</p>
+      <p>shopifund is not a lender, bank, credit union, or financial institution. We do not make credit decisions and do not fund loans. All lending and credit decisions are made by independent third-party lending partners in our network.</p>
+      <p>This Privacy Policy explains what information we collect when you use our Services, how we use and share that information, and the choices you have regarding your information. By using our Services, you agree to the practices described in this policy.</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="policy-section" id="information-we-collect">
+      <div class="section-number">Section 02</div>
+      <h2>Information We Collect</h2>
+
+      <h3>Information You Provide to Us</h3>
+      <p>When you use our application wizard, contact us, or otherwise interact with our Services, you may provide:</p>
+      <ul>
+        <li><strong>Business information:</strong> business name, entity type, industry, ZIP code, date of business formation, and monthly revenue</li>
+        <li><strong>Funding request details:</strong> requested loan amount, funding purpose, and desired timeline</li>
+        <li><strong>Personal contact information:</strong> your name, email address, and phone number</li>
+        <li><strong>Financial indicators:</strong> estimated credit score range and business bank account information (only where you elect to provide it through our optional bank connection feature)</li>
+        <li><strong>Communications:</strong> any messages, inquiries, or feedback you send to us</li>
+      </ul>
+
+      <h3>Information Collected Automatically</h3>
+      <p>When you visit shopifund.com, our servers and third-party analytics partners automatically collect certain technical information, including:</p>
+      <ul>
+        <li>IP address and approximate geographic location (city/state level)</li>
+        <li>Browser type, operating system, and device type</li>
+        <li>Pages visited, time spent on each page, and click paths</li>
+        <li>Referring URLs and search terms that led you to our site</li>
+        <li>Form interaction data (which steps were completed, where users drop off)</li>
+      </ul>
+
+      <h3>Information from Third Parties</h3>
+      <p>We may receive information about you from third parties in limited circumstances, such as:</p>
+      <ul>
+        <li>Analytics and advertising partners who provide aggregated audience data</li>
+        <li>Publicly available business directories or databases used to verify business information</li>
+        <li>Referring partners or affiliates who directed you to shopifund</li>
+      </ul>
+
+      <div class="policy-callout">
+        <p>We do not purchase lists of personal data from data brokers or third-party consumer databases. We do not conduct hard credit inquiries. Any soft inquiry or credit-range estimation is based solely on information you self-report.</p>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="policy-section" id="how-we-use">
+      <div class="section-number">Section 03</div>
+      <h2>How We Use Your Information</h2>
+      <p>We use the information we collect for the following purposes:</p>
+
+      <div class="policy-table-wrap">
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th>Purpose</th>
+              <th>Information Used</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Match you with lenders</strong> — identify lending partners whose criteria match your business profile and funding needs</td>
+              <td>Business info, revenue, credit range, funding amount, timeline, entity type, industry</td>
+            </tr>
+            <tr>
+              <td><strong>Deliver your matches</strong> — send match results, lender introductions, and follow-up communications</td>
+              <td>Name, email address, phone number</td>
+            </tr>
+            <tr>
+              <td><strong>Improve our Services</strong> — analyze form completion patterns, identify drop-off points, and improve the matching experience</td>
+              <td>Form interaction data, analytics data</td>
+            </tr>
+            <tr>
+              <td><strong>Communicate with you</strong> — respond to your inquiries, send service-related notices, and provide updates on your match status</td>
+              <td>Name, email address, phone number</td>
+            </tr>
+            <tr>
+              <td><strong>Marketing</strong> — send promotional content about our Services or lending products, with your consent where required by law</td>
+              <td>Email address, funding interests</td>
+            </tr>
+            <tr>
+              <td><strong>Fraud prevention and security</strong> — detect and prevent fraudulent submissions or misuse of our Services</td>
+              <td>IP address, device data, form interaction patterns</td>
+            </tr>
+            <tr>
+              <td><strong>Legal compliance</strong> — comply with applicable laws, regulations, and lawful requests from authorities</td>
+              <td>Any information required by law</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>We do not use your information to make automated credit decisions. All credit evaluations are performed by our independent lending partners under their own privacy policies and underwriting standards.</p>
+    </section>
+
+    <!-- 4 -->
+    <section class="policy-section" id="how-we-share">
+      <div class="section-number">Section 04</div>
+      <h2>How We Share Your Information</h2>
+      <p>shopifund shares your information in the following ways. We do not sell your personal information to third parties for their own marketing purposes.</p>
+
+      <h3>Lending Partners</h3>
+      <p>When you complete our application and request matches, we share your business and contact information with the lending partners we match you with. Each lending partner operates under its own privacy policy. Once shared, your information is subject to that lender's terms. We encourage you to review each lender's privacy policy before proceeding with an application.</p>
+
+      <h3>Service Providers</h3>
+      <p>We work with third-party vendors who help us operate our platform, including:</p>
+      <ul>
+        <li>Cloud hosting and infrastructure providers</li>
+        <li>Email delivery and CRM platforms</li>
+        <li>Analytics and product analytics tools (e.g., session recording, funnel analysis)</li>
+        <li>Customer support software</li>
+        <li>Bank account verification providers (where used)</li>
+      </ul>
+      <p>These providers access your information only to perform services on our behalf and are contractually prohibited from using it for other purposes.</p>
+
+      <h3>Referring Partners and Affiliates</h3>
+      <p>If you arrived at shopifund through a referring partner or affiliate, we may share aggregated, non-identifying performance data (such as whether a referral converted) with that partner. We do not share your personal information with referring partners unless you explicitly consent.</p>
+
+      <h3>Legal Requirements and Business Transfers</h3>
+      <p>We may disclose your information if required to do so by law, regulation, or valid legal process, or if we believe disclosure is necessary to protect the rights, property, or safety of shopifund, our users, or the public. In the event of a merger, acquisition, or sale of all or a portion of our business, your information may be transferred to the acquiring entity.</p>
+
+      <div class="policy-callout amber">
+        <p><strong>We do not sell your personal information.</strong> Sharing your data with matched lenders for the purpose of fulfilling your loan inquiry is not a "sale" under applicable privacy laws, including the California Consumer Privacy Act.</p>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="policy-section" id="your-choices">
+      <div class="section-number">Section 05</div>
+      <h2>Your Privacy Choices</h2>
+
+      <h3>Marketing Communications</h3>
+      <p>If you receive promotional emails from us, you may opt out at any time by clicking "unsubscribe" in any email or by contacting us at <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a>. Please allow up to 10 business days for your request to take effect. Note that even after opting out of marketing, you may still receive transactional emails related to your loan inquiry or active matches.</p>
+
+      <h3>Access and Correction</h3>
+      <p>You may request access to the personal information we hold about you, or ask us to correct inaccuracies, by contacting us at <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a>. We will respond within 30 days. Note that certain information may be retained as required by law or legitimate business purposes.</p>
+
+      <h3>Deletion</h3>
+      <p>You may request that we delete the personal information we hold about you. We will honor such requests to the extent permitted by law. Certain records may need to be retained for legal compliance, fraud prevention, or dispute resolution purposes.</p>
+
+      <h3>Do Not Track</h3>
+      <p>Some browsers transmit "Do Not Track" signals to websites. Our site does not currently respond to Do Not Track signals. You may use browser settings or third-party tools to limit tracking technologies on our site.</p>
+    </section>
+
+    <!-- 6 -->
+    <section class="policy-section" id="cookies">
+      <div class="section-number">Section 06</div>
+      <h2>Cookies &amp; Tracking Technologies</h2>
+      <p>We use cookies and similar tracking technologies to operate our Services, remember your preferences, and analyze usage patterns. The types of cookies we use include:</p>
+
+      <h3>Essential Cookies</h3>
+      <p>Required for our site to function. These enable session state, form progress retention, and security. They cannot be disabled without breaking core functionality.</p>
+
+      <h3>Analytics Cookies</h3>
+      <p>Used to understand how visitors use our site — which pages they visit, how long they stay, and where they exit. This data is aggregated and used to improve our Services. We use tools such as Google Analytics for this purpose.</p>
+
+      <h3>Marketing and Retargeting Cookies</h3>
+      <p>Used to show you relevant advertisements on other platforms after you visit shopifund.com. These are set by third-party advertising platforms. You can opt out of interest-based advertising through the <a href="https://optout.aboutads.info/" target="_blank" rel="noopener">Digital Advertising Alliance opt-out tool</a> or your browser's cookie settings.</p>
+
+      <p>You may configure your browser to refuse all cookies or to alert you when cookies are being set. Note that disabling cookies may affect the functionality of some features of our Services.</p>
+    </section>
+
+    <!-- 7 -->
+    <section class="policy-section" id="security">
+      <div class="section-number">Section 07</div>
+      <h2>Information Security</h2>
+      <p>We implement industry-standard technical and organizational measures to protect your personal information against unauthorized access, disclosure, alteration, and destruction. These measures include:</p>
+      <ul>
+        <li>TLS/SSL encryption for all data transmitted between your browser and our servers</li>
+        <li>Encryption of sensitive data at rest</li>
+        <li>Access controls limiting employee access to personal data on a need-to-know basis</li>
+        <li>Regular security assessments of our infrastructure and third-party vendors</li>
+      </ul>
+      <p>No method of transmission over the internet or electronic storage is 100% secure. While we work hard to protect your information, we cannot guarantee absolute security. If you believe your information has been compromised, please contact us immediately at <a href="mailto:security@shopifund.com">security@shopifund.com</a>.</p>
+    </section>
+
+    <!-- 8 -->
+    <section class="policy-section" id="retention">
+      <div class="section-number">Section 08</div>
+      <h2>Data Retention</h2>
+      <p>We retain your personal information for as long as necessary to fulfill the purposes described in this policy, unless a longer retention period is required or permitted by law. Specifically:</p>
+      <ul>
+        <li><strong>Active inquiries:</strong> retained for the duration of your match window and any follow-on lending process</li>
+        <li><strong>Completed or closed inquiries:</strong> retained for up to 3 years for fraud prevention, legal compliance, and service improvement</li>
+        <li><strong>Marketing data:</strong> retained until you opt out, after which we retain only a suppression record to honor your preference</li>
+        <li><strong>Analytics data:</strong> retained in aggregated, non-identifying form indefinitely</li>
+      </ul>
+      <p>When your information is no longer needed, we securely delete or anonymize it.</p>
+    </section>
+
+    <!-- 9 -->
+    <section class="policy-section" id="third-party">
+      <div class="section-number">Section 09</div>
+      <h2>Third-Party Services</h2>
+      <p>Our Services contain links to third-party websites, and our matching process connects you to third-party lenders. This Privacy Policy applies only to information collected and processed by shopifund. We are not responsible for the privacy practices of:</p>
+      <ul>
+        <li>Lending partners and financial institutions you are matched with</li>
+        <li>Websites you navigate to from links on our platform</li>
+        <li>Referring or affiliate partners</li>
+      </ul>
+      <p>We encourage you to review the privacy policies of any third party before submitting your personal information. Each lender in our network operates independently and is responsible for its own data practices.</p>
+    </section>
+
+    <!-- 10 -->
+    <section class="policy-section" id="children">
+      <div class="section-number">Section 10</div>
+      <h2>Children's Privacy</h2>
+      <p>Our Services are intended solely for use by businesses and their authorized representatives who are 18 years of age or older. We do not knowingly collect personal information from individuals under the age of 18. If we learn that we have inadvertently collected information from a minor, we will promptly delete it. If you believe we have collected information from a minor, please contact us at <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a>.</p>
+    </section>
+
+    <!-- 11 -->
+    <section class="policy-section" id="california">
+      <div class="section-number">Section 11</div>
+      <h2>California Privacy Rights</h2>
+      <p>If you are a California resident, the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA) grant you specific rights regarding your personal information.</p>
+
+      <h3>Your California Rights</h3>
+      <ul>
+        <li><strong>Right to Know:</strong> You may request that we disclose the categories and specific pieces of personal information we have collected about you, the sources, our business purposes, and the third parties with whom we share it.</li>
+        <li><strong>Right to Delete:</strong> You may request deletion of your personal information, subject to certain exceptions.</li>
+        <li><strong>Right to Correct:</strong> You may request correction of inaccurate personal information we hold about you.</li>
+        <li><strong>Right to Opt Out of Sale or Sharing:</strong> shopifund does not sell your personal information. We share data with matched lenders as a core function of our service, which is not considered a "sale" under CCPA.</li>
+        <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of your CCPA rights.</li>
+        <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> Where we process sensitive personal information (such as financial account data used in bank verification), you may request that we limit its use to the purposes disclosed in this policy.</li>
+      </ul>
+
+      <h3>How to Exercise Your Rights</h3>
+      <p>To submit a California privacy rights request, contact us at <a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a> with the subject line "California Privacy Request." We will respond within 45 days. You may designate an authorized agent to submit requests on your behalf; we may require verification of the agent's authority.</p>
+
+      <div class="policy-callout">
+        <p>California residents who have questions about our data practices or wish to exercise any of the rights described above may also contact us by mail at the address listed in Section 13.</p>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section class="policy-section" id="changes">
+      <div class="section-number">Section 12</div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or other factors. When we make material changes, we will update the "Last updated" date at the top of this page and, where appropriate, notify you by email or by displaying a notice on our website.</p>
+      <p>Your continued use of our Services after any changes to this Privacy Policy constitutes your acceptance of the revised policy. We encourage you to review this page periodically to stay informed about how we protect your information.</p>
+    </section>
+
+    <!-- 13 -->
+    <section class="policy-section" id="contact">
+      <div class="section-number">Section 13</div>
+      <h2>Contact Us</h2>
+      <p>If you have questions, concerns, or requests related to this Privacy Policy or our data practices, please reach out through any of the following channels. We aim to respond within 5 business days.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value"><a href="mailto:privacy@shopifund.com">privacy@shopifund.com</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-label">Security Issues</div>
+          <div class="contact-card-value"><a href="mailto:security@shopifund.com">security@shopifund.com</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-label">Mailing Address</div>
+          <div class="contact-card-value">shopifund Inc.<br>Privacy Office<br>Miami, FL 33101</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- /policy-layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">
+      <img src="shopifund_icon_cream.svg" width="36" height="36" alt="shopifund icon" style="display:block;flex-shrink:0;object-fit:contain;">
+      <span class="footer-wordmark"><span class="w-shopi">shopi</span><span class="w-fund">fund</span></span>
+    </div>
+    <p class="footer-legal">shopifund is a business funding marketplace that connects small businesses with alternative lenders. shopifund is not a lender. All credit decisions are made by third-party lending partners. Funding amounts and terms vary by lender, business profile, and qualification criteria.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#products">Products</a>
+    <a href="#">For lenders</a>
+    <a href="privacy.html" style="color:#F7F9F8;font-weight:600;">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+  </div>
+</footer>
+
+<script>
+// Sidebar TOC active state on scroll
+(function(){
+  var links = document.querySelectorAll('#toc-list a');
+  var sections = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el) sections.push({el:el, a:a});
+  });
+  function onScroll(){
+    var scrollY = window.scrollY + 120;
+    var active = null;
+    sections.forEach(function(s){
+      if(s.el.offsetTop <= scrollY) active = s;
+    });
+    links.forEach(function(a){a.classList.remove('active');});
+    if(active) active.a.classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
