@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shopifund — Business Funding That Works as Hard as You Do</title>
+<meta name="description" content="shopifund matches small businesses with the right lender in 24 hours. Bank statements only. No tax returns. No credit pulls. Funded by Friday.">
+<meta name="keywords" content="small business loan, business funding, working capital, MCA, merchant cash advance, business line of credit, fast business loan, no tax return business loan">
+<meta property="og:title" content="shopifund — Funded by Friday">
+<meta property="og:description" content="One match. One call. One offer. Bank-statement underwriting. Decisions in 24 hours.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #1B6B5A;
+  --teal-dark: #144F43;
+  --teal-mid: #2A8A72;
+  --teal-tint: #E8F2F0;
+  --amber: #F5A020;
+  --amber-dark: #D4880F;
+  --amber-tint: #FEF6E8;
+  --charcoal: #1A2028;
+  --charcoal-mid: #3D4550;
+  --muted: #6B7480;
+  --cream: #F7F9F8;
+  --border: #E2E8E6;
+  --white: #FFFFFF;
+  --red: #C0392B;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--charcoal);line-height:1.6;background:var(--white);}
+a{color:inherit;text-decoration:none;}
+img{display:block;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(255,255,255,0.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(12px);
+  padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:68px;
+}
+.nav-logo{display:flex;align-items:center;gap:0.6rem;}
+.nav-logo img{height:36px;}
+.nav-wordmark{font-family:'Nunito',sans-serif;font-size:1.35rem;font-weight:900;color:var(--teal);letter-spacing:-0.02em;}
+.nav-links{display:flex;align-items:center;gap:0.25rem;}
+.nav-links a{
+  font-size:0.85rem;font-weight:600;color:var(--muted);
+  padding:0.45rem 0.9rem;border-radius:6px;
+  transition:color 0.15s,background 0.15s;
+}
+.nav-links a:hover{color:var(--teal);background:var(--teal-tint);}
+.nav-cta{
+  background:var(--amber);color:var(--white);
+  font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:800;
+  padding:0.6rem 1.4rem;border-radius:8px;
+  border:none;cursor:pointer;
+  transition:background 0.15s,transform 0.1s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;}
+.nav-mobile-toggle span{display:block;width:22px;height:2px;background:var(--charcoal);margin:4px 0;border-radius:2px;transition:all 0.2s;}
+
+/* ── HERO ── */
+.hero{
+  background:var(--teal);
+  padding:120px 2rem 80px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:-200px;right:-200px;
+  width:600px;height:600px;border-radius:50%;
+  background:rgba(245,160,32,0.07);
+}
+.hero::after{
+  content:'';position:absolute;
+  bottom:-100px;left:-100px;
+  width:400px;height:400px;border-radius:50%;
+  background:rgba(255,255,255,0.03);
+}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:2;}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center;}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(245,160,32,0.15);border:1px solid rgba(245,160,32,0.3);
+  padding:0.35rem 0.85rem;border-radius:100px;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:1.5rem;
+}
+.hero-eyebrow::before{content:'';width:6px;height:6px;background:var(--amber);border-radius:50%;}
+.hero h1{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(2.6rem,5.5vw,4.2rem);
+  font-weight:900;color:var(--white);
+  line-height:1.08;letter-spacing:-0.02em;
+  margin-bottom:1.25rem;
+}
+.hero h1 em{color:var(--amber);font-style:normal;}
+.hero-sub{
+  font-size:clamp(1rem,1.8vw,1.15rem);
+  color:rgba(255,255,255,0.7);
+  max-width:520px;line-height:1.75;
+  margin-bottom:2rem;
+}
+.hero-trust{
+  display:flex;flex-wrap:wrap;gap:0.5rem 1.25rem;
+  font-size:0.8rem;color:rgba(255,255,255,0.5);
+  margin-bottom:2.5rem;
+}
+.hero-trust span{display:flex;align-items:center;gap:0.4rem;}
+.hero-trust span::before{content:'';width:5px;height:5px;background:var(--amber);border-radius:50%;}
+.hero-stats{
+  display:flex;gap:0;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px;overflow:hidden;
+}
+.hero-stat{
+  flex:1;padding:1.1rem 1rem;text-align:center;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+.hero-stat:last-child{border-right:none;}
+.stat-value{
+  font-family:'Nunito',sans-serif;
+  font-size:1.4rem;font-weight:900;color:var(--amber);
+  line-height:1;margin-bottom:0.2rem;
+}
+.stat-label{font-size:0.65rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;}
+
+/* HERO FORM CARD */
+.hero-form-card{
+  background:var(--white);border-radius:20px;
+  padding:2rem;box-shadow:0 32px 80px rgba(0,0,0,0.25);
+  position:relative;
+}
+.hero-form-card::before{
+  content:'';position:absolute;top:-3px;left:24px;right:24px;height:3px;
+  background:var(--amber);border-radius:3px 3px 0 0;
+}
+.form-eyebrow{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--amber);margin-bottom:0.35rem;
+}
+.form-title{
+  font-family:'Nunito',sans-serif;font-size:1.2rem;font-weight:800;
+  color:var(--charcoal);margin-bottom:1.25rem;line-height:1.25;
+}
+.form-group{margin-bottom:1rem;}
+.form-label{font-size:0.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.35rem;display:block;}
+.form-select,.form-input{
+  width:100%;padding:0.75rem 1rem;
+  border:1.5px solid var(--border);border-radius:8px;
+  font-family:'Inter',sans-serif;font-size:0.9rem;color:var(--charcoal);
+  background:var(--white);appearance:none;
+  transition:border-color 0.15s;cursor:pointer;
+}
+.form-select:focus,.form-input:focus{outline:none;border-color:var(--teal);}
+.form-select-wrap{position:relative;}
+.form-select-wrap::after{
+  content:'';position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+  width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:5px solid var(--muted);pointer-events:none;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.form-submit{
+  width:100%;padding:1rem;border:none;border-radius:10px;
+  background:var(--amber);color:var(--white);
+  font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;
+  cursor:pointer;transition:background 0.15s,transform 0.1s;
+  letter-spacing:0.01em;margin-top:0.25rem;
+}
+.form-submit:hover{background:var(--amber-dark);transform:translateY(-1px);}
+.form-note{
+  text-align:center;font-size:0.7rem;color:var(--muted);
+  margin-top:0.85rem;line-height:1.5;
+}
+.form-note strong{color:var(--teal);}
+
+/* ── TRUST BAR ── */
+.trust-bar{
+  background:var(--charcoal);padding:1rem 2rem;
+}
+.trust-bar-inner{
+  max-width:1080px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:2rem;flex-wrap:wrap;
+}
+.trust-item{
+  display:flex;align-items:center;gap:0.5rem;
+  font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.55);
+}
+.trust-item .ti-icon{font-size:1rem;}
+.trust-sep{color:rgba(255,255,255,0.15);font-size:0.8rem;}
+
+/* ── SECTION BASE ── */
+.section{padding:5rem 2rem;}
+.section-inner{max-width:1080px;margin:0 auto;}
+.section-label{font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:0.4rem;}
+.section-heading{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:800;color:var(--charcoal);
+  line-height:1.15;margin-bottom:0.6rem;letter-spacing:-0.01em;
+}
+.section-heading em{color:var(--teal);font-style:normal;}
+.section-sub{font-size:0.95rem;color:var(--muted);max-width:580px;line-height:1.75;}
+
+/* ── PROBLEM SECTION ── */
+.problem{background:var(--cream);}
+.pain-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1rem;margin:2.5rem 0;}
+.pain-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:12px;padding:1.5rem;
+}
+.pain-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:rgba(192,57,43,0.08);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;
+}
+.pain-title{font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;color:var(--charcoal);margin-bottom:0.4rem;}
+.pain-body{font-size:0.82rem;color:var(--muted);line-height:1.65;}
+.pain-tag{
+  display:inline-block;margin-top:0.75rem;
+  font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0.25rem 0.6rem;border-radius:4px;
+  background:rgba(192,57,43,0.08);color:var(--red);
+}
+.problem-resolution{
+  background:var(--teal);border-radius:16px;padding:2rem 2.5rem;
+  display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
+}
+.resolution-text{
+  font-family:'Nunito',sans-serif;font-size:1.2rem;font-weight:700;
+  color:var(--white);line-height:1.5;
+}
+.resolution-text em{color:var(--amber);font-style:normal;}
+.resolution-cta{
+  background:var(--amber);color:var(--white);
+  font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;
+  padding:0.85rem 1.75rem;border-radius:10px;border:none;
+  cursor:pointer;white-space:nowrap;
+  transition:background 0.15s,transform 0.1s;
+}
+.resolution-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+
+/* ── HOW IT WORKS ── */
+.how{background:var(--white);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;margin-top:3rem;position:relative;}
+.steps::before{
+  content:'';position:absolute;
+  top:28px;left:calc(16.6% + 28px);right:calc(16.6% + 28px);
+  height:2px;background:linear-gradient(to right,var(--teal),var(--amber));
+  display:none;
+}
+.step{padding:0 1.5rem;text-align:center;position:relative;}
+.step-num{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--teal);color:var(--white);
+  font-family:'Nunito',sans-serif;font-size:1.2rem;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.25rem;position:relative;z-index:1;
+}
+.step-connector{
+  display:none;position:absolute;top:28px;left:calc(50% + 28px);right:-50%;
+  height:2px;background:linear-gradient(to right,var(--teal),var(--amber));
+}
+.step-title{font-family:'Nunito',sans-serif;font-size:1.05rem;font-weight:800;color:var(--charcoal);margin-bottom:0.4rem;}
+.step-body{font-size:0.82rem;color:var(--muted);line-height:1.65;}
+.step-badge{
+  display:inline-block;margin-top:0.75rem;
+  font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0.25rem 0.65rem;border-radius:4px;
+  background:var(--teal-tint);color:var(--teal);
+}
+
+/* Friday banner */
+.friday-banner{
+  margin-top:3rem;background:var(--amber);border-radius:16px;
+  padding:2rem 2.5rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;
+}
+.friday-text{
+  font-family:'Nunito',sans-serif;font-size:clamp(1.3rem,2.5vw,1.8rem);
+  font-weight:900;color:var(--white);line-height:1.25;
+}
+.friday-sub{font-size:0.85rem;color:rgba(255,255,255,0.75);margin-top:0.3rem;}
+.friday-cta{
+  margin-left:auto;background:var(--white);
+  color:var(--amber);font-family:'Nunito',sans-serif;
+  font-size:0.9rem;font-weight:800;
+  padding:0.85rem 1.75rem;border-radius:10px;
+  border:none;cursor:pointer;white-space:nowrap;
+  transition:transform 0.1s,box-shadow 0.15s;
+  box-shadow:0 4px 16px rgba(0,0,0,0.12);
+}
+.friday-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.16);}
+
+/* ── WHY SHOPIFUND ── */
+.why{background:var(--cream);}
+.compare-table{
+  width:100%;border-collapse:collapse;
+  background:var(--white);border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;margin-top:2.5rem;
+}
+.compare-table th{
+  text-align:left;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--muted);padding:0.85rem 1.25rem;background:var(--cream);
+  border-bottom:1px solid var(--border);font-weight:700;
+}
+.compare-table th:first-child{min-width:200px;}
+.compare-table td{
+  padding:0.9rem 1.25rem;border-bottom:1px solid var(--border);
+  font-size:0.84rem;vertical-align:middle;
+}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table tr.shopifund-row td{background:var(--teal-tint);}
+.compare-table tr.shopifund-row .feature-name{color:var(--teal);font-weight:800;}
+.feature-name{font-weight:700;color:var(--charcoal);}
+.feature-sub{font-size:0.7rem;color:var(--muted);margin-top:0.1rem;}
+.yes{color:var(--teal);font-weight:700;}
+.no{color:var(--red);font-weight:700;}
+.partial{color:var(--amber-dark);font-weight:600;}
+
+/* ── LOAN PRODUCTS ── */
+.products{background:var(--white);}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2.5rem;}
+.product-card{
+  border:1.5px solid var(--border);border-radius:14px;padding:1.5rem;
+  transition:border-color 0.2s,box-shadow 0.2s;cursor:default;
+}
+.product-card:hover{border-color:var(--teal);box-shadow:0 8px 30px rgba(27,107,90,0.1);}
+.product-icon{
+  width:44px;height:44px;border-radius:12px;background:var(--teal-tint);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;
+}
+.product-name{font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;color:var(--charcoal);margin-bottom:0.3rem;}
+.product-range{font-size:0.88rem;font-weight:700;color:var(--teal);margin-bottom:0.5rem;}
+.product-desc{font-size:0.79rem;color:var(--muted);line-height:1.6;}
+.product-speed{
+  margin-top:0.85rem;
+  font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0.25rem 0.6rem;border-radius:4px;
+  background:var(--amber-tint);color:var(--amber-dark);
+  display:inline-block;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--teal);}
+.testimonials .section-label{color:var(--amber);}
+.testimonials .section-heading{color:var(--white);}
+.testimonials .section-sub{color:rgba(255,255,255,0.6);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:2.5rem;}
+.testi-card{
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:14px;padding:1.75rem;
+}
+.testi-stars{color:var(--amber);font-size:0.85rem;margin-bottom:1rem;letter-spacing:0.1em;}
+.testi-quote{
+  font-size:0.9rem;color:rgba(255,255,255,0.85);
+  line-height:1.7;margin-bottom:1.25rem;font-style:italic;
+}
+.testi-author{display:flex;align-items:center;gap:0.75rem;}
+.testi-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(245,160,32,0.2);border:2px solid var(--amber);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:800;color:var(--amber);
+  flex-shrink:0;
+}
+.testi-name{font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:800;color:var(--white);}
+.testi-biz{font-size:0.72rem;color:rgba(255,255,255,0.45);}
+.testi-amount{
+  margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);
+  font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;
+}
+.testi-amount span{color:var(--amber);font-weight:700;}
+
+/* ── FAQ ── */
+.faq{background:var(--cream);}
+.faq-list{margin-top:2.5rem;max-width:760px;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item:first-child{border-top:1px solid var(--border);}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;
+  padding:1.15rem 0;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  font-family:'Nunito',sans-serif;font-size:0.95rem;font-weight:700;
+  color:var(--charcoal);transition:color 0.15s;
+}
+.faq-q:hover{color:var(--teal);}
+.faq-icon{
+  flex-shrink:0;width:24px;height:24px;border-radius:50%;
+  background:var(--teal-tint);display:flex;align-items:center;justify-content:center;
+  font-size:0.9rem;color:var(--teal);font-weight:700;
+  transition:transform 0.2s,background 0.15s;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--teal);color:var(--white);}
+.faq-a{
+  display:none;padding:0 0 1.15rem;
+  font-size:0.85rem;color:var(--muted);line-height:1.75;
+  max-width:620px;
+}
+.faq-item.open .faq-a{display:block;}
+
+/* ── BOTTOM CTA ── */
+.bottom-cta{
+  background:var(--charcoal);padding:5rem 2rem;text-align:center;
+}
+.bottom-cta-inner{max-width:680px;margin:0 auto;}
+.bottom-cta h2{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:900;color:var(--white);
+  line-height:1.15;letter-spacing:-0.02em;margin-bottom:1rem;
+}
+.bottom-cta h2 em{color:var(--amber);font-style:normal;}
+.bottom-cta p{font-size:1rem;color:rgba(255,255,255,0.5);margin-bottom:2rem;line-height:1.7;}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--amber);color:var(--white);
+  font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;
+  padding:1rem 2.5rem;border-radius:10px;border:none;cursor:pointer;
+  transition:background 0.15s,transform 0.1s;
+}
+.btn-primary:hover{background:var(--amber-dark);transform:translateY(-1px);}
+.btn-outline{
+  background:transparent;color:rgba(255,255,255,0.6);
+  font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;
+  padding:1rem 2.5rem;border-radius:10px;
+  border:1.5px solid rgba(255,255,255,0.2);cursor:pointer;
+  transition:border-color 0.15s,color 0.15s;
+}
+.btn-outline:hover{border-color:rgba(255,255,255,0.5);color:var(--white);}
+
+/* ── FOOTER ── */
+footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,0.06);padding:3rem 2rem 2rem;}
+.footer-inner{max-width:1080px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
+.footer-brand .wordmark{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;color:var(--white);margin-bottom:0.5rem;}
+.footer-brand .wordmark span{color:var(--amber);}
+.footer-brand p{font-size:0.8rem;color:rgba(255,255,255,0.35);line-height:1.65;max-width:240px;}
+.footer-col h4{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1rem;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:0.5rem;}
+.footer-col ul li a{font-size:0.83rem;color:rgba(255,255,255,0.5);transition:color 0.15s;}
+.footer-col ul li a:hover{color:var(--white);}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;
+  padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);
+}
+.footer-bottom p{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+.footer-bottom a{color:var(--teal-mid);}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.footer-legal a{font-size:0.73rem;color:rgba(255,255,255,0.3);transition:color 0.15s;}
+.footer-legal a:hover{color:rgba(255,255,255,0.6);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:3rem;}
+  .hero{padding:100px 2rem 60px;}
+  .hero-sub{max-width:100%;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:680px){
+  nav{padding:0 1rem;}
+  .nav-links{display:none;}
+  .nav-mobile-toggle{display:block;}
+  .hero{padding:88px 1.25rem 50px;}
+  .hero-stats{flex-wrap:wrap;}
+  .hero-stat{min-width:50%;}
+  .section{padding:3.5rem 1.25rem;}
+  .problem-resolution{grid-template-columns:1fr;}
+  .resolution-cta{width:100%;text-align:center;}
+  .friday-cta{width:100%;margin-left:0;text-align:center;}
+  .compare-table{font-size:0.78rem;}
+  .compare-table th,.compare-table td{padding:0.75rem 0.85rem;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .cta-buttons{flex-direction:column;}
+  .btn-primary,.btn-outline{width:100%;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-wordmark">shopifund</div>
+  </a>
+  <div class="nav-links">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#products">Loan Types</a>
+    <a href="#why-shopifund">Why Us</a>
+    <a href="#faq">FAQ</a>
+    <a href="#">For Lenders</a>
+  </div>
+  <button class="nav-cta" onclick="scrollToForm()">Apply Now</button>
+  <button class="nav-mobile-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Funded by Friday. No exceptions.</div>
+        <h1>Your business runs on capital.<br>We make sure it <em>never</em> runs out.</h1>
+        <p class="hero-sub">shopifund matches small businesses with the right lender in 24 hours using real bank data, not tax returns. One match. One call. One offer. No phone circus.</p>
+        <div class="hero-trust">
+          <span>Bank statements only</span>
+          <span>No credit score pulls</span>
+          <span>5-minute application</span>
+          <span>No tax returns required</span>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-value">$500M+</div>
+            <div class="stat-label">Funded</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value">2,400+</div>
+            <div class="stat-label">Businesses</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value">24 hrs</div>
+            <div class="stat-label">Avg Decision</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value">$50K–$1M</div>
+            <div class="stat-label">Loan Range</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-form-card" id="apply-form">
+        <div class="form-eyebrow">Free. No obligation. No credit pull.</div>
+        <div class="form-title">See your matched offers in 60 seconds</div>
+
+        <div class="form-group">
+          <label class="form-label">Monthly Revenue</label>
+          <div class="form-select-wrap">
+            <select class="form-select">
+              <option value="">Select monthly revenue</option>
+              <option>Under $25,000</option>
+              <option>$25,000 — $50,000</option>
+              <option>$50,000 — $100,000</option>
+              <option>$100,000 — $250,000</option>
+              <option>$250,000+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Time in Business</label>
+            <div class="form-select-wrap">
+              <select class="form-select">
+                <option value="">Select</option>
+                <option>Under 1 year</option>
+                <option>1 — 2 years</option>
+                <option>2 — 5 years</option>
+                <option>5+ years</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Industry</label>
+            <div class="form-select-wrap">
+              <select class="form-select">
+                <option value="">Select</option>
+                <option>Restaurant / Food</option>
+                <option>Retail</option>
+                <option>Construction</option>
+                <option>Trucking</option>
+                <option>Healthcare</option>
+                <option>Landscaping</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">How Much Do You Need?</label>
+          <div class="form-select-wrap">
+            <select class="form-select">
+              <option value="">Select funding amount</option>
+              <option>$10,000 — $50,000</option>
+              <option>$50,000 — $150,000</option>
+              <option>$150,000 — $500,000</option>
+              <option>$500,000 — $1,000,000</option>
+              <option>$1,000,000+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Business Email</label>
+          <input type="email" class="form-input" placeholder="owner@yourbusiness.com">
+        </div>
+
+        <button class="form-submit" type="button">See My Matched Offers &rarr;</button>
+        <p class="form-note"><strong>No credit pull.</strong> Checking your offers never affects your credit score. Bank connection takes under 60 seconds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span class="ti-icon">&#10003;</span> No tax returns required</div>
+    <div class="trust-sep">|</div>
+    <div class="trust-item"><span class="ti-icon">&#10003;</span> No personal guarantee (under $150K)</div>
+    <div class="trust-sep">|</div>
+    <div class="trust-item"><span class="ti-icon">&#10003;</span> One lender match — not 8 cold calls</div>
+    <div class="trust-sep">|</div>
+    <div class="trust-item"><span class="ti-icon">&#10003;</span> Decisions in 24 hours</div>
+    <div class="trust-sep">|</div>
+    <div class="trust-item"><span class="ti-icon">&#10003;</span> Transparent factor rates, no stacking</div>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<section class="section problem">
+  <div class="section-inner">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-heading">Every other option was built for someone else.</h2>
+    <p class="section-sub">Banks built their underwriting for companies with accountants and audited financials. Lead-gen sites built their revenue model around selling your data. Neither was built for you.</p>
+
+    <div class="pain-cards">
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+        <div class="pain-title">Banks decline 80% of SMB applications</div>
+        <div class="pain-body">Not because your business is failing. Because you do not have three years of profitable tax returns, audited financials, and commercial collateral. The SBA process takes 60-90 days. You need capital Friday.</div>
+        <span class="pain-tag">78% SMB decline rate (Fed Reserve 2023)</span>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 0140 1.18 2 2 0 016 3v3"/></svg>
+        </div>
+        <div class="pain-title">Lead marketplaces sell your application 5-8 times</div>
+        <div class="pain-body">Sites like LendingTree are not lenders — they are data businesses. They sell your information to multiple lenders simultaneously. Your phone rings for three days. Lenders close fewer than 18% of what they buy because they are all racing for the same lead.</div>
+        <span class="pain-tag">18% close rate on purchased leads</span>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="pain-title">MCA brokers bury the real cost</div>
+        <div class="pain-body">Factor rates, stacking, undisclosed commissions, and renewal churn. The broker earns more when you borrow more, regardless of whether the deal is right for your business. No skin in the game. No long-term relationship.</div>
+        <span class="pain-tag">Average MCA factor rate: 1.2x — 1.5x</span>
+      </div>
+    </div>
+
+    <div class="problem-resolution">
+      <div>
+        <div class="resolution-text">shopifund is the <em>explicit opposite.</em><br>One qualified lead. One placement. One relationship.<br>Funded fast, with honest terms, from a partner who knows your business.</div>
+      </div>
+      <button class="resolution-cta" onclick="scrollToForm()">Get My Match &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how" id="how-it-works">
+  <div class="section-inner">
+    <div class="section-label">The Process</div>
+    <h2 class="section-heading">From application to funded in <em>under 48 hours.</em></h2>
+    <p class="section-sub">Built for mobile. Finishes in under 5 minutes. Designed for a business owner who is short on time — not short on hustle.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Connect your bank</div>
+        <div class="step-body">Securely share 3 months of bank statements. We look at average daily balance, deposit consistency, and cash flow patterns — not your tax returns or credit score. Takes under 60 seconds.</div>
+        <span class="step-badge">60-second connection</span>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--amber);">2</div>
+        <div class="step-title">See your real matched offers</div>
+        <div class="step-body">Our algorithm matches your business against active lender buy-boxes in real time. You see actual offers with real terms — not a promise that lenders will call. One match. Not eight.</div>
+        <span class="step-badge">Real offers, real terms</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Get funded — fast</div>
+        <div class="step-body">Decision in 24-48 hours. For Gold-tier deals, we may fund directly without a third-party lender at all. Wire hits your account the same week — often the same day approval comes through.</div>
+        <span class="step-badge">Funded by Friday</span>
+      </div>
+    </div>
+
+    <div class="friday-banner">
+      <div>
+        <div class="friday-text">"Funded by Friday" is not a tagline.<br>It is an operational standard.</div>
+        <div class="friday-sub">For qualified businesses, we commit to a funding decision within 24 hours of a complete bank statement submission.</div>
+      </div>
+      <button class="friday-cta" onclick="scrollToForm()">Start My Application &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SHOPIFUND -->
+<section class="section why" id="why-shopifund">
+  <div class="section-inner">
+    <div class="section-label">The Difference</div>
+    <h2 class="section-heading">shopifund vs everyone else.</h2>
+    <p class="section-sub">We operate where the existing alternatives break down. No dominant player holds more than 4% of this market. That gap is why shopifund exists.</p>
+
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>shopifund</th>
+            <th>LendingTree</th>
+            <th>Kabbage / AmEx</th>
+            <th>MCA Broker</th>
+            <th>Your Bank</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="shopifund-row">
+            <td><div class="feature-name">Single lender match</div><div class="feature-sub">One placement, not five</div></td>
+            <td><span class="yes">Yes</span></td>
+            <td><span class="no">No — sells to 5-8</span></td>
+            <td><span class="yes">Yes</span></td>
+            <td><span class="partial">Varies</span></td>
+            <td><span class="yes">Yes</span></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">No tax returns required</div></td>
+            <td><span class="yes">Yes</span></td>
+            <td><span class="partial">Depends on lender</span></td>
+            <td><span class="yes">Yes</span></td>
+            <td><span class="yes">Yes</span></td>
+            <td><span class="no">No</span></td>
+          </tr>
+          <tr class="shopifund-row">
+            <td><div class="feature-name">$150K — $1M range</div><div class="feature-sub">The underserved bracket</div></td>
+            <td><span class="yes">Yes</span></td>
+            <td><span class="partial">Depends on lender</span></td>
+            <td><span class="no">Capped at $150K</span></td>
+            <td><span class="partial">Varies</span></td>
+            <td><span class="no">Rarely</span></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Transparent factor rate</div><div class="feature-sub">No hidden stacking</div></td>
+            <td><span class="yes">Yes — disclosed upfront</span></td>
+            <td><span class="partial">Depends on lender</span></td>
+            <td><span class="yes">Yes</span></td>
+            <td><span class="no">Often undisclosed</span></td>
+            <td><span class="yes">Yes (APR)</span></td>
+          </tr>
+          <tr class="shopifund-row">
+            <td><div class="feature-name">Decision speed</div></td>
+            <td><span class="yes">24 — 48 hours</span></td>
+            <td><span class="partial">Days to weeks</span></td>
+            <td><span class="yes">1 — 3 days</span></td>
+            <td><span class="partial">2 — 5 days</span></td>
+            <td><span class="no">60 — 90 days (SBA)</span></td>
+          </tr>
+          <tr>
+            <td><div class="feature-name">Direct funding option</div><div class="feature-sub">No third-party lender</div></td>
+            <td><span class="yes">Yes — Gold tier</span></td>
+            <td><span class="no">No</span></td>
+            <td><span class="yes">Yes</span></td>
+            <td><span class="no">No</span></td>
+            <td><span class="yes">Yes</span></td>
+          </tr>
+          <tr class="shopifund-row">
+            <td><div class="feature-name">Stacking check</div><div class="feature-sub">Protects your business</div></td>
+            <td><span class="yes">Yes — flagged automatically</span></td>
+            <td><span class="no">No</span></td>
+            <td><span class="partial">Basic</span></td>
+            <td><span class="no">Rarely</span></td>
+            <td><span class="partial">Manual review</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- LOAN PRODUCTS -->
+<section class="section products" id="products">
+  <div class="section-inner">
+    <div class="section-label">Funding Options</div>
+    <h2 class="section-heading">The right capital for what you actually need.</h2>
+    <p class="section-sub">Every business has a different cash flow pattern. We match the product to the problem, not the other way around.</p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="product-name">Working Capital</div>
+        <div class="product-range">$10K — $500K</div>
+        <div class="product-desc">Cash to cover payroll, inventory, rent, and operating gaps. Revenue-based repayment tied to your daily deposits. Best for businesses with consistent monthly card volume.</div>
+        <span class="product-speed">Decision in 24 hrs</span>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="product-name">Business Line of Credit</div>
+        <div class="product-range">$25K — $250K</div>
+        <div class="product-desc">Draw what you need, when you need it. Pay interest only on what you use. Ideal for businesses with seasonal swings or unpredictable receivables timing.</div>
+        <span class="product-speed">Revolving access</span>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2.5" stroke-linecap="round"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+        </div>
+        <div class="product-name">Bridge Loan</div>
+        <div class="product-range">$50K — $1M</div>
+        <div class="product-desc">Short-term capital for a specific opportunity — a contract, expansion, or equipment purchase with a clear payoff date. Fixed term, fixed payments, no surprises.</div>
+        <span class="product-speed">Funded same week</span>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B6B5A" stroke-width="2.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M12 12v4M10 14h4"/></svg>
+        </div>
+        <div class="product-name">Equipment Finance</div>
+        <div class="product-range">$20K — $500K</div>
+        <div class="product-desc">Finance the equipment your business runs on — vehicles, machinery, kitchen builds, technology. The asset backs the loan. Lower factor rate than working capital by design.</div>
+        <span class="product-speed">Asset-backed rate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <div class="section-inner">
+    <div class="section-label">Real Businesses</div>
+    <h2 class="section-heading" style="color:var(--white);">They needed capital on a deadline.<br>We delivered.</h2>
+    <p class="section-sub">shopifund clients across construction, food service, trucking, and healthcare.</p>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-quote">"We had a $280K contract starting Monday and needed equipment by Friday. Every bank I called said six to eight weeks minimum. shopifund had the offer in my inbox by Wednesday morning. We started that job on time."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">MR</div>
+          <div>
+            <div class="testi-name">Marcus R.</div>
+            <div class="testi-biz">General Contractor — Atlanta, GA</div>
+          </div>
+        </div>
+        <div class="testi-amount">Funded: <span>$220,000 Bridge Loan</span></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-quote">"I applied with LendingTree two years ago and my phone rang for two weeks straight. With shopifund I got one call from one lender, we talked for 20 minutes, and I had the money in three days. Not the same experience at all."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">SK</div>
+          <div>
+            <div class="testi-name">Sandra K.</div>
+            <div class="testi-biz">Restaurant Owner — Miami, FL</div>
+          </div>
+        </div>
+        <div class="testi-amount">Funded: <span>$85,000 Working Capital</span></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-quote">"I run 14 trucks. Insurance renewal and two new leases hit the same month. shopifund pulled three months of bank statements, matched us with the right lender, and we had $450K approved before the due dates. Painless."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">DW</div>
+          <div>
+            <div class="testi-name">Darnell W.</div>
+            <div class="testi-biz">Freight Operator — Dallas, TX</div>
+          </div>
+        </div>
+        <div class="testi-amount">Funded: <span>$450,000 Bridge Loan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="section-inner">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-heading">Straight answers. No fine print.</h2>
+
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need tax returns or financial statements to apply?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">No. shopifund qualifies your business using 3 months of bank statements. We look at average daily balance, deposit consistency, and monthly revenue — not your tax return history. Businesses that have been declined by banks for insufficient documentation apply and get funded every week.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Will applying hurt my credit score?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">No. The prequalification process is a soft pull only and does not affect your credit score. A hard pull may be required at the final approval stage for certain loan types, and we will always notify you before that happens.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the minimum to qualify?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Your business must be at least 12 months old and deposit a minimum of $50,000 per month in gross revenue. We do not fund startups or businesses under one year. Beyond that, qualification depends on cash flow consistency and industry — not credit score or tax returns.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How is shopifund different from LendingTree or Lendio?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">LendingTree sells your application to 5-8 lenders simultaneously. Your phone rings for days and lenders compete on price alone, not fit. Lendio is a broker — they earn commission and have no ability to fund directly. shopifund routes your application to a single matched lender, or funds you directly when the economics make sense. One call. No circus.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is a factor rate and how does it work?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">A factor rate is how revenue-based financing is priced. A 1.35 factor rate means you repay $1.35 for every $1.00 borrowed — so $100,000 becomes $135,000 total repayment. We disclose your factor rate, total repayment amount, and daily payment size before you sign anything. No surprises, no stacking, no hidden fees.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How fast can I actually get funded?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">"Funded by Friday" is an operational commitment, not a marketing line. For qualified borrowers who submit complete bank statements, our standard is a funding decision within 24 hours and wire within 48. Many deals fund the same day approval is issued. Speed depends on completeness of your submission and lender ACH schedules.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="bottom-cta-inner">
+    <h2>Your business shouldn't stall<br>for lack of <em>capital.</em></h2>
+    <p>5-minute application. Bank statements only. One matched offer. No phone flood, no hidden fees, no weeks of waiting.</p>
+    <div class="cta-buttons">
+      <button class="btn-primary" onclick="scrollToForm()">See My Matched Offers &rarr;</button>
+      <button class="btn-outline">Talk to a Funding Specialist</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="wordmark">shopi<span>fund</span></div>
+        <p>The SMB lending marketplace built for business owners who move fast and need capital to match. Funding that works as hard as you do.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Borrowers</h4>
+        <ul>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Loan Types</a></li>
+          <li><a href="#">Qualification Guide</a></li>
+          <li><a href="#">Apply Now</a></li>
+          <li><a href="#">Check Application Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Lenders</h4>
+        <ul>
+          <li><a href="#">Partner Program</a></li>
+          <li><a href="#">Lender Portal</a></li>
+          <li><a href="#">Buy-Box Configuration</a></li>
+          <li><a href="#">Data API</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About shopifund</a></li>
+          <li><a href="#">Compliance</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="https://futur-proof.com">Built by FuturProof Labs</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 shopifund. All rights reserved. shopifund is not a bank or lender. shopifund connects businesses with third-party lenders and may fund select deals directly through its lending affiliate. CA SB 1235 and NY CFDL disclosures provided at time of offer.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Licenses</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function scrollToForm(){
+  document.getElementById('apply-form').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+// Sticky nav shadow
+window.addEventListener('scroll',()=>{
+  const nav=document.querySelector('nav');
+  nav.style.boxShadow=window.scrollY>10?'0 2px 20px rgba(0,0,0,0.08)':'none';
+});
+</script>
+</body>
+</html>
