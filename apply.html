@@ -121,7 +121,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--teal);heigh
 .trust-badges{display:flex;flex-direction:column;gap:0.35rem;margin-top:0.25rem;}
 .trust-badge{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--muted);}
 .step-notice{font-size:0.78rem;color:var(--muted);margin-top:-0.5rem;margin-bottom:1.2rem;line-height:1.5;}
-.progress-pill{display:inline-flex;align-items:center;gap:0.4rem;border:1.5px solid var(--teal-mid);border-radius:50px;padding:0.35rem 0.85rem;font-size:0.8rem;font-weight:600;color:var(--teal-mid);margin-bottom:1.5rem;}
+.progress-pill-wrap{display:flex;justify-content:center;margin-bottom:1.5rem;}
+.progress-pill{display:inline-flex;align-items:center;gap:0.4rem;border:1.5px solid var(--teal-mid);border-radius:50px;padding:0.35rem 0.85rem;font-size:0.8rem;font-weight:600;color:var(--teal-mid);white-space:nowrap;}
 
 /* BANK STEP */
 .bank-search{width:100%;border:2px solid var(--border);border-radius:10px;padding:0.85rem 1rem 0.85rem 2.8rem;font-size:1rem;font-family:'Inter',sans-serif;color:var(--charcoal);background:var(--white);outline:none;transition:border-color 0.18s;margin-bottom:1rem;}
@@ -287,9 +288,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--teal);heigh
       </div>
 
     </div>
-    <div class="progress-pill">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Get your matches in 2 minutes or less.
+    <div class="progress-pill-wrap">
+      <div class="progress-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Get your matches in 2 minutes or less.
+      </div>
     </div>
   </div>
 
