@@ -572,6 +572,22 @@ section{padding:5rem 5vw;}
 .testi-name{font-weight:700;font-size:0.82rem;color:var(--charcoal);}
 .testi-biz{font-size:0.75rem;color:var(--muted);}
 
+/* TESTIMONIAL MARQUEE */
+.testi-marquee{
+  overflow:hidden;margin-top:2.5rem;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);
+}
+.testi-track{
+  display:flex;gap:1.25rem;width:max-content;
+  animation:testi-scroll 45s linear infinite;
+}
+.testi-track:hover{animation-play-state:paused;}
+@keyframes testi-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
 /* FAQ */
 .faq{background:var(--white);}
 .faq-inner{max-width:700px;margin:0 auto;}
@@ -945,15 +961,10 @@ function closeMenu(){document.querySelector('.hamburger').classList.remove('open
   <div class="testi-inner">
     <div class="section-label">Business owners</div>
     <h2 class="section-title">They got funded. You can too.</h2>
-    <div class="scroll-arrows">
-      <button class="scroll-btn" onclick="scrollRow('testi-row',-1)" aria-label="Scroll left">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <button class="scroll-btn" onclick="scrollRow('testi-row',1)" aria-label="Scroll right">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-    <div class="scroll-row" id="testi-row">
+  </div>
+  <div class="testi-marquee">
+    <div class="testi-track">
+      <!-- Set 1 -->
       <div class="testi-card">
         <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>"Applied Monday afternoon, had a call Tuesday morning, money in my account Thursday. I've been trying to get funding for 6 months through banks. shopifund did it in 3 days."</p>
@@ -999,6 +1010,62 @@ function closeMenu(){document.querySelector('.hamburger').classList.remove('open
         </div>
       </div>
       <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"One advisor, one call, one offer. That's exactly what happened. No 12 different lenders calling me for a month. Clean, fast, professional. $75K in 4 days."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">JM</div>
+          <div>
+            <div class="testi-name">James M.</div>
+            <div class="testi-biz">Staffing agency, Chicago IL</div>
+          </div>
+        </div>
+      </div>
+      <!-- Set 2 — duplicate for seamless loop -->
+      <div class="testi-card" aria-hidden="true">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Applied Monday afternoon, had a call Tuesday morning, money in my account Thursday. I've been trying to get funding for 6 months through banks. shopifund did it in 3 days."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">MR</div>
+          <div>
+            <div class="testi-name">Marcus R.</div>
+            <div class="testi-biz">Restaurant owner, Miami FL</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" aria-hidden="true">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I was nervous about the factor rate but my advisor explained everything line by line. No pressure. I actually understood what I was signing. That never happens."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">SL</div>
+          <div>
+            <div class="testi-name">Sandra L.</div>
+            <div class="testi-biz">Boutique retail, Austin TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" aria-hidden="true">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Three months of bank statements and that was it. No tax returns, no business plan, no 47-page application. Just real cash flow proof. Got $120K for equipment."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">DT</div>
+          <div>
+            <div class="testi-name">David T.</div>
+            <div class="testi-biz">HVAC contractor, Phoenix AZ</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" aria-hidden="true">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Revenue-based financing was perfect for my seasonal business. Slow months I pay almost nothing. I wish I found shopifund two years ago instead of burning through my savings."</p>
+        <div class="testi-meta">
+          <div class="testi-avatar">KN</div>
+          <div>
+            <div class="testi-name">Kim N.</div>
+            <div class="testi-biz">Landscaping, Seattle WA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" aria-hidden="true">
         <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>"One advisor, one call, one offer. That's exactly what happened. No 12 different lenders calling me for a month. Clean, fast, professional. $75K in 4 days."</p>
         <div class="testi-meta">
