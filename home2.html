@@ -828,6 +828,7 @@ footer{
 .buck-strip-avatar img{
   width:100%;height:100%;object-fit:cover;border-radius:50%;
 }
+.mobile-br{display:none;}
 .buck-strip-text strong{
   font-family:'Nunito',sans-serif;font-size:1.15rem;font-weight:900;
   color:var(--cream);display:block;
@@ -850,6 +851,7 @@ footer{
   .buck-strip{justify-content:center;text-align:center;}
   .buck-strip-left{flex-direction:column;text-align:center;}
   .buck-strip-cta{width:100%;justify-content:center;}
+  .mobile-br{display:block;}
 }
 
 /* CHAT WITH BUCK inline section */
@@ -1112,7 +1114,7 @@ function closeMenu(){document.querySelector('.hamburger').classList.remove('open
     </div>
     <div class="buck-strip-text">
       <strong>Need cash by Friday? Buck's got you.</strong>
-      <span>Three lenders just reviewed your file. Here's what came back.</span>
+      <span>Three lenders just reviewed your file. <br class="mobile-br">Here's what came back.</span>
     </div>
   </div>
   <a href="#buck-chat" class="buck-strip-cta" onclick="openBuckChat();return false;">
